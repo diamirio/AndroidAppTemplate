@@ -29,7 +29,7 @@ For each feature a separate module should be created. The `core` module should b
 ## Testing
 
 * Every module should contain tests for its use cases.
-* `test`: Write unit tests for every `ViewModel`/`Reactor`. Mockito or PowerMock can be used to mock objects and verify correct behaviour. Add the `RxSchedulersOverrideRule` to prevent errors when using RxJava.
+* `test`: Write unit tests for every `Reactor`. Mockito or PowerMock can be used to mock objects and verify correct behaviour. Add the `RxSchedulersOverrideRule` to prevent errors with RxJava.
 * `androidTest`: Write UI tests for common actions in your app. Use JUnit 4 Tests with Espresso. Some helper methods are available in EspressoUtils.
 
 ## Recommended Reading
