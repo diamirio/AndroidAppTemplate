@@ -1,5 +1,5 @@
 # Android App Template
-![Android](https://img.shields.io/badge/Android-✓-green.svg) ![Kotlin](https://img.shields.io/badge/Kotlin-✓-orange.svg) ![MVI](https://img.shields.io/badge/MVI-✓-red.svg)
+![Kotlin](https://img.shields.io/badge/Language-Kotlin-orange.svg) ![Android](https://img.shields.io/badge/Platform-Android-green.svg) ![MVI](https://img.shields.io/badge/Architecture-MVI-red.svg)
 
 This is an Android app template which can be used for new projects. A small example app is available [here](https://github.com/tailoredmedia/AndroidAppTemplateExample).  
 Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for several utility classes.
