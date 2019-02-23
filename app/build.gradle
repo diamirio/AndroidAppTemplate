@@ -1,0 +1,143 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: "kotlin-android-extensions"
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.akaita.android.easylauncher'
+apply plugin: "androidx.navigation.safeargs"
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.tailoredapps.androidapptemplate"
+        setProperty("archivesBaseName", "AndroidAppTemplate-v$versionName-b$versionCode")
+
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion rootProject.ext.minSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.version
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'mykeyalias'
+            keyPassword 'mykeypassword'
+            storeFile file('../keystore.jks')
+            storePassword 'mykeystorepassword'
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
+            minifyEnabled false
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "backend"
+    productFlavors {
+        dev {
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "AndroidAppTemplate Dev"
+            resValue "string", "leak_canary_display_activity_label", "AndroidAppTemplate Leaks"
+            buildConfigField "String", "BASE_URL", "\"https://restcountries.eu/rest/v2/\""
+            dimension "backend"
+        }
+        prod {
+            resValue "string", "app_name", "AndroidAppTemplate"
+            buildConfigField "String", "BASE_URL", "\"https://restcountries.eu/rest/v2/\""
+            dimension "backend"
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+androidExtensions {
+    experimental = true
+}
+
+
+dependencies {
+    /**
+     * Base
+     */
+    implementation project(path: ':core')
+    implementation appbase.values()
+
+    /**
+     * UI
+     */
+    implementation ui.values()
+    kapt lifecycle.compiler
+
+    /**
+     * Rx
+     */
+    implementation rxjava.android
+    implementation rxbinding.values()
+
+    /**
+     * Util
+     */
+    debugImplementation leakcanary.op
+    releaseImplementation leakcanary.noop
+    implementation glide.core
+    kapt glide.compiler
+
+    /**
+     * Testing
+     */
+    testImplementation test.values()
+    androidTestImplementation androidtest.values()
+}
+
+
+easylauncher {
+    iconNames "@mipmap/ic_launcher_foreground"
+    foregroundIconNames "@mipmap/ic_launcher_foreground"
+
+    defaultFlavorNaming = true
+
+    buildTypes {
+        debug {
+            filters = customColorRibbonFilter("debug", "#47BAF2", "#ffffff")
+        }
+        release {}
+    }
+}

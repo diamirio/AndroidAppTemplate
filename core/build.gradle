@@ -1,0 +1,32 @@
+apply from: "$rootDir/library-module.gradle"
+
+dependencies {
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    /**
+     * DI
+     */
+    api koin.values()
+
+    /**
+     * Rx
+     */
+    api rxjava.core
+    api rxjava.kotlin
+    api rxjava.relay
+
+    /**
+     * Networking
+     */
+    implementation networking.values()
+
+    /**
+     * Util
+     */
+    api coreutil.values()
+
+    /**
+     * Testing
+     */
+    testImplementation test.values()
+}
