@@ -9,4 +9,13 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
+    <!-- Text -->
+    <style name="Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/textDarkPrimary</item>
+    </style>
+
+    <style name="Text" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/textDarkPrimary</item>
+    </style>
+
 </resources>

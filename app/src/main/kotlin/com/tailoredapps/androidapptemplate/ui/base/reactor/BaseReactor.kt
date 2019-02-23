@@ -43,7 +43,7 @@ abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
 
 
 /**
- * Reactor DSL extension for Koin.
+ * Reactor DSL extension to declare a Reactor in a Koin Module.
  */
 inline fun <reified Reactor : BaseReactor<*, *, *>> Module.reactor(
     name: String? = null,

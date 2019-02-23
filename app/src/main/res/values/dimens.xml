@@ -3,9 +3,4 @@
     <dimen name="margin_half">8dp</dimen>
     <dimen name="padding">12dp</dimen>
     <dimen name="padding_half">6dp</dimen>
-
-    <dimen name="text_small">12sp</dimen>
-    <dimen name="text_regular">15sp</dimen>
-    <dimen name="text_large">18sp</dimen>
-    <dimen name="text_larger">22sp</dimen>
 </resources>
