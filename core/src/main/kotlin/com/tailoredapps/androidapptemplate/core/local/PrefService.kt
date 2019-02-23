@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.core.di
+package com.tailoredapps.androidapptemplate.core.local
 
-import com.google.gson.GsonBuilder
-import com.tailoredapps.core.CoreDataRepo
-import com.tailoredapps.core.DataRepo
-import org.koin.dsl.module
+import android.content.Context
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 
 
-val coreModule = module {
-    single { provideGson() }
-    single { CoreDataRepo(get(), get()) as DataRepo }
+interface PrefService
+
+
+class SharedPrefService(context: Context) : PrefService {
+    private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+    
 }
-
-
-private fun provideGson() = GsonBuilder().create()

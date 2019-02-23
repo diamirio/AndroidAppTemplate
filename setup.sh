@@ -113,6 +113,11 @@ mv $baseDir/app/src/test/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/a
 mv ${baseDir}/app/src/androidTest/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/app/src/androidTest/kotlin/${packagePath}
 mv $baseDir/app/src/main/kotlin/$packagePath/MyApp.kt $baseDir/app/src/main/kotlin/$packagePath/${appClassName}App.kt
 
+mkdir -p $baseDir/core/src/main/kotlin/$packagePath
+mkdir -p $baseDir/core/src/test/kotlin/$packagePath
+mv $baseDir/core/src/main/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/core/src/main/kotlin/$packagePath
+mv $baseDir/core/src/test/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/core/src/test/kotlin/$packagePath
+
 # remove old folders
 
 originalPackagePathParts=(com tailoredapps androidapptemplate)
@@ -138,6 +143,9 @@ if [[ $packageName != com.tailoredapps.androidapptemplate* ]]; then
     rm -r $baseDir/app/src/main/kotlin/$deletePath
     rm -r $baseDir/app/src/test/kotlin/$deletePath
     rm -r ${baseDir}/app/src/androidTest/kotlin/${deletePath}
+
+    rm -r $baseDir/core/src/main/kotlin/$deletePath
+    rm -r $baseDir/core/src/test/kotlin/$deletePath
 
 fi
 

@@ -21,9 +21,9 @@ import at.florianschuster.androidreactor.AndroidReactor
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
 import com.tailoredapps.androidapptemplate.di.*
-import com.tailoredapps.core.di.coreModule
-import com.tailoredapps.core.di.localModule
-import com.tailoredapps.core.di.remoteModule
+import com.tailoredapps.androidapptemplate.core.di.coreModule
+import com.tailoredapps.androidapptemplate.core.di.localModule
+import com.tailoredapps.androidapptemplate.core.di.remoteModule
 import io.reactivex.plugins.RxJavaPlugins
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

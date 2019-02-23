@@ -18,7 +18,7 @@ package com.tailoredapps.androidapptemplate.di
 
 import com.squareup.leakcanary.LeakCanary
 import com.tailoredapps.androidapptemplate.BuildConfig
-import com.tailoredapps.core.di.BaseUrl
+import com.tailoredapps.androidapptemplate.core.di.BaseUrl
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 

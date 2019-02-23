@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.core.di
+package com.tailoredapps.androidapptemplate.core.di
 
 import com.google.gson.Gson
-import com.tailoredapps.core.BuildConfig
-import com.tailoredapps.core.remote.Api
+import com.tailoredapps.androidapptemplate.core.BuildConfig
+import com.tailoredapps.androidapptemplate.core.remote.Api
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

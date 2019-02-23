@@ -20,8 +20,8 @@ import com.tailoredapps.androidapptemplate.R
 import com.tailoredapps.androidapptemplate.ui.base.reactor.BaseReactor
 import com.tailoredapps.androidapptemplate.ui.base.reactor.ReactorFragment
 import com.tailoredapps.androidapptemplate.ui.base.reactor.reactor
-import com.tailoredapps.core.DataRepo
-import com.tailoredapps.core.model.Model
+import com.tailoredapps.androidapptemplate.core.DataRepo
+import com.tailoredapps.androidapptemplate.core.model.Model
 
 
 class DetailFragment : ReactorFragment<DetailReactor>(R.layout.fragment_detail) {

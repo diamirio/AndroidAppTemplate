@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.core.di
+package com.tailoredapps.androidapptemplate.core.di
 
-import com.tailoredapps.core.local.PrefService
-import com.tailoredapps.core.local.SharedPrefService
+import com.tailoredapps.androidapptemplate.core.local.PrefService
+import com.tailoredapps.androidapptemplate.core.local.SharedPrefService
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 

@@ -14,7 +14,15 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.core.model
+package com.tailoredapps.androidapptemplate.core
+
+import com.tailoredapps.androidapptemplate.core.local.PrefService
+import com.tailoredapps.androidapptemplate.core.remote.Api
 
 
-data class Model(val any: Any = Unit)
+interface DataRepo
+
+
+class CoreDataRepo(private val api: Api, private val prefService: PrefService) : DataRepo {
+
+}

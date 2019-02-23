@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.core.remote
+package com.tailoredapps.androidapptemplate.core.model
 
 
-interface Api
+data class Model(val any: Any = Unit)

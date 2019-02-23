@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.core
+package com.tailoredapps.androidapptemplate.core.di
 
-import com.tailoredapps.core.local.PrefService
-import com.tailoredapps.core.remote.Api
+import com.google.gson.GsonBuilder
+import com.tailoredapps.androidapptemplate.core.CoreDataRepo
+import com.tailoredapps.androidapptemplate.core.DataRepo
+import org.koin.dsl.module
 
 
-interface DataRepo
-
-
-class CoreDataRepo(private val api: Api, private val prefService: PrefService) : DataRepo {
-
+val coreModule = module {
+    single { provideGson() }
+    single { CoreDataRepo(get(), get()) as DataRepo }
 }
+
+
+private fun provideGson() = GsonBuilder().create()

@@ -14,17 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.core.local
-
-import android.content.Context
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
+package com.tailoredapps.androidapptemplate.core.remote
 
 
-interface PrefService
-
-
-class SharedPrefService(context: Context) : PrefService {
-    private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-    
-}
+interface Api
