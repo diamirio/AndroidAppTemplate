@@ -22,7 +22,6 @@
 -keep class com.squareup.leakcanary.** { *; }
 -dontwarn android.app.Notification
 
-
 # Glide
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public class * extends com.bumptech.glide.module.AppGlideModule
@@ -31,7 +30,6 @@
   public *;
 }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
-
 
 # Gson
 -keepattributes Signature

@@ -1,32 +1,32 @@
 apply from: "$rootDir/library-module.gradle"
 
 dependencies {
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
     /**
      * DI
      */
-    api koin.values()
+    api deps.koin.values()
 
     /**
      * Rx
      */
-    api rxjava.core
-    api rxjava.kotlin
-    api rxjava.relay
+    api deps.rxjava.core
+    api deps.rxjava.kotlin
+    api deps.rxjava.relay
 
     /**
      * Networking
      */
-    implementation networking.values()
+    implementation deps.networking.values()
 
     /**
      * Util
      */
-    api coreutil.values()
+    api deps.coreutil.values()
 
     /**
      * Testing
      */
-    testImplementation test.values()
+    testImplementation deps.test.values()
 }

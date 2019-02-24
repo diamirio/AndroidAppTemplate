@@ -7,16 +7,16 @@ apply plugin: "androidx.navigation.safeargs"
 
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion rootProject.ext.config.compileSdkVersion
 
     defaultConfig {
         applicationId "com.tailoredapps.androidapptemplate"
         setProperty("archivesBaseName", "AndroidAppTemplate-v$versionName-b$versionCode")
 
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        minSdkVersion rootProject.ext.minSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.version
+        targetSdkVersion rootProject.ext.config.targetSdkVersion
+        minSdkVersion rootProject.ext.config.minSdkVersion
+        versionCode rootProject.ext.config.versionCode
+        versionName rootProject.ext.config.version
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -98,33 +98,34 @@ dependencies {
      * Base
      */
     implementation project(path: ':core')
-    implementation appbase.values()
+    implementation deps.reactor
+    implementation deps.androidutil
 
     /**
      * UI
      */
-    implementation ui.values()
-    kapt lifecycle.compiler
+    implementation deps.ui.values()
+    kapt deps.lifecycle.compiler
 
     /**
      * Rx
      */
-    implementation rxjava.android
-    implementation rxbinding.values()
+    implementation deps.rxjava.android
+    implementation deps.rxbinding.values()
 
     /**
      * Util
      */
-    debugImplementation leakcanary.op
-    releaseImplementation leakcanary.noop
-    implementation glide.core
-    kapt glide.compiler
+    debugImplementation deps.leakcanary.op
+    releaseImplementation deps.leakcanary.noop
+    implementation deps.glide.core
+    kapt deps.glide.compiler
 
     /**
      * Testing
      */
-    testImplementation test.values()
-    androidTestImplementation androidtest.values()
+    testImplementation deps.test.values()
+    androidTestImplementation deps.androidtest.values()
 }
 
 

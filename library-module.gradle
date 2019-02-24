@@ -5,12 +5,12 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion rootProject.ext.config.compileSdkVersion
     defaultConfig {
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        minSdkVersion rootProject.ext.minSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.version
+        targetSdkVersion rootProject.ext.config.targetSdkVersion
+        minSdkVersion rootProject.ext.config.minSdkVersion
+        versionCode rootProject.ext.config.versionCode
+        versionName rootProject.ext.config.version
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
