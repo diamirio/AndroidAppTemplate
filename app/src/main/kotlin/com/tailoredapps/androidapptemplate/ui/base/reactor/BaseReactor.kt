@@ -53,9 +53,9 @@ inline fun <reified Reactor : BaseReactor<*, *, *>> Module.reactor(
 
 
 /**
- * Lazily gets a reactor instance.
+ * Lazily gets a reactor instance for a LifecycleOwner.
  */
-inline fun <reified Reactor : BaseReactor<*, *, *>> LifecycleOwner.reactor(
+inline fun <L : LifecycleOwner, reified Reactor : BaseReactor<*, *, *>> L.reactor(
     name: String? = null,
     noinline parameters: ParametersDefinition? = null
 ) = viewModel<Reactor>(name, parameters)
