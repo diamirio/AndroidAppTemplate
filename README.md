@@ -15,7 +15,13 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 
 ## App structure
 
-For each feature a separate module should be created. The `core` module should be implemented in each module and contains code that is needed for all modules, for example an api or a database that is needed in multiple feature modules. The `app`module contains Android app related code. Depending on the project size each feature could be contained in a separated module to support and promote reusability, such as for example a `login` module or a `map` module. Each module then contains all the necessary code for the module to "live" on its own. For example a `login` module could contain the login api, the token storage database and the view containing the login user interface. However app and module structure should be thought through for every project separately.
+For each feature a separate module should be created. The `core` module should be implemented in each module and contains code that is needed for all modules, for example an api or a database that is needed in multiple feature modules. The `app`module contains Android app related code. Depending on the project size 
+
+* each feature could be contained in a separated module to support and promote reusability, such as for example a `login` module or a `map` module. Each module then contains all the necessary code for the module to "live" on its own. For example a `login` module could contain the login api, the token storage database and the view containing the login user interface.
+
+* or all ui elements are located in the `app` module and the `core` module contains business logic that can potentially be shared with other feature or ui modules.
+
+However app and module structure should be thought through for every project separately.
 
 ## Module structure
 
