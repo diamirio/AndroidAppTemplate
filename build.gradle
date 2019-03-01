@@ -4,9 +4,7 @@ buildscript {
     ext.config = [
             targetSdkVersion : 28,
             minSdkVersion    : 21,
-            compileSdkVersion: 28,
-            versionCode      : 1,
-            version          : '1.0.0'
+            compileSdkVersion: 28
     ]
 
     ext.versions = [
@@ -24,7 +22,7 @@ buildscript {
 
     ext.deps = [
             reactor    : "at.florianschuster:androidreactor:0.1.0",
-            androidutil: "com.tailoredapps:androidutil:0.0.9",
+            androidutil: "com.tailoredapps:androidutil:0.0.13",
             ui         : [
                     material_core            : 'com.google.android.material:material:1.0.0',
                     androidx_appcompat       : 'androidx.appcompat:appcompat:1.0.2',

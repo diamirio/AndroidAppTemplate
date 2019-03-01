@@ -10,13 +10,14 @@ android {
     compileSdkVersion rootProject.ext.config.compileSdkVersion
 
     defaultConfig {
+        versionCode 1
+        versionName '1.0.0'
+        
         applicationId "com.tailoredapps.androidapptemplate"
         setProperty("archivesBaseName", "AndroidAppTemplate-v$versionName-b$versionCode")
 
         targetSdkVersion rootProject.ext.config.targetSdkVersion
         minSdkVersion rootProject.ext.config.minSdkVersion
-        versionCode rootProject.ext.config.versionCode
-        versionName rootProject.ext.config.version
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
