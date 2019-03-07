@@ -16,7 +16,7 @@
 
 package com.tailoredapps.androidapptemplate.di
 
-import com.tailoredapps.androidapptemplate.ui.base.reactor.reactor
+import com.tailoredapps.androidapptemplate.ui.base.reactor
 import com.tailoredapps.androidapptemplate.ui.detail.DetailReactor
 import org.koin.dsl.module
 

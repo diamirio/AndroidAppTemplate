@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.ui.base.reactor
+package com.tailoredapps.androidapptemplate.ui.base
 
 import androidx.annotation.CallSuper
 import androidx.lifecycle.LifecycleOwner

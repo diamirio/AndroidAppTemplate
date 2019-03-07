@@ -16,16 +16,26 @@
 
 package com.tailoredapps.androidapptemplate.ui.detail
 
+import android.os.Bundle
+import at.florianschuster.androidreactor.ReactorView
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.ui.base.reactor.BaseReactor
-import com.tailoredapps.androidapptemplate.ui.base.reactor.ReactorFragment
-import com.tailoredapps.androidapptemplate.ui.base.reactor.reactor
+import com.tailoredapps.androidapptemplate.ui.base.BaseReactor
+import com.tailoredapps.androidapptemplate.ui.base.reactor
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.core.model.Model
+import com.tailoredapps.androidapptemplate.ui.base.BaseFragment
 
 
-class DetailFragment : ReactorFragment<DetailReactor>(R.layout.fragment_detail) {
+class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<DetailReactor> {
     override val reactor: DetailReactor by reactor()
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        //bind view
+
+        bind(reactor)
+    }
 
     override fun bind(reactor: DetailReactor) {
         //bind actions and state

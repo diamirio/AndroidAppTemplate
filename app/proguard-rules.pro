@@ -7,10 +7,7 @@
 
 
 # Keep model classes
--keep class com.tailoredapps.androidapptemplate.** { *; }
--dontwarn com.tailoredapps.androidapptemplate.**
 -keep class com.tailoredapps.androidapptemplate.core.model.** { *; }
--dontwarn com.tailoredapps.androidapptemplate.core.**
 
 
 # LeakCanary
