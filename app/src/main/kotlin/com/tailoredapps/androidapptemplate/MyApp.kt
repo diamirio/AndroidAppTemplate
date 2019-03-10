@@ -43,7 +43,7 @@ class MyApp : Application() {
         Timber.plant(Timber.DebugTree())
         AndroidThreeTen.init(this)
         RxJavaPlugins.setErrorHandler(Timber::e)
-        AndroidReactor.handleErrorsWith(Timber::e)
+        AndroidReactor.handleErrorsWith(handler = Timber::e)
 
         startKoin {
             androidContext(this@MyApp)

@@ -29,6 +29,7 @@ import org.koin.android.ext.android.inject
 
 abstract class BaseActivity(@LayoutRes protected val layout: Int) : AppCompatActivity(), ViewState by VS() {
     private val refWatcher: RefWatcher by inject()
+
     open val disposables = CompositeDisposable()
 
     @CallSuper

@@ -35,6 +35,7 @@ import org.koin.android.ext.android.inject
 abstract class BaseFragment(@LayoutRes protected val layout: Int? = null) : Fragment(), ViewState by VS() {
     protected val navController: NavController by lazy { findNavController() }
     private val refWatcher: RefWatcher by inject()
+
     open val disposables = CompositeDisposable()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
@@ -57,11 +58,6 @@ abstract class BaseFragment(@LayoutRes protected val layout: Int? = null) : Frag
     override fun onDestroyView() {
         super.onDestroyView()
         disposables.clear()
-    }
-
-    @CallSuper
-    override fun onDestroy() {
-        super.onDestroy()
         refWatcher.watch(this)
     }
 }

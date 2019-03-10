@@ -33,5 +33,11 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
         toolbar.setupWithNavController(navController)
     }
 
-    override fun onSupportNavigateUp() = navController.navigateUp()
+    override fun onSupportNavigateUp(): Boolean = navController.navigateUp()
+
+    override fun onBackPressed() {
+        if (!navController.popBackStack()) {
+            super.onBackPressed()
+        }
+    }
 }

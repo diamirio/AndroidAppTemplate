@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.tailoredapps.androidapptemplate">
+          xmlns:tools="http://schemas.android.com/tools" package="com.tailoredapps.androidapptemplate">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -10,7 +10,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:name=".MyApp"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".ui.MainActivity">
             <intent-filter>

@@ -76,7 +76,7 @@ buildscript {
             coreutil   : [
                     gson    : 'com.google.code.gson:gson:2.8.5',
                     timber  : 'com.jakewharton.timber:timber:4.7.1',
-                    threeten: 'com.jakewharton.threetenabp:threetenabp:1.1.2'
+                    threeten: 'com.jakewharton.threetenabp:threetenabp:1.2.0'
             ],
             test       : [
                     kointest         : "org.koin:koin-test:${versions.koin}",
