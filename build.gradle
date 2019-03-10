@@ -21,7 +21,7 @@ buildscript {
     ]
 
     ext.deps = [
-            reactor    : "at.florianschuster:androidreactor:0.1.1",
+            reactor    : "at.florianschuster:androidreactor:0.1.2",
             androidutil: "com.tailoredapps:androidutil:19",
             ui         : [
                     material_core            : 'com.google.android.material:material:1.0.0',
