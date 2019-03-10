@@ -21,7 +21,9 @@ For each feature a separate module should be created. The `core` module should b
 
 * or all ui elements are located in the `app` module and the `core` module contains business logic that can potentially be shared with other feature or ui modules.
 
-However app and module structure should be thought through for every project separately.
+When adding a new module, create a library module and add `apply from: "$rootDir/library-module.gradle"` to the top of the newly created `build.gradle` file and afterwards your dependencies (see core's `build.gradle` for example).
+
+Remember however: app and module structure should be thought through for every project separately.
 
 ## Module structure
 

@@ -23,6 +23,4 @@ import com.tailoredapps.androidapptemplate.core.remote.Api
 interface DataRepo
 
 
-class CoreDataRepo(private val api: Api, private val prefService: PrefService) : DataRepo {
-
-}
+class CoreDataRepo(private val api: Api, private val prefService: PrefService) : DataRepo

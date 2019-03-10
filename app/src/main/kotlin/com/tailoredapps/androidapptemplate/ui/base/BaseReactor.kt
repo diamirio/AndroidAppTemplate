@@ -49,7 +49,7 @@ inline fun <reified Reactor : BaseReactor<*, *, *>> Module.reactor(
     name: String? = null,
     override: Boolean = false,
     noinline definition: Definition<Reactor>
-) = viewModel(name, override, definition)
+): Unit = viewModel(name, override, definition)
 
 
 /**
@@ -58,4 +58,4 @@ inline fun <reified Reactor : BaseReactor<*, *, *>> Module.reactor(
 inline fun <L : LifecycleOwner, reified Reactor : BaseReactor<*, *, *>> L.reactor(
     name: String? = null,
     noinline parameters: ParametersDefinition? = null
-) = viewModel<Reactor>(name, parameters)
+): Lazy<Reactor> = viewModel(name, parameters)

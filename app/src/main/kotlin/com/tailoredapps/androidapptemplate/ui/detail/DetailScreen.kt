@@ -38,7 +38,11 @@ class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<Detai
     }
 
     override fun bind(reactor: DetailReactor) {
-        //bind actions and state
+        //bind state
+
+
+        //bind actions
+
     }
 }
 
