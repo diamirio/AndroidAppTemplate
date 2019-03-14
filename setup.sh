@@ -25,7 +25,7 @@ baseDir=$(dirname $0)
 echo 
 
 # simple check if setup was already done
-if [ ! -f "$baseDir/app/src/main/kotlin/com/tailoredapps/androidapptemplate/MyApp.kt" ]; then
+if [ ! -f "$baseDir/app/src/main/kotlin/com/tailoredapps/androidapptemplate/application/MyApp.kt" ]; then
     echo "${bold}Setup already completed!"
     echo
     exit 0
@@ -111,7 +111,7 @@ mkdir -p ${baseDir}/app/src/androidTest/kotlin/${packagePath}
 mv $baseDir/app/src/main/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/app/src/main/kotlin/$packagePath
 mv $baseDir/app/src/test/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/app/src/test/kotlin/$packagePath
 mv ${baseDir}/app/src/androidTest/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/app/src/androidTest/kotlin/${packagePath}
-mv $baseDir/app/src/main/kotlin/$packagePath/MyApp.kt $baseDir/app/src/main/kotlin/$packagePath/${appClassName}App.kt
+mv $baseDir/app/src/main/kotlin/$packagePath/application/MyApp.kt $baseDir/app/src/main/kotlin/$packagePath/application/${appClassName}App.kt
 
 mkdir -p $baseDir/core/src/main/kotlin/$packagePath
 mkdir -p $baseDir/core/src/test/kotlin/$packagePath

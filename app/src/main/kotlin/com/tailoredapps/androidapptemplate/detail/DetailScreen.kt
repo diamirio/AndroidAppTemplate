@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.ui.detail
+package com.tailoredapps.androidapptemplate.detail
 
 import android.os.Bundle
 import android.view.View
 import at.florianschuster.androidreactor.ReactorView
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.ui.base.BaseReactor
-import com.tailoredapps.androidapptemplate.ui.base.reactor
+import com.tailoredapps.androidapptemplate.base.BaseReactor
+import com.tailoredapps.androidapptemplate.base.reactor
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.core.model.Model
-import com.tailoredapps.androidapptemplate.ui.base.BaseFragment
+import com.tailoredapps.androidapptemplate.base.BaseFragment
 
 
 class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<DetailReactor> {

@@ -14,7 +14,16 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.remote
+package com.tailoredapps.androidapptemplate.application
+
+import com.squareup.leakcanary.LeakCanary
+import com.tailoredapps.androidapptemplate.BuildConfig
+import com.tailoredapps.androidapptemplate.core.remote.BaseUrl
+import org.koin.android.ext.koin.androidApplication
+import org.koin.dsl.module
 
 
-interface Api
+val appModule = module {
+    single { BaseUrl(BuildConfig.BASE_URL) }
+    single { LeakCanary.install(androidApplication()) }
+}

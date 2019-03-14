@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.di
+package com.tailoredapps.androidapptemplate.core
 
 import com.google.gson.GsonBuilder
-import com.tailoredapps.androidapptemplate.core.CoreDataRepo
-import com.tailoredapps.androidapptemplate.core.DataRepo
 import org.koin.dsl.module
 
 

@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.di
+package com.tailoredapps.androidapptemplate.core.local
 
-import com.squareup.leakcanary.LeakCanary
-import com.tailoredapps.androidapptemplate.BuildConfig
-import com.tailoredapps.androidapptemplate.core.di.BaseUrl
-import org.koin.android.ext.koin.androidApplication
+import com.tailoredapps.androidapptemplate.core.local.PrefService
+import com.tailoredapps.androidapptemplate.core.local.SharedPrefService
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 
-val appModule = module {
-    single { BaseUrl(BuildConfig.BASE_URL) }
-    single { LeakCanary.install(androidApplication()) }
+val localModule = module {
+    single { SharedPrefService(androidContext()) as PrefService }
 }
+

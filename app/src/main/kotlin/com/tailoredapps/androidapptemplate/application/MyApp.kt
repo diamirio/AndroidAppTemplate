@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate
+package com.tailoredapps.androidapptemplate.application
 
 import android.app.Application
 import at.florianschuster.androidreactor.AndroidReactor
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
-import com.tailoredapps.androidapptemplate.di.*
-import com.tailoredapps.androidapptemplate.core.di.coreModule
-import com.tailoredapps.androidapptemplate.core.di.localModule
-import com.tailoredapps.androidapptemplate.core.di.remoteModule
+import com.tailoredapps.androidapptemplate.core.coreModule
+import com.tailoredapps.androidapptemplate.core.local.localModule
+import com.tailoredapps.androidapptemplate.core.remote.remoteModule
+import com.tailoredapps.androidapptemplate.detail.detailModule
 import io.reactivex.plugins.RxJavaPlugins
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -50,7 +50,7 @@ class MyApp : Application() {
             androidLogger(Level.INFO)
             modules(
                 coreModule, localModule, remoteModule, //core
-                appModule, reactorModule //app
+                appModule, detailModule //app
             )
         }
     }

@@ -14,15 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.di
-
-import com.tailoredapps.androidapptemplate.core.local.PrefService
-import com.tailoredapps.androidapptemplate.core.local.SharedPrefService
-import org.koin.android.ext.koin.androidContext
-import org.koin.dsl.module
+package com.tailoredapps.androidapptemplate.core.remote
 
 
-val localModule = module {
-    single { SharedPrefService(androidContext()) as PrefService }
-}
-
+interface MyApi

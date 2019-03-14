@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.ui
+package com.tailoredapps.androidapptemplate
 
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.ui.base.BaseActivity
-import com.tailoredapps.androidutil.validation.Rule
+import com.tailoredapps.androidapptemplate.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main_appbar.*
 
 

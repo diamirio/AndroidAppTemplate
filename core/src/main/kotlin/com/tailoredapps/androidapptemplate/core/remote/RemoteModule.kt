@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.di
+package com.tailoredapps.androidapptemplate.core.remote
 
 import com.google.gson.Gson
 import com.tailoredapps.androidapptemplate.core.BuildConfig
-import com.tailoredapps.androidapptemplate.core.remote.Api
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -30,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val remoteModule = module {
     single { provideOkHttpClient() }
-    single { provideApi<Api>(get(), get(), get()) }
+    single { provideApi<MyApi>(get(), get(), get()) }
 }
 
 

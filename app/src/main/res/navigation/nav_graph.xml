@@ -8,6 +8,6 @@
 
     <fragment
             android:id="@+id/detail"
-            android:name="com.tailoredapps.androidapptemplate.ui.detail.DetailFragment"
+            android:name="com.tailoredapps.androidapptemplate.detail.DetailFragment"
             tools:layout="@layout/fragment_detail"/>
 </navigation>

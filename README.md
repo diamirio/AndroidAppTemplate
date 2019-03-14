@@ -19,7 +19,7 @@ For each feature a separate module should be created. The `core` module should b
 
 * each feature could be contained in a separated module to support and promote reusability, such as for example a `login` module or a `map` module. Each module then contains all the necessary code for the module to **live** on its own. For example a `login` module could contain the login api, the token storage database and the view containing the login user interface.
 
-* or all ui elements are located in the `app` module and the `core` module contains business logic that can potentially be shared with other feature or ui modules.
+* or all ui related elements are located in the `app` module in the according feature packages and the `core` module contains business logic that can potentially be shared with other feature or ui modules.
 
 When adding a new module, create a library module and add `apply from: "$rootDir/library-module.gradle"` to the top of the newly created `build.gradle` file and afterwards your dependencies (see core's `build.gradle` for example).
 

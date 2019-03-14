@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.di
+package com.tailoredapps.androidapptemplate.detail
 
-import com.tailoredapps.androidapptemplate.ui.base.reactor
-import com.tailoredapps.androidapptemplate.ui.detail.DetailReactor
+import com.tailoredapps.androidapptemplate.base.reactor
 import org.koin.dsl.module
 
 
-val reactorModule = module {
+val detailModule = module {
     reactor { DetailReactor(get()) }
 }
