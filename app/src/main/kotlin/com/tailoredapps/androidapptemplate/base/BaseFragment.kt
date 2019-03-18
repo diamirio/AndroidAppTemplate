@@ -58,6 +58,10 @@ abstract class BaseFragment(@LayoutRes protected val layout: Int? = null) : Frag
     override fun onDestroyView() {
         super.onDestroyView()
         disposables.clear()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
         refWatcher.watch(this)
     }
 }
