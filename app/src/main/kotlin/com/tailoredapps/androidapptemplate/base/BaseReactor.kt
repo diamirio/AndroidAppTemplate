@@ -18,7 +18,7 @@ package com.tailoredapps.androidapptemplate.base
 
 import androidx.annotation.CallSuper
 import androidx.lifecycle.LifecycleOwner
-import at.florianschuster.androidreactor.ViewModelReactor
+import at.florianschuster.reaktor.android.ViewModelReactor
 import com.squareup.leakcanary.RefWatcher
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.androidx.viewmodel.ext.viewModel

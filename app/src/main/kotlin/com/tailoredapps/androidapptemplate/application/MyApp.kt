@@ -17,7 +17,7 @@
 package com.tailoredapps.androidapptemplate.application
 
 import android.app.Application
-import at.florianschuster.androidreactor.AndroidReactor
+import at.florianschuster.reaktor.Reaktor
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
 import com.tailoredapps.androidapptemplate.core.coreModule
@@ -43,7 +43,7 @@ class MyApp : Application() {
         Timber.plant(Timber.DebugTree())
         AndroidThreeTen.init(this)
         RxJavaPlugins.setErrorHandler(Timber::e)
-        AndroidReactor.handleErrorsWith(handler = Timber::e)
+        Reaktor.handleErrorsWith(handler = Timber::e)
 
         startKoin {
             androidContext(this@MyApp)

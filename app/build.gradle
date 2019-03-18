@@ -99,7 +99,7 @@ dependencies {
      * Base
      */
     implementation project(path: ':core')
-    implementation deps.reactor
+    implementation deps.reaktor.values()
     implementation deps.androidutil
 
     /**

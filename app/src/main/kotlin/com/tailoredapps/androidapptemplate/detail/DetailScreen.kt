@@ -18,7 +18,7 @@ package com.tailoredapps.androidapptemplate.detail
 
 import android.os.Bundle
 import android.view.View
-import at.florianschuster.androidreactor.ReactorView
+import at.florianschuster.reaktor.ReactorView
 import com.tailoredapps.androidapptemplate.R
 import com.tailoredapps.androidapptemplate.base.BaseReactor
 import com.tailoredapps.androidapptemplate.base.reactor
