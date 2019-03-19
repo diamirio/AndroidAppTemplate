@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.application
+package com.tailoredapps.androidapptemplate
 
 import com.squareup.leakcanary.LeakCanary
 import com.tailoredapps.androidapptemplate.BuildConfig

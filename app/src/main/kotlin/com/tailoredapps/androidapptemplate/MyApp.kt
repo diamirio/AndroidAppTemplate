@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.application
+package com.tailoredapps.androidapptemplate
 
 import android.app.Application
 import at.florianschuster.reaktor.Reaktor

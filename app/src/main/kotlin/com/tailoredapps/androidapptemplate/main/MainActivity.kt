@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate
+package com.tailoredapps.androidapptemplate.main
 
 import android.os.Bundle
 import androidx.navigation.NavController
