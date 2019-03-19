@@ -33,7 +33,8 @@ import org.koin.android.ext.android.inject
 
 
 abstract class BaseFragment(@LayoutRes protected val layout: Int? = null) : Fragment(), ViewState by VS() {
-    protected val navController: NavController by lazy { findNavController() }
+    protected val navController: NavController
+        get() = findNavController()
     private val refWatcher: RefWatcher by inject()
 
     open val disposables = CompositeDisposable()
