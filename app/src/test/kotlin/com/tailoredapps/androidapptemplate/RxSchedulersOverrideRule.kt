@@ -14,7 +14,6 @@
 
 package com.tailoredapps.androidapptemplate
 
-
 import io.reactivex.Scheduler
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.functions.Function
@@ -23,7 +22,6 @@ import io.reactivex.schedulers.Schedulers
 import org.junit.rules.TestRule
 import org.junit.runner.Description
 import org.junit.runners.model.Statement
-
 
 class RxSchedulersOverrideRule : TestRule {
 

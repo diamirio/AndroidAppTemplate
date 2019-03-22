@@ -16,5 +16,4 @@
 
 package com.tailoredapps.androidapptemplate.core.model
 
-
 data class Model(val any: Any = Unit)

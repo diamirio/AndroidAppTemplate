@@ -26,15 +26,12 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-
 val remoteModule = module {
     single { provideOkHttpClient() }
     single { provideApi<MyApi>(get(), get(), get()) }
 }
 
-
 data class BaseUrl(val url: String)
-
 
 private fun provideOkHttpClient() =
     OkHttpClient().newBuilder().apply {
@@ -44,7 +41,6 @@ private fun provideOkHttpClient() =
             addInterceptor(loggingInterceptor)
         }
     }.build()
-
 
 private inline fun <reified T> provideApi(okHttpClient: OkHttpClient, gson: Gson, baseUrl: BaseUrl): T =
     Retrofit.Builder().apply {

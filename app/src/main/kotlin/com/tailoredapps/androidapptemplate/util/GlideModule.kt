@@ -23,7 +23,6 @@ import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule
 import com.tailoredapps.androidapptemplate.BuildConfig
 
-
 @GlideModule
 class GlideModule : AppGlideModule() {
     override fun applyOptions(context: Context, builder: GlideBuilder) {

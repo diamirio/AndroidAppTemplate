@@ -19,11 +19,9 @@ package com.tailoredapps.androidapptemplate.core
 import com.google.gson.GsonBuilder
 import org.koin.dsl.module
 
-
 val coreModule = module {
     single { provideGson() }
     single { CoreDataRepo(get(), get()) as DataRepo }
 }
-
 
 private fun provideGson() = GsonBuilder().create()

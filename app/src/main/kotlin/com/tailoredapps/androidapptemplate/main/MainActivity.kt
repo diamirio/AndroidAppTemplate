@@ -24,7 +24,6 @@ import com.tailoredapps.androidapptemplate.R
 import com.tailoredapps.androidapptemplate.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main_appbar.*
 
-
 class MainActivity : BaseActivity(R.layout.activity_main) {
     private val navController: NavController by lazy { findNavController(R.id.navHost) }
 

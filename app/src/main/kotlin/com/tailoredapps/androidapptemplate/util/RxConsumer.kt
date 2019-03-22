@@ -21,7 +21,6 @@ import androidx.annotation.DrawableRes
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import io.reactivex.functions.Consumer
 
-
 /**
  * Consumes an image URL to display the image in this ImageView.
  */

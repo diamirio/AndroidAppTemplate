@@ -16,13 +16,9 @@
 
 package com.tailoredapps.androidapptemplate.core.local
 
-import com.tailoredapps.androidapptemplate.core.local.PrefService
-import com.tailoredapps.androidapptemplate.core.local.SharedPrefService
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
-
 
 val localModule = module {
     single { SharedPrefService(androidContext()) as PrefService }
 }
-

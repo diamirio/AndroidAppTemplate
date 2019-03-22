@@ -20,11 +20,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 
-
 interface PrefService
-
 
 class SharedPrefService(context: Context) : PrefService {
     private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-    
 }

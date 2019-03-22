@@ -31,7 +31,6 @@ import com.tailoredapps.androidutil.viewstate.ViewState
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.android.inject
 
-
 abstract class BaseFragment(@LayoutRes protected val layout: Int? = null) : Fragment(), ViewState by VS() {
     protected val navController: NavController
         get() = findNavController()

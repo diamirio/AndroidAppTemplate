@@ -26,27 +26,23 @@ import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.core.model.Model
 import com.tailoredapps.androidapptemplate.base.BaseFragment
 
-
 class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<DetailReactor> {
     override val reactor: DetailReactor by reactor()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //bind view
+        // bind view
 
         bind(reactor)
     }
 
     override fun bind(reactor: DetailReactor) {
-        //bind state
+        // bind state
 
-
-        //bind actions
-
+        // bind actions
     }
 }
-
 
 class DetailReactor(
     private val dataRepo: DataRepo

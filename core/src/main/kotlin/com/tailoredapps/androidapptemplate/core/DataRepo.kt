@@ -19,8 +19,6 @@ package com.tailoredapps.androidapptemplate.core
 import com.tailoredapps.androidapptemplate.core.local.PrefService
 import com.tailoredapps.androidapptemplate.core.remote.MyApi
 
-
 interface DataRepo
-
 
 class CoreDataRepo(private val api: MyApi, private val prefService: PrefService) : DataRepo

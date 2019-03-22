@@ -31,7 +31,6 @@ import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import timber.log.Timber
 
-
 class MyApp : Application() {
 
     override fun onCreate() {
@@ -49,8 +48,8 @@ class MyApp : Application() {
             androidContext(this@MyApp)
             androidLogger(Level.INFO)
             modules(
-                coreModule, localModule, remoteModule, //core
-                appModule, detailModule //app
+                coreModule, localModule, remoteModule, // core
+                appModule, detailModule // app
             )
         }
     }
@@ -59,5 +58,4 @@ class MyApp : Application() {
         lateinit var instance: MyApp
             private set
     }
-
 }

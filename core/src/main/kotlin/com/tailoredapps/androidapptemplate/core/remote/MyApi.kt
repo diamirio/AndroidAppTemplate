@@ -16,5 +16,4 @@
 
 package com.tailoredapps.androidapptemplate.core.remote
 
-
 interface MyApi

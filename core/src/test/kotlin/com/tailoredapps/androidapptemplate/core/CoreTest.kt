@@ -10,5 +10,4 @@ class CoreTest {
         val test = true
         test shouldEqual true
     }
-
 }

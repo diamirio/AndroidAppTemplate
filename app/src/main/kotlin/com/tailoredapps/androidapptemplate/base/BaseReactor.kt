@@ -28,7 +28,6 @@ import org.koin.core.inject
 import org.koin.core.module.Module
 import org.koin.core.parameter.ParametersDefinition
 
-
 abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
     initialState: State
 ) : ViewModelReactor<Action, Mutation, State>(initialState), KoinComponent {
@@ -41,7 +40,6 @@ abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
     }
 }
 
-
 /**
  * Reactor DSL extension to declare a Reactor in a Koin Module.
  */
@@ -50,7 +48,6 @@ inline fun <reified Reactor : BaseReactor<*, *, *>> Module.reactor(
     override: Boolean = false,
     noinline definition: Definition<Reactor>
 ): Unit = viewModel(name, override, definition)
-
 
 /**
  * Lazily gets a reactor instance for a LifecycleOwner.

@@ -19,7 +19,6 @@ package com.tailoredapps.androidapptemplate.detail
 import com.tailoredapps.androidapptemplate.base.reactor
 import org.koin.dsl.module
 
-
 val detailModule = module {
     reactor { DetailReactor(get()) }
 }
