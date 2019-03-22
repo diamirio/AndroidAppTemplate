@@ -21,12 +21,14 @@ import androidx.lifecycle.LifecycleOwner
 import at.florianschuster.reaktor.android.ViewModelReactor
 import com.squareup.leakcanary.RefWatcher
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.androidx.viewmodel.ext.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.KoinComponent
 import org.koin.core.definition.Definition
 import org.koin.core.inject
 import org.koin.core.module.Module
 import org.koin.core.parameter.ParametersDefinition
+import org.koin.core.qualifier.Qualifier
+import org.koin.core.scope.Scope
 
 abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
     initialState: State
@@ -44,15 +46,16 @@ abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
  * Reactor DSL extension to declare a Reactor in a Koin Module.
  */
 inline fun <reified Reactor : BaseReactor<*, *, *>> Module.reactor(
-    name: String? = null,
+    qualifier: Qualifier? = null,
     override: Boolean = false,
     noinline definition: Definition<Reactor>
-): Unit = viewModel(name, override, definition)
+): Unit = viewModel(qualifier, override, definition)
 
 /**
  * Lazily gets a reactor instance for a LifecycleOwner.
  */
 inline fun <L : LifecycleOwner, reified Reactor : BaseReactor<*, *, *>> L.reactor(
-    name: String? = null,
+    qualifier: Qualifier? = null,
+    scope: Scope = Scope.GLOBAL,
     noinline parameters: ParametersDefinition? = null
-): Lazy<Reactor> = viewModel(name, parameters)
+): Lazy<Reactor> = viewModel(qualifier, scope, parameters)
