@@ -7,7 +7,7 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 
 
 android {
-    compileSdkVersion rootProject.ext.config.compileSdkVersion
+    compileSdkVersion rootProject.ext.buildConfig.compileSdkVersion
 
     defaultConfig {
         versionCode 1
@@ -16,8 +16,8 @@ android {
         applicationId "com.tailoredapps.androidapptemplate"
         setProperty("archivesBaseName", "AndroidAppTemplate-v$versionName-b$versionCode")
 
-        targetSdkVersion rootProject.ext.config.targetSdkVersion
-        minSdkVersion rootProject.ext.config.minSdkVersion
+        targetSdkVersion rootProject.ext.buildConfig.targetSdkVersion
+        minSdkVersion rootProject.ext.buildConfig.minSdkVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
