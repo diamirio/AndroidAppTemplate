@@ -31,13 +31,12 @@ class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<Detai
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // bind view
-
         bind(reactor)
     }
 
     override fun bind(reactor: DetailReactor) {
+        // bind view
+
         // bind state
 
         // bind actions
