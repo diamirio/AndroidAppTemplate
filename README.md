@@ -8,14 +8,14 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 
 * Kotlin
 * Android Architecture Component Navigation for navigation
-* Koin for dependency injection
+* Koin for dependency injection (or Dagger2 if preferred)
 * Retrofit/OkHttp/Gson for networking
-* AndroidReactor (MVI) as architectural pattern
+* Reaktor (MVI) as architectural pattern
 * (Room for local data storage)
 
 ## App structure
 
-For each feature a separate module should be created. The `core` module should be implemented in each module and contains code that is needed for all modules, for example an api or a database that is needed in multiple feature modules. The `app`module contains Android app related code. Depending on the project size 
+For each feature a separate module should be created. The `core` module should be implemented in each module and contains code that is needed for all modules, for example an api or a database that is needed in multiple feature modules. The `app` module contains Android app related code. Depending on the project size 
 
 * each feature could be contained in a separated module to support and promote reusability, such as for example a `login` module or a `map` module. Each module then contains all the necessary code for the module to **live** on its own. For example a `login` module could contain the login api, the token storage database and the view containing the login user interface.
 
@@ -44,7 +44,7 @@ Remember however: app and module structure should be thought through for every p
 
 * [Navigation Architecture Component](https://developer.android.com/topic/libraries/architecture/navigation/)
 * [RxJava](http://www.vogella.com/tutorials/RxJava/article.html)
-* [AndroidReactor](https://github.com/floschu/AndroidReactor)
+* [Reaktor](https://github.com/floschu/Reaktor)
 * [Koin](https://insert-koin.io/)
 * [Room](http://www.vogella.com/tutorials/AndroidSQLite/article.html)
 * [Retrofit](http://www.vogella.com/tutorials/Retrofit/article.html)
