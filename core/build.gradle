@@ -4,6 +4,13 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
     /**
+     * Base
+     */
+    api deps.reaktor.core
+    implementation deps.androidutil.network
+    implementation deps.androidutil.optional
+
+    /**
      * DI
      */
     api deps.koin.values()

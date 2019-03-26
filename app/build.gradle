@@ -12,7 +12,7 @@ android {
     defaultConfig {
         versionCode 1
         versionName '1.0.0'
-        
+
         applicationId "com.tailoredapps.androidapptemplate"
         setProperty("archivesBaseName", "AndroidAppTemplate-v$versionName-b$versionCode")
 
@@ -98,8 +98,9 @@ dependencies {
      * Base
      */
     implementation project(path: ':core')
-    implementation deps.reaktor.values()
-    implementation deps.androidutil
+    implementation deps.reaktor.android
+    implementation deps.reaktor.androidkoin
+    implementation deps.androidutil.values()
 
     /**
      * UI
