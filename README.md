@@ -41,6 +41,18 @@ Remember however: app and module structure should be thought through for every p
 * `test`: Write unit tests for every `Reactor`. Mockito or PowerMock can be used to mock objects and verify correct behaviour. Add the `RxSchedulersOverrideRule` to prevent errors with RxJava.
 * `androidTest`: Write UI tests for common actions in your app. Use JUnit 4 Tests with Espresso. Some helper methods are available in EspressoUtils.
 
+## Other
+
+### ktlint
+
+[ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is recommended to keep the code base clean and readable. Use 
+* `./gradlew ktlint` to lint your code.
+* `./gradlew ktlintFormat` to automatically format all your code according to the linting rules.
+
+### fastlane
+
+[fastlane](https://fastlane.tools/) is an automation framework that can be used to for deployment and release processes for Android or iOS apps. It is recommended to setup your Project with *fastlane*. 
+
 ## Recommended Reading
 
 * [Navigation Architecture Component](https://developer.android.com/topic/libraries/architecture/navigation/)
