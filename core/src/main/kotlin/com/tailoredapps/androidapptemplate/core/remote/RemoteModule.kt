@@ -28,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val remoteModule = module {
     single { provideOkHttpClient() }
-    single { provideApi<MyApi>(get(), get(), get()) }
+    single { provideApi<MyApi>(okHttpClient = get(), gson = get(), baseUrl = get()) }
 }
 
 data class BaseUrl(val url: String)

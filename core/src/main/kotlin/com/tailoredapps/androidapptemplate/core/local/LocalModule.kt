@@ -20,5 +20,5 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val localModule = module {
-    single { SharedPrefService(androidContext()) as PrefService }
+    single { SharedPrefService(context = androidContext()) as PrefService }
 }

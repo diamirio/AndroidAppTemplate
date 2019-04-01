@@ -21,7 +21,7 @@ import org.koin.dsl.module
 
 val coreModule = module {
     single { provideGson() }
-    single { CoreDataRepo(get(), get()) as DataRepo }
+    single { CoreDataRepo(api = get(), prefService = get()) as DataRepo }
 }
 
 private fun provideGson() = GsonBuilder().create()

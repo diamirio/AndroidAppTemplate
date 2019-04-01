@@ -20,5 +20,5 @@ import com.tailoredapps.reaktor.koin.reactor
 import org.koin.dsl.module
 
 val detailModule = module {
-    reactor { DetailReactor(get()) }
+    reactor { DetailReactor(dataRepo = get()) }
 }
