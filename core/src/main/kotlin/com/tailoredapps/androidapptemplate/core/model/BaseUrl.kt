@@ -14,11 +14,6 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.local
+package com.tailoredapps.androidapptemplate.core.model
 
-import org.koin.android.ext.koin.androidContext
-import org.koin.dsl.module
-
-internal val localModule = module {
-    single { SharedPrefService(context = androidContext()) as PrefService }
-}
+data class BaseUrl(val url: String)

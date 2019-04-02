@@ -18,6 +18,7 @@ package com.tailoredapps.androidapptemplate.core.remote
 
 import com.google.gson.Gson
 import com.tailoredapps.androidapptemplate.core.BuildConfig
+import com.tailoredapps.androidapptemplate.core.model.BaseUrl
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -26,12 +27,11 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-val remoteModule = module {
+internal val remoteModule = module {
     single { provideOkHttpClient() }
     single { provideApi<MyApi>(okHttpClient = get(), gson = get(), baseUrl = get()) }
 }
 
-data class BaseUrl(val url: String)
 
 private fun provideOkHttpClient() =
     OkHttpClient().newBuilder().apply {

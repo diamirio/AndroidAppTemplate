@@ -17,11 +17,14 @@
 package com.tailoredapps.androidapptemplate
 
 import com.squareup.leakcanary.LeakCanary
-import com.tailoredapps.androidapptemplate.core.remote.BaseUrl
+import com.tailoredapps.androidapptemplate.core.model.BaseUrl
+import com.tailoredapps.androidapptemplate.detail.detailModule
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
-val appModule = module {
+internal val appModule = module {
     single { BaseUrl(BuildConfig.BASE_URL) }
     single { LeakCanary.install(androidApplication()) }
 }
+
+val appModules = listOf(appModule, detailModule)
