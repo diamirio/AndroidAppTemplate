@@ -34,23 +34,28 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 5. Commit and Push to your **git** repository.
 
 ## App structure <a name="app_structure"></a>
-For each feature a separate module should be created. The `core` module should be implemented in each module and contains code that is needed for all modules, for example an api or a database that is needed in multiple feature modules. The `app` module contains Android app related code. Depending on the project size 
+Features should be contained in a separate module. The `core` module should contain shared code, for example *apis* or *databases* that are needed in multiple feature modules. The `app` module contains Android app related (*ui*) code. Depending on the project size 
 
-* each feature could be contained in a separated module to support and promote reusability, such as for example a `login` module or a `map` module. Each module then contains all the necessary code for the module to **live** on its own. For example a `login` module could contain the login api, the token storage database and the view containing the login user interface.
+* each feature could be contained in a separated module to support and promote reusability, such as for example a `login` module or a `map` module. Each module then contains all the necessary code for the module to **live** on its own. For example a `login` module could contain the login *api*, the token storage *database* and the *views* containing the login user interface.
 
-* or all ui related elements are located in the `app` module in the according feature packages and the `core` module contains business logic that can potentially be shared with other feature or ui modules.
+* or all *ui* related elements are located in the `app` module in the according feature packages and the `core` module contains business logic that can potentially be shared with other feature or ui modules in future expansions of the application.
 
-When adding a new module, create a library module and add `apply from: "$rootDir/library-module.gradle"` to the top of the newly created `build.gradle` file and afterwards your dependencies (see core's `build.gradle` for example).
+When adding a new module, create a library module and add `apply from: "$rootDir/library-module.gradle"` to the top of the newly created `build.gradle` file and afterwards your dependencies (see `core`'s `build.gradle` for example).
 
-Remember however: app and module structure should be thought through for every project separately.
+Remember however: app and module structure should be thought through separately for every project.
 
 ## Module structure <a name="module_structure"></a>
-* Koin modules for dependency injection are located in a `di` package.
-* Model classes are located in a `model` package.
+* Each module contains multiple *feature* packages. These contain:
+   * a *di module* (e.g. a Koin `Module`)
+   * *ui* classes related to the feature (e.g. Activities, Fragments, RecyclerView Adapter, ...)
+* Classes that do not correspond to a certain feature, should be located in the `all` package. For example: Utility classes should be located in a `util` package in the `all` package.
+* Classes that are related to the whole app should be located in the `core` module. For example: Model classes should be  located in a `model` package in the `core` module.
 * Network related classes and interfaces (e.g. networking api's) are located in a `remote` package.
 * Local storage related classes (e.g. databases or dao's) are located in a `local` package.
-* UI related classes (Activities, Fragments, Views, ViewModels,...) are located in a `ui` package. Use the interfaces and abstract classes from the `ui.base` subpackage.
-* Utility classes are located in a `util` package.
+
+However remember **again**: app and module structure should be thought through separately for every project.
+
+An example for this module/package structure can be found [here](https://github.com/tailoredmedia/AndroidAppTemplateExample).
 
 ## Testing <a name="testing"></a>
 * Every module should contain tests for its use cases.
