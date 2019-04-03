@@ -106,7 +106,9 @@ dependencies {
      * UI
      */
     implementation deps.ui.values()
+    implementation deps.lifecycle.arch
     kapt deps.lifecycle.compiler
+    implementation deps.navigation.values()
 
     /**
      * Rx

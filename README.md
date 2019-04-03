@@ -5,8 +5,20 @@ This is an Android app template which can be used for new projects. A small exam
 
 Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for several utility classes.
 
-## Technologies used
+### Table of Contents
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [App structure](#app_structure)
+* [Module structure](#module_structure)
+* [Testing](#testing)
+* [Other](#other)
+    * [ktlint](#ktlint)
+    * [fastlane](#fastlane)
+    * [Naming Conventions](#naming_conventions)
+* [Recommended Reading](#recommended_reading)
+* [License](#license)
 
+## Technologies <a name="technologies"></a>
 * Kotlin
 * Android Architecture Component Navigation for navigation
 * Koin for dependency injection (or Dagger2 if preferred)
@@ -14,8 +26,14 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 * Reaktor (MVI) as architectural pattern
 * (Room for local data storage)
 
-## App structure
+## Setup <a name="setup"></a>
+1. Create your **git** repository and check it out on your machine.
+2. Add `git@github.com:tailoredmedia/AndroidAppTemplate.git` as remote and merge the latest commit into your repository (you most likely need to `--allow-unrelated-histories`).
+3. Run the provided `setup.sh` script to rename files and properties according to project. Afterwards delete `setup.sh` from your repository.
+4. Change `Readme.md` content to something appropriate.
+5. Commit and Push to your **git** repository.
 
+## App structure <a name="app_structure"></a>
 For each feature a separate module should be created. The `core` module should be implemented in each module and contains code that is needed for all modules, for example an api or a database that is needed in multiple feature modules. The `app` module contains Android app related code. Depending on the project size 
 
 * each feature could be contained in a separated module to support and promote reusability, such as for example a `login` module or a `map` module. Each module then contains all the necessary code for the module to **live** on its own. For example a `login` module could contain the login api, the token storage database and the view containing the login user interface.
@@ -26,8 +44,7 @@ When adding a new module, create a library module and add `apply from: "$rootDir
 
 Remember however: app and module structure should be thought through for every project separately.
 
-## Module structure
-
+## Module structure <a name="module_structure"></a>
 * Koin modules for dependency injection are located in a `di` package.
 * Model classes are located in a `model` package.
 * Network related classes and interfaces (e.g. networking api's) are located in a `remote` package.
@@ -35,26 +52,39 @@ Remember however: app and module structure should be thought through for every p
 * UI related classes (Activities, Fragments, Views, ViewModels,...) are located in a `ui` package. Use the interfaces and abstract classes from the `ui.base` subpackage.
 * Utility classes are located in a `util` package.
 
-## Testing
-
+## Testing <a name="testing"></a>
 * Every module should contain tests for its use cases.
 * `test`: Write unit tests for every `Reactor`. Mockito or PowerMock can be used to mock objects and verify correct behaviour. Add the `RxSchedulersOverrideRule` to prevent errors with RxJava.
 * `androidTest`: Write UI tests for common actions in your app. Use JUnit 4 Tests with Espresso. Some helper methods are available in EspressoUtils.
 
-## Other
+## Other <a name="other"></a>
 
-### ktlint
-
+### ktlint <a name="ktlint"></a>
 [ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is recommended to keep the code base clean and readable. Use 
 * `./gradlew ktlint` to lint your code.
 * `./gradlew ktlintFormat` to automatically format all your code according to the linting rules.
 
-### fastlane
+To conform to the rule of "**No wildcard imports**", go to *Preferences&rarr;Editor&rarr;Code Style&rarr;Kotlin&rarr;Imports* and enable **Use single name import**.
 
+### fastlane <a name="fastlane"></a>
 [fastlane](https://fastlane.tools/) is an automation framework that can be used to for deployment and release processes for Android or iOS apps. It is recommended to setup your Project with *fastlane*. 
 
-## Recommended Reading
+### Naming Conventions <a name="naming_conventions"></a>
+**Bold** rules should be applied. *Italic* rules are optional.
 
+| Component        | Rule             | Example                   |
+| ---------------- | ---------------------- | ----------------------------- |
+| Layouts | **\<what\>**\_**\<where\>**.xml | `activity_main.xml`, `item_detail.xml` |
+| Sub-Layouts | **\<what\>**\_**\<where\>**\_**\<description\>**.xml | `activity_main_appbar.xml` |
+| Strings | **\<where\>**\_**\<what\>**\_**\<description\>** | `detail_tv_location` |
+| Drawables | **\<where\>**\_**\<where\>**\_**\<description\>** | `btn_detail_background`, `bg_overview_card` |
+| Icons | ic_**\<where\>**\_**\<description\>**.xml | `ic_all_close.xml`, `ic_detail_location_pin.xml` |
+| Dimensions | **\<where\>**\_**\<what\>**\_*\<description\>*\_*\<size\>* | `all_margin`, `detail_height_card`, `all_textsize_small` |
+| Styles | **\<what\>**\_**\<description\>** | `Text.Bold`, `Ratingbar.Preview` |
+| Component Ids | **\<what\>\<Description\>** | `btnOpen`, `tvTitle` |
+
+
+## Recommended Reading <a name="recommended_reading"></a>
 * [Navigation Architecture Component](https://developer.android.com/topic/libraries/architecture/navigation/)
 * [RxJava](http://www.vogella.com/tutorials/RxJava/article.html)
 * [Reaktor](https://github.com/floschu/Reaktor)
@@ -62,8 +92,7 @@ Remember however: app and module structure should be thought through for every p
 * [Room](http://www.vogella.com/tutorials/AndroidSQLite/article.html)
 * [Retrofit](http://www.vogella.com/tutorials/Retrofit/article.html)
 
-## License
-
+## License <a name="license"></a>
 ```
 Copyright 2019 Tailored Media GmbH.
 

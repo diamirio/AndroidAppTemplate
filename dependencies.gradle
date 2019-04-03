@@ -1,7 +1,7 @@
 ext {
     versions = [
-            reaktor    : '1.0.4',
-            androidutil: '3',
+            reaktor    : '1.0.6',
+            androidutil: '5',
             kotlin     : '1.3.21',
             navigation : '1.0.0',
             koin       : '2.0.0-rc-2',
@@ -16,12 +16,12 @@ ext {
 
     deps = [
             reaktor    : [
-                    core   : "at.florianschuster.reaktor:core:${versions.reaktor}",
-                    android: "at.florianschuster.reaktor:android:${versions.reaktor}",
-                    androidkoin: "at.florianschuster.reaktor:androidkoin:${versions.reaktor}"
+                    core       : "at.florianschuster.reaktor:reaktor-core:${versions.reaktor}",
+                    android    : "at.florianschuster.reaktor:reaktor-android:${versions.reaktor}",
+                    androidkoin: "at.florianschuster.reaktor:reaktor-android-koin:${versions.reaktor}"
             ],
             androidutil: [
-                    core       : "com.tailoredapps.androidutil:core:${versions.androidutil}",
+                    core       : "com.tailoredapps.androidutil:ui:${versions.androidutil}",
                     async      : "com.tailoredapps.androidutil:async:${versions.androidutil}",
                     network    : "com.tailoredapps.androidutil:network:${versions.androidutil}",
                     optional   : "com.tailoredapps.androidutil:optional:${versions.androidutil}",
@@ -34,12 +34,14 @@ ext {
                     androidx_appcompat       : 'androidx.appcompat:appcompat:1.0.2',
                     androidx_fragment        : 'androidx.fragment:fragment:1.0.0',
                     androidx_constraintlayout: 'androidx.constraintlayout:constraintlayout:1.1.3',
-                    androidx_corektx         : 'androidx.core:core-ktx:1.0.1',
-                    arch_navigation          : "android.arch.navigation:navigation-fragment-ktx:${versions.navigation}",
-                    arch_navigation_ui       : "android.arch.navigation:navigation-ui-ktx:${versions.navigation}",
-                    arch_lifecycle           : "android.arch.lifecycle:extensions:2.1.0-rc01"
+                    androidx_corektx         : 'androidx.core:core-ktx:1.0.1'
+            ],
+            navigation : [
+                    arch_navigation   : "android.arch.navigation:navigation-fragment-ktx:${versions.navigation}",
+                    arch_navigation_ui: "android.arch.navigation:navigation-ui-ktx:${versions.navigation}"
             ],
             lifecycle  : [
+                    arch    : "android.arch.lifecycle:extensions:2.1.0-rc01",
                     compiler: "androidx.lifecycle:lifecycle-compiler:2.1.0-alpha03"
             ],
             koin       : [

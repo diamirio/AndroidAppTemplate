@@ -16,7 +16,7 @@
 
 package com.tailoredapps.androidapptemplate.detail
 
-import com.tailoredapps.reaktor.koin.reactor
+import com.tailoredapps.reaktor.android.koin.reactor
 import org.koin.dsl.module
 
 internal val detailModule = module {

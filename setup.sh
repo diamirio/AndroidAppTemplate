@@ -35,7 +35,7 @@ echo "${bold}Welcome to the Android App Template setup assistant.${normal}"
 echo Please enter the details of your project.
 echo
 
-read -p "${bold}App name:${normal} " appName
+read -p "${bold}App name (e.g. MainGau, note: without the suffix 'App'):${normal} " appName
 # trim app name
 appName=$(echo $appName | xargs echo -n)
 appNameNoWhiteSpace=$(echo $appName | sed -e 's/ //g')
@@ -50,7 +50,7 @@ if ! [[ $appName =~ $regex ]]; then
     exit 1
 fi
 
-read -p "${bold}Package name:${normal} " packageName
+read -p "${bold}Package name (e.g. com.tailoredapps.maingau):${normal} " packageName
 # trim package name
 packageName=$(echo $packageName | xargs echo -n)
 
