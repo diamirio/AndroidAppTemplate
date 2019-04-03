@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.util
+package com.tailoredapps.androidapptemplate.all
 
-import android.widget.ImageView
-import androidx.annotation.DrawableRes
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import io.reactivex.functions.Consumer
+import com.squareup.leakcanary.LeakCanary
+import com.tailoredapps.androidapptemplate.BuildConfig
+import com.tailoredapps.androidapptemplate.core.model.BaseUrl
+import com.tailoredapps.androidapptemplate.detail.detailModule
+import org.koin.android.ext.koin.androidApplication
+import org.koin.dsl.module
 
-/**
- * Consumes an image URL to display the image in this ImageView.
- */
-fun ImageView.source(@DrawableRes fallback: Int? = null): Consumer<in String?> =
-    Consumer {
-        GlideApp.with(this)
-            .load(it)
-            .apply { fallback?.let(::error) }
-            .transition(DrawableTransitionOptions.withCrossFade())
-            .into(this)
-    }
+internal val appModule = module {
+    single { BaseUrl(BuildConfig.BASE_URL) }
+    single { LeakCanary.install(androidApplication()) }
+}
+
+val appModules = listOf(appModule, detailModule)

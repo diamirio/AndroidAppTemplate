@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.util
+package com.tailoredapps.androidapptemplate.all.util
 
 import android.content.Context
 import android.util.Log

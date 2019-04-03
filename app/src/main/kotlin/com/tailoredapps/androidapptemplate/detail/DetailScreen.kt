@@ -20,10 +20,10 @@ import android.os.Bundle
 import android.view.View
 import at.florianschuster.reaktor.ReactorView
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.base.BaseReactor
+import com.tailoredapps.androidapptemplate.all.base.BaseReactor
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.core.model.Model
-import com.tailoredapps.androidapptemplate.base.BaseFragment
+import com.tailoredapps.androidapptemplate.all.base.BaseFragment
 import com.tailoredapps.reaktor.android.koin.reactor
 
 class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<DetailReactor> {
