@@ -9,7 +9,7 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [App structure](#app_structure)
-* [Module structure](#module_structure)
+* [Module/Package structure](#module_structure)
 * [Testing](#testing)
 * [Other](#other)
     * [ktlint](#ktlint)
@@ -44,18 +44,13 @@ When adding a new module, create a library module and add `apply from: "$rootDir
 
 Remember however: app and module structure should be thought through separately for every project.
 
-## Module structure <a name="module_structure"></a>
-* Each module contains multiple *feature* packages. These contain:
-   * a *di module* (e.g. a Koin `Module`)
-   * *ui* classes related to the feature (e.g. Activities, Fragments, RecyclerView Adapter, ...)
-* Classes that do not correspond to a certain feature, should be located in the `all` package. For example: Utility classes should be located in a `util` package in the `all` package.
-* Classes that are related to the whole app should be located in the `core` module. For example: Model classes should be  located in a `model` package in the `core` module.
+## Module/Package structure <a name="module_structure"></a>
+* Model classes should be located in a `model` package.
 * Network related classes and interfaces (e.g. networking api's) are located in a `remote` package.
 * Local storage related classes (e.g. databases or dao's) are located in a `local` package.
+* Classes that do not correspond to a certain feature, should either be located in an `all` package or on the top level of the module. For example: Utility classes should be located in a `util` package in the `all` package.
 
-However remember **again**: app and module structure should be thought through separately for every project.
-
-An example for this module/package structure can be found [here](https://github.com/tailoredmedia/AndroidAppTemplateExample).
+These rules can be applied to either whole *modules* or *packages* depending on if you have feature modules or feature packages. An example for such a module/package structure can be found [here](https://github.com/tailoredmedia/AndroidAppTemplateExample).
 
 ## Testing <a name="testing"></a>
 * Every module should contain tests for its use cases.
