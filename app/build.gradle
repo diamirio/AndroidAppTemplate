@@ -87,40 +87,29 @@ android {
     }
 }
 
-
 androidExtensions {
     experimental = true
 }
-
 
 dependencies {
     /**
      * Base
      */
     implementation project(path: ':core')
-    implementation deps.reaktor.android
-    implementation deps.reaktor.androidkoin
     implementation deps.androidutil.values()
 
     /**
      * UI
      */
+    implementation project(path: ':uibase')
+
     implementation deps.ui.values()
     implementation deps.lifecycle.arch
     kapt deps.lifecycle.compiler
-    implementation deps.navigation.values()
-
-    /**
-     * Rx
-     */
-    implementation deps.rxjava.android
-    implementation deps.rxbinding.values()
 
     /**
      * Util
      */
-    debugImplementation deps.leakcanary.op
-    releaseImplementation deps.leakcanary.noop
     implementation deps.glide.core
     kapt deps.glide.compiler
 

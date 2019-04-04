@@ -32,7 +32,6 @@ internal val remoteModule = module {
     single { provideApi<MyApi>(okHttpClient = get(), gson = get(), baseUrl = get()) }
 }
 
-
 private fun provideOkHttpClient() =
     OkHttpClient().newBuilder().apply {
         if (BuildConfig.DEBUG) {
