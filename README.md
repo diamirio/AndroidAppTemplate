@@ -12,6 +12,7 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 * [Module/Package structure](#module_structure)
 * [Testing](#testing)
 * [Other](#other)
+    * [Dependencies](#dependencies)
     * [ktlint](#ktlint)
     * [fastlane](#fastlane)
     * [Naming Conventions](#naming_conventions)
@@ -58,6 +59,12 @@ These rules can be applied to either whole *modules* or *packages* depending on 
 * `androidTest`: Write UI tests for common actions in your app. Use JUnit 4 Tests with Espresso. Some helper methods are available in EspressoUtils.
 
 ## Other <a name="other"></a>
+
+### Dependencies <a name="dependencies"></a>
+
+**All** dependencies should be located in a `dependencies.gradle`. To implement them in your module use `implementation deps.XXX`.
+
+Checking whether project dependencies are ready to be updated use `./gradlew dependencyUpdates`. 
 
 ### ktlint <a name="ktlint"></a>
 [ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is recommended to keep the code base clean and readable. Use 
