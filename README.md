@@ -87,7 +87,7 @@ To conform to the rule of "**No wildcard imports**", go to *Preferences&rarr;Edi
 | Drawables | **\<where\>**\_**\<where\>**\_**\<description\>** | `btn_detail_background`, `bg_overview_card` |
 | Icons | ic_**\<where\>**\_**\<description\>**.xml | `ic_all_close.xml`, `ic_detail_location_pin.xml` |
 | Dimensions | **\<where\>**\_**\<what\>**\_*\<description\>*\_*\<size\>* | `all_margin`, `detail_height_card`, `all_textsize_small` |
-| Styles | **\<what\>**\_**\<description\>** | `Text.Bold`, `Ratingbar.Preview` |
+| Styles | **\<what\>**\.**\<description\>** | `Text.Bold`, `Ratingbar.Preview` |
 | Component Ids | **\<what\>\<Description\>** | `btnOpen`, `tvTitle` |
 
 
