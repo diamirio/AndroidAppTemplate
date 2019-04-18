@@ -21,6 +21,7 @@ dependencies {
      */
     api deps.rxjava.core
     api deps.rxjava.android
+    api deps.rxjava.relay
     api deps.rxbinding.values()
 
     /**
