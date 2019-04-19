@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.countriesexample.uibase
+package com.tailoredapps.androidapptemplate.uibase
 
 import android.os.Bundle
 import android.view.LayoutInflater

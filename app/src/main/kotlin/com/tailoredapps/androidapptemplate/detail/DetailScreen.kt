@@ -22,8 +22,8 @@ import at.florianschuster.reaktor.ReactorView
 import com.tailoredapps.androidapptemplate.R
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.core.model.Model
-import com.tailoredapps.countriesexample.uibase.BaseFragment
-import com.tailoredapps.countriesexample.uibase.BaseReactor
+import com.tailoredapps.androidapptemplate.uibase.BaseFragment
+import com.tailoredapps.androidapptemplate.uibase.BaseReactor
 import com.tailoredapps.reaktor.android.koin.reactor
 
 class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<DetailReactor> {

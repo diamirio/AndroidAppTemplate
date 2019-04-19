@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.countriesexample.uibase
+package com.tailoredapps.androidapptemplate.uibase
 
 import com.squareup.leakcanary.LeakCanary
 import org.koin.android.ext.koin.androidApplication

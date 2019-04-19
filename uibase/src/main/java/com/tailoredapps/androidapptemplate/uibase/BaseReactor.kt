@@ -14,27 +14,24 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.countriesexample.uibase
+package com.tailoredapps.androidapptemplate.uibase
 
 import androidx.annotation.CallSuper
-import androidx.lifecycle.ViewModel
 import at.florianschuster.reaktor.android.ViewModelReactor
-import com.jakewharton.rxrelay2.BehaviorRelay
 import com.squareup.leakcanary.RefWatcher
-import io.reactivex.Observable
-import io.reactivex.disposables.CompositeDisposable
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-abstract class BaseViewModel : ViewModel(), KoinComponent {
+abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
+    initialState: State,
+    initialAction: Action? = null
+) : ViewModelReactor<Action, Mutation, State>(initialState, initialAction), KoinComponent {
 
     private val refWatcher: RefWatcher by inject()
-    private val disposables = CompositeDisposable()
 
     @CallSuper
     override fun onCleared() {
         super.onCleared()
-        disposables.clear()
         refWatcher.watch(this)
     }
 }
