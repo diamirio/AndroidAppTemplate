@@ -39,7 +39,7 @@ read -p "${bold}App name (e.g. MainGau, note: without the suffix 'App'):${normal
 # trim app name
 appName=$(echo $appName | xargs echo -n)
 appNameNoWhiteSpace=$(echo $appName | sed -e 's/ //g')
-appClassName=$(echo $appNameNoWhiteSpace | awk '{print toupper(substr($0,0,1))substr($0,2)}')
+appClassName=$(echo $appNameNoWhiteSpace | awk '{print toupper(substr($0,0,1))substr($0,1)}')
 
 # Check for correct app name
 regex="^[A-Za-z0-9 ]+$"
