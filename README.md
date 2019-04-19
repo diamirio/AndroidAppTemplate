@@ -85,7 +85,7 @@ To conform to the rule of "**No wildcard imports**", go to *Preferences&rarr;Edi
 | Sub-Layouts | **\<what\>**\_**\<where\>**\_**\<description\>**.xml | `activity_main_appbar.xml` |
 | Strings | **\<where\>**\_**\<what\>**\_**\<description\>** | `detail_tv_location` |
 | Drawables | **\<what\>**\_**\<where\>**\_**\<description\>** | `btn_detail_background`, `card_overview_background` |
-| Icons | ic_**\<where\>**\_**\<description\>**.xml | `ic_close.xml`, `ic_location_pin_detail.xml` |
+| Icons | ic_**\<description\>**\_**\<where\>**.xml | `ic_close.xml`, `ic_location_pin_detail.xml` |
 | Dimensions | *\<where\>*\_**\<what\>**\_*\<description\>*\_*\<size\>* | `margin`, `detail_height_card`, `textsize_small` |
 | Styles | **\<What\>**\.**\<Description\>** | `Text.Bold`, `Ratingbar.Preview` |
 | Component Ids | **\<what\>\<Description\>** | `btnOpen`, `tvTitle` |
