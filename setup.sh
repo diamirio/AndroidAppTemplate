@@ -118,6 +118,11 @@ mkdir -p $baseDir/core/src/test/kotlin/$packagePath
 mv $baseDir/core/src/main/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/core/src/main/kotlin/$packagePath
 mv $baseDir/core/src/test/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/core/src/test/kotlin/$packagePath
 
+mkdir -p $baseDir/uibase/src/main/kotlin/$packagePath
+mkdir -p $baseDir/uibase/src/test/kotlin/$packagePath
+mv $baseDir/uibase/src/main/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/uibase/src/main/kotlin/$packagePath
+mv $baseDir/uibase/src/test/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/uibase/src/test/kotlin/$packagePath
+
 # remove old folders
 
 originalPackagePathParts=(com tailoredapps androidapptemplate)
@@ -146,6 +151,9 @@ if [[ $packageName != com.tailoredapps.androidapptemplate* ]]; then
 
     rm -r $baseDir/core/src/main/kotlin/$deletePath
     rm -r $baseDir/core/src/test/kotlin/$deletePath
+
+    rm -r $baseDir/uibase/src/main/kotlin/$deletePath
+    rm -r $baseDir/uibase/src/test/kotlin/$deletePath
 
 fi
 
