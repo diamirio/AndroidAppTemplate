@@ -84,9 +84,9 @@ To conform to the rule of "**No wildcard imports**", go to *Preferences&rarr;Edi
 | Layouts | **\<what\>**\_**\<where\>**.xml | `activity_main.xml`, `item_detail.xml` |
 | Sub-Layouts | **\<what\>**\_**\<where\>**\_**\<description\>**.xml | `activity_main_appbar.xml` |
 | Strings | **\<where\>**\_**\<what\>**\_**\<description\>** | `detail_tv_location` |
-| Drawables | **\<what\>**\_**\<where\>**\_**\<description\>** | `btn_detail_background`, `bg_overview_card` |
-| Icons | ic_**\<where\>**\_**\<description\>**.xml | `ic_all_close.xml`, `ic_detail_location_pin.xml` |
-| Dimensions | **\<where\>**\_**\<what\>**\_*\<description\>*\_*\<size\>* | `all_margin`, `detail_height_card`, `all_textsize_small` |
+| Drawables | **\<what\>**\_**\<where\>**\_**\<description\>** | `btn_detail_background`, `card_overview_background` |
+| Icons | ic_**\<where\>**\_**\<description\>**.xml | `ic_close.xml`, `ic_location_pin_detail.xml` |
+| Dimensions | *\<where\>*\_**\<what\>**\_*\<description\>*\_*\<size\>* | `margin`, `detail_height_card`, `textsize_small` |
 | Styles | **\<What\>**\.**\<Description\>** | `Text.Bold`, `Ratingbar.Preview` |
 | Component Ids | **\<what\>\<Description\>** | `btnOpen`, `tvTitle` |
 
