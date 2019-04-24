@@ -43,10 +43,10 @@ appClassName=$(echo $appNameNoWhiteSpace | awk '{print toupper(substr($0,0,1))su
 
 # Check for correct app name
 regex="^[A-Za-z0-9 ]+$"
-if ! [[ $appName =~ $regex ]]; then
-    echo 
+if ! [[ ${appName} =~ $regex ]]; then
+    echo
     echo Aborting, please enter a correct app name.
-    echo 
+    echo
     exit 1
 fi
 
@@ -56,7 +56,7 @@ packageName=$(echo $packageName | xargs echo -n)
 
 # check for correct package name
 regex="^[a-z][a-z0-9_]*(\.[a-z0-9_]+)+[0-9a-z_]$"
-if ! [[ $packageName =~ $regex ]]; then
+if ! [[ ${packageName} =~ $regex ]]; then
     echo
     echo Aborting, please enter a correct package name.
     echo
@@ -68,93 +68,114 @@ packagePath=$(echo $packageName | sed 's/\./\//g')
 
 # set app name
 
-if [ "Darwin" == $systemName ]; then
-    sed -i '' "s/resValue \"string\", \"app_name\", \"AndroidAppTemplate/resValue \"string\", \"app_name\", \"$appName/g" $baseDir/app/build.gradle
+if [ "Darwin" == ${systemName} ]; then
+    sed -i '' "s/resValue \"string\", \"app_name\", \"AndroidAppTemplate/resValue \"string\", \"app_name\", \"$appName/g" ${baseDir}/app/build.gradle
 else
-    sed -i "s/resValue \"string\", \"app_name\", \"AndroidAppTemplate/resValue \"string\", \"app_name\", \"$appName/g" $baseDir/app/build.gradle
+    sed -i "s/resValue \"string\", \"app_name\", \"AndroidAppTemplate/resValue \"string\", \"app_name\", \"$appName/g" ${baseDir}/app/build.gradle
 fi
 
-if [ "Darwin" == $systemName ]; then
+if [ "Darwin" == ${systemName} ]; then
     sed -i '' "s/resValue \"string\", \"leak_canary_display_activity_label\", \"AndroidAppTemplate/resValue \"string\", \"leak_canary_display_activity_label\", \"$appName/g" $baseDir/app/build.gradle
 else
     sed -i "s/resValue \"string\", \"leak_canary_display_activity_label\", \"AndroidAppTemplate/resValue \"string\", \"leak_canary_display_activity_label\", \"$appName/g" $baseDir/app/build.gradle
 fi
 
-if [ "Darwin" == $systemName ]; then
-    sed -i '' "s/setProperty(\"archivesBaseName\", \"AndroidAppTemplate/setProperty(\"archivesBaseName\", \"$appNameNoWhiteSpace/g" $baseDir/app/build.gradle
+if [ "Darwin" == ${systemName} ]; then
+    sed -i '' "s/setProperty(\"archivesBaseName\", \"AndroidAppTemplate/setProperty(\"archivesBaseName\", \"$appNameNoWhiteSpace/g" ${baseDir}/app/build.gradle
 else
-    sed -i "s/setProperty(\"archivesBaseName\", \"AndroidAppTemplate/setProperty(\"archivesBaseName\", \"$appNameNoWhiteSpace/g" $baseDir/app/build.gradle
+    sed -i "s/setProperty(\"archivesBaseName\", \"AndroidAppTemplate/setProperty(\"archivesBaseName\", \"$appNameNoWhiteSpace/g" ${baseDir}/app/build.gradle
 fi
 
 
 # find and replace package name recursively
 
-if [ "Darwin" == $systemName ]; then
-    find $baseDir -not -path './.idea*' -a -not -path './.git*' -a -type f \( -iname \*.kt -o -iname \*.java -o -iname \*.xml -o -iname \*.gradle -o -iname \*.pro \) -exec sed -i '' "s/com\.tailoredapps\.androidapptemplate/$packageName/g" {} +
+if [ "Darwin" == ${systemName} ]; then
+    find ${baseDir} -not -path './.idea*' -a -not -path './.git*' -a -type f \( -iname \*.kt -o -iname \*.java -o -iname \*.xml -o -iname \*.gradle -o -iname \*.pro \) -exec sed -i '' "s/com\.tailoredapps\.androidapptemplate/$packageName/g" {} +
 else
-    find $baseDir -not -path './.idea*' -a -not -path './.git*' -a -type f \( -iname \*.kt -o -iname \*.java -o -iname \*.xml -o -iname \*.gradle -o -iname \*.pro \) -exec sed -i "s/com\.tailoredapps\.androidapptemplate/$packageName/g" {} +
+    find ${baseDir} -not -path './.idea*' -a -not -path './.git*' -a -type f \( -iname \*.kt -o -iname \*.java -o -iname \*.xml -o -iname \*.gradle -o -iname \*.pro \) -exec sed -i "s/com\.tailoredapps\.androidapptemplate/$packageName/g" {} +
 fi
 
 # find and replace app name recursively
 
-if [ "Darwin" == $systemName ]; then
-    find $baseDir -not -path './.idea*' -a -not -path './.git*' -a -type f \( -iname \*.kt -o -iname \*.java -o -iname \*.xml -o -iname \*.gradle \) -exec sed -i '' "s/MyApp/${appNameNoWhiteSpace}App/g" {} +
+if [ "Darwin" == ${systemName} ]; then
+    find ${baseDir} -not -path './.idea*' -a -not -path './.git*' -a -type f \( -iname \*.kt -o -iname \*.java -o -iname \*.xml -o -iname \*.gradle \) -exec sed -i '' "s/MyApp/${appNameNoWhiteSpace}App/g" {} +
 else
-    find $baseDir -not -path './.idea*' -a -not -path './.git*' -a -type f \( -iname \*.kt -o -iname \*.java -o -iname \*.xml -o -iname \*.gradle \) -exec sed -i "s/MyApp/${appNameNoWhiteSpace}App/g" {} +
+    find ${baseDir} -not -path './.idea*' -a -not -path './.git*' -a -type f \( -iname \*.kt -o -iname \*.java -o -iname \*.xml -o -iname \*.gradle \) -exec sed -i "s/MyApp/${appNameNoWhiteSpace}App/g" {} +
 fi
 
 # move files
 
-mkdir -p $baseDir/app/src/main/kotlin/$packagePath
-mkdir -p $baseDir/app/src/test/kotlin/$packagePath
+mkdir -p ${baseDir}/app/src/main/kotlin/${packagePath}
+mkdir -p ${baseDir}/app/src/test/kotlin/${packagePath}
 mkdir -p ${baseDir}/app/src/androidTest/kotlin/${packagePath}
-mv $baseDir/app/src/main/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/app/src/main/kotlin/$packagePath
-mv $baseDir/app/src/test/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/app/src/test/kotlin/$packagePath
-mv ${baseDir}/app/src/androidTest/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/app/src/androidTest/kotlin/${packagePath}
-mv $baseDir/app/src/main/kotlin/$packagePath/MyApp.kt $baseDir/app/src/main/kotlin/$packagePath/${appClassName}App.kt
 
-mkdir -p $baseDir/core/src/main/kotlin/$packagePath
-mkdir -p $baseDir/core/src/test/kotlin/$packagePath
-mv $baseDir/core/src/main/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/core/src/main/kotlin/$packagePath
-mv $baseDir/core/src/test/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/core/src/test/kotlin/$packagePath
+if [ Darwin == ${systemName} ]; then
+    mv ${baseDir}/app/src/main/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/app/src/main/kotlin/${packagePath}
+    mv ${baseDir}/app/src/test/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/app/src/test/kotlin/${packagePath}
+    mv ${baseDir}/app/src/androidTest/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/app/src/androidTest/kotlin/${packagePath}
+    mv ${baseDir}/app/src/main/kotlin/${packagePath}/MyApp.kt ${baseDir}/app/src/main/kotlin/${packagePath}/${appClassName}App.kt
+else
+    mv "${baseDir}/app/src/main/kotlin/com/tailoredapps/androidapptemplate"/* "${baseDir}/app/src/main/kotlin/${packagePath}"
+    mv "${baseDir}/app/src/test/kotlin/com/tailoredapps/androidapptemplate"/* "${baseDir}/app/src/test/kotlin/${packagePath}"
+    mv "${baseDir}/app/src/androidTest/kotlin/com/tailoredapps/androidapptemplate"/* "${baseDir}/app/src/androidTest/kotlin/${packagePath}"
+    mv "${baseDir}/app/src/main/kotlin/${packagePath}/MyApp.kt" "${baseDir}/app/src/main/kotlin/${packagePath}/${appClassName}App.kt"
+fi
 
-mkdir -p $baseDir/uibase/src/main/kotlin/$packagePath
-mv $baseDir/uibase/src/main/kotlin/com/tailoredapps/androidapptemplate/* $baseDir/uibase/src/main/kotlin/$packagePath
+mkdir -p ${baseDir}/core/src/main/kotlin/${packagePath}
+mkdir -p ${baseDir}/core/src/test/kotlin/${packagePath}
+
+if [ Darwin == ${systemName} ]; then
+    mv ${baseDir}/core/src/main/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/core/src/main/kotlin/${packagePath}
+    mv ${baseDir}/core/src/test/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/core/src/test/kotlin/${packagePath}
+else
+    mv "${baseDir}/core/src/main/kotlin/com/tailoredapps/androidapptemplate"/* "${baseDir}/core/src/main/kotlin/${packagePath}"
+    mv "${baseDir}/core/src/test/kotlin/com/tailoredapps/androidapptemplate"/* "${baseDir}/core/src/test/kotlin/${packagePath}"
+fi
+
+mkdir -p ${baseDir}/uibase/src/main/kotlin/${packagePath}
+if [ "Darwin" == ${systemName} ]; then
+    mv ${baseDir}/uibase/src/main/kotlin/com/tailoredapps/androidapptemplate/* ${baseDir}/uibase/src/main/kotlin/${packagePath}
+else
+    mv "${baseDir}/uibase/src/main/kotlin/com/tailoredapps/androidapptemplate"/* "${baseDir}/uibase/src/main/kotlin/${packagePath}"
+fi
 
 # remove old folders
 
 originalPackagePathParts=(com tailoredapps androidapptemplate)
-newPackagePathParts=(`echo $packageName | sed 's/\./ /g'`)
+newPackagePathParts=(`echo ${packageName} | sed 's/\./ /g'`)
 
 if [[ $packageName != com.tailoredapps.androidapptemplate* ]]; then
     # New package name is not equal or subpackage of old package name
-    
+
     deletePath=""
     for index in ${!originalPackagePathParts[*]}
     do
-        if [ $index -ne 0 ]; then 
-            deletePath=${deletePath}/ 
+        if [ ${index} -ne 0 ]; then
+            deletePath=${deletePath}/
         fi
 
         deletePath=${deletePath}${originalPackagePathParts[$index]}
 
-        if  [ $index -eq ${#newPackagePathParts[@]} ] || [ ${originalPackagePathParts[$index]} != ${newPackagePathParts[$index]} ]; then
+        if  [ ${index} -eq ${#newPackagePathParts[@]} ] || [ ${originalPackagePathParts[$index]} != ${newPackagePathParts[$index]} ]; then
             break
         fi
     done
 
-    rm -r $baseDir/app/src/main/kotlin/$deletePath
-    rm -r $baseDir/app/src/test/kotlin/$deletePath
+    rm -r ${baseDir}/app/src/main/kotlin/${deletePath}
+    rm -r ${baseDir}/app/src/test/kotlin/${deletePath}
     rm -r ${baseDir}/app/src/androidTest/kotlin/${deletePath}
 
-    rm -r $baseDir/core/src/main/kotlin/$deletePath
-    rm -r $baseDir/core/src/test/kotlin/$deletePath
+    rm -r ${baseDir}/core/src/main/kotlin/${deletePath}
+    rm -r ${baseDir}/core/src/test/kotlin/${deletePath}
 
-    rm -r $baseDir/uibase/src/main/kotlin/$deletePath
+    rm -r ${baseDir}/uibase/src/main/kotlin/${deletePath}
 
 fi
 
 echo
 echo "${bold}Setup complete${normal}"
 echo
-echo 
+echo
+echo "${bold}Press Enter to close${normal}"
+
+read
