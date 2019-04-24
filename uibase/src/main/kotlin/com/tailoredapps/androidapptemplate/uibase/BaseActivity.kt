@@ -26,7 +26,9 @@ import com.tailoredapps.androidutil.viewstate.ViewState
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.android.inject
 
-abstract class BaseActivity(@LayoutRes protected val layout: Int) : AppCompatActivity(), ViewState by VS() {
+abstract class BaseActivity(
+    @LayoutRes protected val layout: Int
+) : AppCompatActivity(), ViewState by VS() {
     private val refWatcher: RefWatcher by inject()
 
     open val disposables = CompositeDisposable()

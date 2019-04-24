@@ -42,15 +42,15 @@ abstract class BaseFragment(@LayoutRes protected val layout: Int? = null) : Frag
         else throw RuntimeException("Please implement onCreateView() and inflate your layout.")
 
     @CallSuper
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        restoreStateFrom(savedInstanceState)
-    }
-
-    @CallSuper
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         storeStateIn(outState)
+    }
+
+    @CallSuper
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        restoreStateFrom(savedInstanceState)
     }
 
     @CallSuper
