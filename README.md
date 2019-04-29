@@ -31,6 +31,7 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 1. Create your **git** repository and check it out on your machine.
 2. Add `git@github.com:tailoredmedia/AndroidAppTemplate.git` as remote and merge the latest commit into your repository (you most likely need to `--allow-unrelated-histories`).
 3. Run the provided `setup.sh` script to rename files and properties according to project. Afterwards delete `setup.sh` from your repository.
+3a. `setup.sh` script needs bash version 4+. [MacOS has bash version 3.2 pre-installed and needs to be upgraded](https://itnext.io/upgrading-bash-on-macos-7138bd1066ba)!
 4. Change `Readme.md` content to something appropriate.
 5. Commit and Push to your **git** repository.
 
