@@ -6,7 +6,7 @@ dependencies {
     /**
      * Ui
      */
-    api deps.reaktor.values()
+    api deps.reaktor
     api deps.ui.values()
     api deps.navigation.values()
     api deps.androidutil.viewstate

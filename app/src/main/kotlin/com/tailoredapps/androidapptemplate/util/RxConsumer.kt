@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.all.util
+package com.tailoredapps.androidapptemplate.util
 
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.tailoredapps.androidapptemplate.all.util.GlideApp
 import io.reactivex.functions.Consumer
 
 /**

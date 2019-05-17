@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.all
+package com.tailoredapps.androidapptemplate
 
 import com.squareup.leakcanary.LeakCanary
-import com.tailoredapps.androidapptemplate.BuildConfig
 import com.tailoredapps.androidapptemplate.core.model.BaseUrl
 import com.tailoredapps.androidapptemplate.detail.detailModule
 import org.koin.android.ext.koin.androidApplication
@@ -28,4 +27,4 @@ internal val appModule = module {
     single { LeakCanary.install(androidApplication()) }
 }
 
-val appModules = listOf(appModule, detailModule)
+internal val appModules = listOf(appModule, detailModule)

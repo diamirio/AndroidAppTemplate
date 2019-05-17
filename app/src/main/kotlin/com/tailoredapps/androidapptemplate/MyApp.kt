@@ -20,7 +20,6 @@ import android.app.Application
 import at.florianschuster.reaktor.Reaktor
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
-import com.tailoredapps.androidapptemplate.all.appModules
 import com.tailoredapps.androidapptemplate.core.coreModules
 import com.tailoredapps.androidapptemplate.uibase.uiBaseModule
 import io.reactivex.plugins.RxJavaPlugins

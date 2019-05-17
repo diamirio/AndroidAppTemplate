@@ -6,7 +6,6 @@ dependencies {
     /**
      * Base
      */
-    api deps.reaktor.core
     implementation deps.androidutil.network
     implementation deps.androidutil.optional
 
