@@ -71,7 +71,8 @@ Checking whether project dependencies are ready to be updated use `./gradlew dep
 * `./gradlew ktlint` to lint your code.
 * `./gradlew ktlintFormat` to automatically format all your code according to the linting rules.
 
-To conform to the rule of "**No wildcard imports**", go to *Preferences&rarr;Editor&rarr;Code Style&rarr;Kotlin&rarr;Imports* and enable **Use single name import**.
+To conform to the rules configure AndroidStudio accordingly: [RULES](https://github.com/pinterest/ktlint#-with-intellij-idea).
+
 
 ### fastlane <a name="fastlane"></a>
 [fastlane](https://fastlane.tools/) is an automation framework that can be used to for deployment and release processes for Android or iOS apps. It is recommended to setup your Project with *fastlane*. 
