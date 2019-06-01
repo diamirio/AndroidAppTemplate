@@ -1,12 +1,12 @@
-apply from: "$rootDir/library-module.gradle"
+apply from: rootProject.file("library-module.gradle")
 
 dependencies {
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    api deps.kotlin
 
     /**
      * Ui
      */
-    api deps.reaktor
+    api deps.reaktor.values()
     api deps.ui.values()
     api deps.navigation.values()
     api deps.androidutil.viewstate

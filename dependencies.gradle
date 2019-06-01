@@ -1,10 +1,10 @@
 ext {
     versions = [
             kotlin     : '1.3.31',
-            reaktor    : '1.0.12',
-            androidutil: '9',
+            reaktor    : '1.0.15',
+            androidutil: '13',
             navigation : '2.0.0',
-            koin       : '2.0.0-rc-3',
+            koin       : '2.0.1',
             rxbinding  : '3.0.0-alpha2',
             lifecycle  : '2.0.0',
             retrofit   : '2.5.0',
@@ -16,15 +16,21 @@ ext {
     ]
 
     deps = [
-            reaktor    : "at.florianschuster.reaktor:reaktor-android-koin:${versions.reaktor}",
+            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+            reaktor    : [
+                    core   : "at.florianschuster.reaktor:reaktor-core:$versions.reaktor",
+                    android: "at.florianschuster.reaktor:reaktor-android:$versions.reaktor",
+                    koin   : "at.florianschuster.reaktor:reaktor-android-koin:$versions.reaktor"
+            ],
             androidutil: [
-                    core       : "com.tailoredapps.androidutil:ui:${versions.androidutil}",
-                    async      : "com.tailoredapps.androidutil:async:${versions.androidutil}",
-                    network    : "com.tailoredapps.androidutil:network:${versions.androidutil}",
-                    optional   : "com.tailoredapps.androidutil:optional:${versions.androidutil}",
-                    permissions: "com.tailoredapps.androidutil:permissions:${versions.androidutil}",
-                    validation : "com.tailoredapps.androidutil:validation:${versions.androidutil}",
-                    viewstate  : "com.tailoredapps.androidutil:viewstate:${versions.androidutil}"
+                    base       : "com.tailoredapps.androidutil:util-base:$versions.androidutil",
+                    ui         : "com.tailoredapps.androidutil:util-ui:$versions.androidutil",
+                    async      : "com.tailoredapps.androidutil:util-async:$versions.androidutil",
+                    network    : "com.tailoredapps.androidutil:util-network:$versions.androidutil",
+                    optional   : "com.tailoredapps.androidutil:util-optional:$versions.androidutil",
+                    permissions: "com.tailoredapps.androidutil:util-permissions:$versions.androidutil",
+                    validation : "com.tailoredapps.androidutil:util-validation:$versions.androidutil",
+                    viewstate  : "com.tailoredapps.androidutil:util-viewstate:$versions.androidutil"
             ],
             ui         : [
                     material_core            : 'com.google.android.material:material:1.0.0',
@@ -34,49 +40,49 @@ ext {
                     androidx_corektx         : 'androidx.core:core-ktx:1.0.1'
             ],
             navigation : [
-                    navigation   : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
-                    navigation_ui: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+                    navigation   : "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
+                    navigation_ui: "androidx.navigation:navigation-ui-ktx:$versions.navigation"
             ],
             lifecycle  : [
-                    core    : "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}",
-                    compiler: "androidx.lifecycle:lifecycle-compiler:${versions.lifecycle}"
+                    core    : "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle",
+                    compiler: "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
             ],
             koin       : [
-                    core     : "org.koin:koin-core:${versions.koin}",
-                    android  : "org.koin:koin-android:${versions.koin}",
-                    scope    : "org.koin:koin-androidx-scope:${versions.koin}",
-                    viewmodel: "org.koin:koin-androidx-viewmodel:${versions.koin}"
+                    core     : "org.koin:koin-core:$versions.koin",
+                    android  : "org.koin:koin-android:$versions.koin",
+                    scope    : "org.koin:koin-androidx-scope:$versions.koin",
+                    viewmodel: "org.koin:koin-androidx-viewmodel:$versions.koin"
             ],
             rxjava     : [
-                    core   : "io.reactivex.rxjava2:rxjava:2.2.8",
+                    core   : "io.reactivex.rxjava2:rxjava:2.2.9",
                     kotlin : "io.reactivex.rxjava2:rxkotlin:2.3.0",
                     relay  : "com.jakewharton.rxrelay2:rxrelay:2.1.0",
                     android: "io.reactivex.rxjava2:rxandroid:2.1.1"
             ],
             rxbinding  : [
-                    binding           : "com.jakewharton.rxbinding3:rxbinding:${versions.rxbinding}",
-                    core              : "com.jakewharton.rxbinding3:rxbinding-core:${versions.rxbinding}",
-                    appcompat         : "com.jakewharton.rxbinding3:rxbinding-appcompat:${versions.rxbinding}",
-                    drawerlayout      : "com.jakewharton.rxbinding3:rxbinding-drawerlayout:${versions.rxbinding}",
-                    recyclerview      : "com.jakewharton.rxbinding3:rxbinding-recyclerview:${versions.rxbinding}",
-                    swiperefreshlayout: "com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:${versions.rxbinding}",
-                    viewpager         : "com.jakewharton.rxbinding3:rxbinding-viewpager:${versions.rxbinding}",
-                    material          : "com.jakewharton.rxbinding3:rxbinding-material:${versions.rxbinding}"
+                    binding           : "com.jakewharton.rxbinding3:rxbinding:$versions.rxbinding",
+                    core              : "com.jakewharton.rxbinding3:rxbinding-core:$versions.rxbinding",
+                    appcompat         : "com.jakewharton.rxbinding3:rxbinding-appcompat:$versions.rxbinding",
+                    drawerlayout      : "com.jakewharton.rxbinding3:rxbinding-drawerlayout:$versions.rxbinding",
+                    recyclerview      : "com.jakewharton.rxbinding3:rxbinding-recyclerview:$versions.rxbinding",
+                    swiperefreshlayout: "com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:$versions.rxbinding",
+                    viewpager         : "com.jakewharton.rxbinding3:rxbinding-viewpager:$versions.rxbinding",
+                    material          : "com.jakewharton.rxbinding3:rxbinding-material:$versions.rxbinding"
             ],
             networking : [
-                    retrofit      : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
-                    retrofitGson  : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
-                    retrofitRxjava: "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
-                    okhttp        : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
-                    okhttpLogging : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
+                    retrofit      : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+                    retrofitGson  : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+                    retrofitRxjava: "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+                    okhttp        : "com.squareup.okhttp3:okhttp:$versions.retrofit",
+                    okhttpLogging : "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
             ],
             leakcanary : [
-                    op  : "com.squareup.leakcanary:leakcanary-android:${versions.leakcanary}",
-                    noop: "com.squareup.leakcanary:leakcanary-android-no-op:${versions.leakcanary}"
+                    op  : "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary",
+                    noop: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakcanary"
             ],
             glide      : [
-                    core    : "com.github.bumptech.glide:glide:${versions.glide}",
-                    compiler: "com.github.bumptech.glide:compiler:${versions.glide}"
+                    core    : "com.github.bumptech.glide:glide:$versions.glide",
+                    compiler: "com.github.bumptech.glide:compiler:$versions.glide"
             ],
             coreutil   : [
                     gson    : 'com.google.code.gson:gson:2.8.5',
@@ -84,13 +90,13 @@ ext {
                     threeten: 'com.jakewharton.threetenabp:threetenabp:1.2.0'
             ],
             test       : [
-                    kointest         : "org.koin:koin-test:${versions.koin}",
+                    kointest         : "org.koin:koin-test:$versions.koin",
                     junit            : 'junit:junit:4.12',
-                    mockito          : "org.mockito:mockito-core:${versions.mockito}",
-                    powermock        : "org.powermock:powermock-module-junit4:${versions.powermock}",
-                    powermockrule    : "org.powermock:powermock-module-junit4-rule:${versions.powermock}",
-                    powermockmockito2: "org.powermock:powermock-api-mockito2:${versions.powermock}",
-                    kotlinreflect    : "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}",
+                    mockito          : "org.mockito:mockito-core:$versions.mockito",
+                    powermock        : "org.powermock:powermock-module-junit4:$versions.powermock",
+                    powermockrule    : "org.powermock:powermock-module-junit4-rule:$versions.powermock",
+                    powermockmockito2: "org.powermock:powermock-api-mockito2:$versions.powermock",
+                    kotlinreflect    : "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin",
                     mockitokotlin    : "com.nhaarman:mockito-kotlin-kt1.1:1.5.0",
                     jsr305           : "com.google.code.findbugs:jsr305:3.0.2",
                     mockk            : 'io.mockk:mockk:1.9.3',
@@ -101,7 +107,7 @@ ext {
                     rules          : 'com.android.support.test:rules:1.0.2',
                     espresso       : 'com.android.support.test.espresso:espresso-core:3.0.2',
                     espressointents: 'com.android.support.test.espresso:espresso-intents:3.0.2',
-                    mockito        : "org.mockito:mockito-android:${versions.mockito}"
+                    mockito        : "org.mockito:mockito-android:$versions.mockito"
             ],
     ]
 }

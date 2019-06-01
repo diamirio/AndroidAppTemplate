@@ -41,7 +41,7 @@ Features should be contained in a separate module. The `core` module should cont
 
 * or all *ui* related elements are located in the `app` module in the according feature packages and the `core` module contains business logic that can potentially be shared with other feature or ui modules in future expansions of the application.
 
-When adding a new module, create a library module and add `apply from: "$rootDir/library-module.gradle"` to the top of the newly created `build.gradle` file and afterwards your dependencies (see `core`'s `build.gradle` for example).
+When adding a new module, create a library module and add `apply from: rootProject.file("library-module.gradle")` to the top of the newly created `build.gradle` file and afterwards your dependencies (see `core`'s `build.gradle` for example).
 
 Remember however: app and module structure should be thought through separately for every project.
 
@@ -49,7 +49,7 @@ Remember however: app and module structure should be thought through separately 
 * Model classes should be located in a `model` package.
 * Network related classes and interfaces (e.g. networking api's) are located in a `remote` package.
 * Local storage related classes (e.g. databases or dao's) are located in a `local` package.
-* Classes that do not correspond to a certain feature, should either be located in an `all` package or on the top level of the module. For example: Utility classes should be located in a `util` package in the `all` package.
+* Classes that do not correspond to a certain feature, should either be located in an `all` package or on the top level of the module.
 
 These rules can be applied to either whole *modules* or *packages* depending on if you have feature modules or feature packages. An example for such a module/package structure can be found [here](https://github.com/tailoredmedia/AndroidAppTemplateExample).
 

@@ -1,7 +1,7 @@
-apply from: "$rootDir/library-module.gradle"
+apply from: rootProject.file("library-module.gradle")
 
 dependencies {
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    api deps.kotlin
 
     /**
      * Base
