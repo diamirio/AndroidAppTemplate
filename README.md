@@ -1,4 +1,5 @@
-# Android App Template
+![Android App Template Logo](https://user-images.githubusercontent.com/2580292/59103107-390a7b80-892e-11e9-9466-774d413697ee.jpg)
+
 ![Kotlin](https://img.shields.io/badge/Language-Kotlin-orange.svg) ![Android](https://img.shields.io/badge/Platform-Android-green.svg) ![Reaktor](https://img.shields.io/badge/Architecture-Reaktor-red.svg)
 
 This is an Android app template which can be used for new projects. A small example app is available [here](https://github.com/tailoredmedia/AndroidAppTemplateExample).
