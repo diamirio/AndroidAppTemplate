@@ -16,9 +16,8 @@
 
 package com.tailoredapps.androidapptemplate.core.local
 
-import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 internal val localModule = module {
-    single { SharedPrefService(context = androidContext()) as PrefService }
+    single<Database> { DatabaseImpl() }
 }

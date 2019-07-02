@@ -16,12 +16,6 @@
 
 package com.tailoredapps.androidapptemplate.core.local
 
-import android.content.Context
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
+interface Database
 
-interface PrefService
-
-class SharedPrefService(context: Context) : PrefService {
-    private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-}
+class DatabaseImpl : Database

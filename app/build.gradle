@@ -93,32 +93,20 @@ androidExtensions {
 }
 
 dependencies {
-    /**
-     * Base
-     */
     implementation project(path: ':core')
-    implementation deps.androidutil.values()
-
-    /**
-     * UI
-     */
     implementation project(path: ':uibase')
 
-    implementation deps.ui.values()
-    implementation deps.lifecycle.core
-    kapt deps.lifecycle.compiler
+    implementation ModuleDependencies.AndroidAppUtil.Async
+    implementation ModuleDependencies.AndroidAppUtil.Permissions
 
-    /**
-     * Util
-     */
-    implementation deps.glide.core
-    kapt deps.glide.compiler
+    implementation ModuleDependencies.Lifecycle.Extensions
+    kapt ModuleDependencies.Lifecycle.Compiler
 
-    /**
-     * Testing
-     */
-    testImplementation deps.test.values()
-    androidTestImplementation deps.androidtest.values()
+    implementation ModuleDependencies.Glide.Core
+    kapt ModuleDependencies.Glide.Compiler
+
+    testImplementation ModuleDependencies.Test.values()
+    androidTestImplementation ModuleDependencies.AndroidTest.values()
 }
 
 

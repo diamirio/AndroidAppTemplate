@@ -1,8 +1,7 @@
 apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'com.vanniktech.dependency.graph.generator'
 
 buildscript {
-    apply from: rootProject.file("dependencies.gradle")
-
     ext.buildConfig = [
             targetSdkVersion : 28,
             minSdkVersion    : 21,
@@ -15,13 +14,14 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+        classpath BuildScriptDependencies.AndroidBuildTools
+        classpath BuildScriptDependencies.KotlinPlugin
+        classpath BuildScriptDependencies.NavigationSafeArgs
 
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
-
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.21.0'
-        classpath 'com.akaita.android:easylauncher:1.3.1'
+        classpath BuildScriptDependencies.DependencyVersions
+        classpath BuildScriptDependencies.EasyLauncher
+        classpath BuildScriptDependencies.GraphViz
+        classpath BuildScriptDependencies.DependencyGraph
     }
 }
 
