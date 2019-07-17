@@ -5,14 +5,14 @@ dependencies {
 
     api ModuleDependencies.Reaktor
 
-    api ModuleDependencies.UI.values()
-    api ModuleDependencies.AndroidAppUtil.UI
-    api ModuleDependencies.AndroidAppUtil.ViewState
+    api UI.values()
+    api AndroidAppUtil.UI
+    api AndroidAppUtil.ViewState
 
-    api ModuleDependencies.Koin.values()
+    api Koin.values()
 
-    api ModuleDependencies.Rx.values()
-    api ModuleDependencies.RxBinding.values()
+    api Rx.values()
+    api RxBinding.values()
 
     debugApi ModuleDependencies.LeakCanaryOp
     releaseApi ModuleDependencies.LeakCanaryNoOp

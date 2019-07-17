@@ -96,17 +96,15 @@ dependencies {
     implementation project(path: ':core')
     implementation project(path: ':uibase')
 
-    implementation ModuleDependencies.AndroidAppUtil.Async
-    implementation ModuleDependencies.AndroidAppUtil.Permissions
+    implementation AndroidAppUtil.values()
+    implementation Lifecycle.Extensions
+    kapt Lifecycle.Compiler
 
-    implementation ModuleDependencies.Lifecycle.Extensions
-    kapt ModuleDependencies.Lifecycle.Compiler
+    implementation Glide.Core
+    kapt Glide.Compiler
 
-    implementation ModuleDependencies.Glide.Core
-    kapt ModuleDependencies.Glide.Compiler
-
-    testImplementation ModuleDependencies.Test.values()
-    androidTestImplementation ModuleDependencies.AndroidTest.values()
+    testImplementation Tests.values()
+    androidTestImplementation AndroidTests.values()
 }
 
 

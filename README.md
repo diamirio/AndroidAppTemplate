@@ -80,7 +80,7 @@ Despite you and your *brain* being the judge of how the project should best be s
 
 ### Dependencies <a name="dependencies"></a>
 
-**All** dependencies should be located in the `Dependencies.kt` file in the `buildSrc` folder. To implement them in your module use `implementation ModuleDependencies.XXX`.
+**All** dependencies should be located in the `Dependencies.kt` file in the `buildSrc` folder. To implement them in your module use `implementation ModuleDependencies.XXX`,  `implementation XXX.YYY` for a dependency contained in a dependency group or `implementation XXX.values()` for all dependencies from a group.
 
 Checking whether project dependencies are ready to be updated, use `./gradlew dependencyUpdates`. 
 

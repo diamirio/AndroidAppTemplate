@@ -3,20 +3,20 @@ apply from: rootProject.file("library-module.gradle")
 dependencies {
     api ModuleDependencies.KotlinStd
 
-    implementation ModuleDependencies.AndroidAppUtil.Network
-    api ModuleDependencies.AndroidAppUtil.Optional
+    implementation AndroidAppUtil.Network
+    api AndroidAppUtil.Optional
 
-    api ModuleDependencies.Koin.Core
+    api Koin.Core
 
-    api ModuleDependencies.Rx.Java
-    api ModuleDependencies.Rx.Kotlin
-    api ModuleDependencies.Rx.Relay
+    api Rx.Java
+    api Rx.Kotlin
+    api Rx.Relay
 
-    implementation ModuleDependencies.Networking.values()
+    implementation Networking.values()
 
     api ModuleDependencies.Gson
     api ModuleDependencies.Timber
     api ModuleDependencies.Threeten
 
-    testImplementation ModuleDependencies.Test.values()
+    testImplementation Tests.values()
 }
