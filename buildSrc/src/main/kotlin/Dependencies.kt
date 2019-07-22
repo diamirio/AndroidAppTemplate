@@ -18,7 +18,7 @@ object Versions {
     const val Mockito = "2.28.2"
     const val Powermock = "2.0.2"
     const val Espresso = "3.1.0"
-    const val AndroidXTest = "1.1.0"
+    const val AndroidXTest = "1.2.0"
 }
 
 object BuildScriptDependencies {
@@ -148,11 +148,11 @@ enum class Tests(private val dependency: String): DependencyItem by dependency {
 }
 
 enum class AndroidTests(private val dependency: String): DependencyItem by dependency {
-    Core("androidx.test:core:1.0.0"),
+    Core("androidx.test:core:${Versions.AndroidXTest}"), //todo check which AndroidXTest version have same version codes
     Runner("androidx.test:runner:${Versions.AndroidXTest}"),
     Rules("androidx.test:rules:${Versions.AndroidXTest}"),
     AndroidXTruth("androidx.test.ext:truth:${Versions.AndroidXTest}"),
-    AndroidJunit("androidx.test.ext:junit:${Versions.AndroidXTest}"),
+    AndroidXJunit("androidx.test.ext:junit:1.1.0"),
     Truth("com.google.truth:truth:1.0-rc2"),
     Espresso("androidx.test.espresso:espresso-core:${Versions.Espresso}"),
     EspressoContrib("androidx.test.espresso:espresso-contrib:${Versions.Espresso}"),
