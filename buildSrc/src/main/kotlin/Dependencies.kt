@@ -45,6 +45,7 @@ object ModuleDependencies {
     const val LeakCanaryNoOp = "com.squareup.leakcanary:leakcanary-android-no-op:${Versions.Leakcanary}"
 }
 
+// todo split up and put into ModuleDependencies
 enum class AndroidAppUtil(val dep: String): DependencyItem by dep {
     UI("com.tailoredapps.androidutil:util-ui:${Versions.AndroidAppUtil}"),
     Async("com.tailoredapps.androidutil:util-async:${Versions.AndroidAppUtil}"),
@@ -56,6 +57,7 @@ enum class AndroidAppUtil(val dep: String): DependencyItem by dep {
     override fun toString() = dep
 }
 
+// todo split up and put into ModuleDependencies
 enum class UI(val dep: String) : DependencyItem by dep {
     AppCompat("androidx.appcompat:appcompat:${Versions.AndroidX}"),
     Fragment("androidx.fragment:fragment:${Versions.AndroidX}"),
@@ -68,6 +70,7 @@ enum class UI(val dep: String) : DependencyItem by dep {
     override fun toString() = dep
 }
 
+// todo split up and put into ModuleDependencies
 enum class Lifecycle(val dep: String) : DependencyItem by dep {
     Extensions("androidx.lifecycle:lifecycle-extensions:${Versions.Lifecycle}"),
     Compiler("androidx.lifecycle:lifecycle-compiler:${Versions.Lifecycle}");
@@ -75,6 +78,7 @@ enum class Lifecycle(val dep: String) : DependencyItem by dep {
     override fun toString() = dep
 }
 
+// todo split up and put into ModuleDependencies
 enum class Koin(val dep: String) : DependencyItem by dep {
     Core("org.koin:koin-core:${Versions.Koin}"),
     Android("org.koin:koin-android:${Versions.Koin}"),
@@ -84,7 +88,7 @@ enum class Koin(val dep: String) : DependencyItem by dep {
     override fun toString() = dep
 }
 
-
+// todo split up and put into ModuleDependencies
 enum class Rx(val dep: String) : DependencyItem by dep {
     Java("io.reactivex.rxjava2:rxjava:2.2.10"),
     Kotlin("io.reactivex.rxjava2:rxkotlin:2.3.0"),
@@ -94,7 +98,7 @@ enum class Rx(val dep: String) : DependencyItem by dep {
     override fun toString() = dep
 }
 
-
+// todo split up and put into ModuleDependencies
 enum class Networking(val dep: String) : DependencyItem by dep {
     Retrofit("com.squareup.retrofit2:retrofit:${Versions.Retrofit}"),
     RetrofitGsonConverter("com.squareup.retrofit2:converter-gson:${Versions.Retrofit}"),
@@ -105,6 +109,7 @@ enum class Networking(val dep: String) : DependencyItem by dep {
     override fun toString() = dep
 }
 
+// todo split up and put into ModuleDependencies
 enum class RxBinding(val dep: String) : DependencyItem by dep {
     Binding("com.jakewharton.rxbinding3:rxbinding:${Versions.RxBinding}"),
     Core("com.jakewharton.rxbinding3:rxbinding-core:${Versions.RxBinding}"),
@@ -118,6 +123,7 @@ enum class RxBinding(val dep: String) : DependencyItem by dep {
     override fun toString() = dep
 }
 
+// todo split up and put into ModuleDependencies
 enum class Glide(val dep: String) : DependencyItem by dep {
     Core("com.github.bumptech.glide:glide:${Versions.Glide}"),
     Compiler("com.github.bumptech.glide:compiler:${Versions.Glide}");
@@ -125,7 +131,7 @@ enum class Glide(val dep: String) : DependencyItem by dep {
     override fun toString() = dep
 }
 
-enum class Tests(val dep: String): DependencyItem by dep {
+enum class Tests(private val dependency: String): DependencyItem by dependency {
     Junit("junit:junit:4.12"),
     Mockito("org.mockito:mockito-core:${Versions.Mockito}"),
     MockitoKotlin("com.nhaarman:mockito-kotlin-kt1.1:1.5.0"),
@@ -138,10 +144,10 @@ enum class Tests(val dep: String): DependencyItem by dep {
     Kluent("org.amshove.kluent:kluent:1.51"),
     KoinTest("org.koin:koin-test:${Versions.Koin}");
 
-    override fun toString() = dep
+    override fun toString() = dependency
 }
 
-enum class AndroidTests(val dep: String): DependencyItem by dep {
+enum class AndroidTests(private val dependency: String): DependencyItem by dependency {
     Core("androidx.test:core:1.0.0"),
     Runner("androidx.test:runner:${Versions.AndroidXTest}"),
     Rules("androidx.test:rules:${Versions.AndroidXTest}"),
@@ -154,5 +160,5 @@ enum class AndroidTests(val dep: String): DependencyItem by dep {
     EspressoWeb("androidx.test.espresso:espresso-web:${Versions.Espresso}"),
     Mockito("org.mockito:mockito-android:${Versions.Mockito}");
 
-    override fun toString() = dep
+    override fun toString() = dependency
 }
