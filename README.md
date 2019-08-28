@@ -6,11 +6,13 @@ This is an Android app template which can be used for new projects. A small exam
 
 Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for several utility classes.
 
+
 ### Table of Contents
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [App structure](#app_structure)
 * [Module/Package structure](#module_structure)
+    * [Predefined Modules](#predefined_structure)
 * [Testing](#testing)
 * [Other](#other)
     * [Dependencies](#dependencies)
@@ -20,6 +22,7 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 * [Recommended Reading](#recommended_reading)
 * [License](#license)
 
+
 ## Technologies <a name="technologies"></a>
 * Kotlin
 * Android Architecture Component Navigation for navigation
@@ -28,12 +31,14 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 * Reaktor (MVI) as architectural pattern
 * (Room for local data storage)
 
+
 ## Setup <a name="setup"></a>
 1. Create your **git** repository and check it out on your machine.
 2. Add `git@github.com:tailoredmedia/AndroidAppTemplate.git` as remote and merge the latest commit into your repository (you most likely need to `--allow-unrelated-histories`).
 3. Run the provided `setup.sh` script to rename files and properties according to project. Afterwards delete `setup.sh` from your repository.
 4. Change `Readme.md` content to something appropriate.
 5. Commit and Push to your **git** repository.
+
 
 ## App structure <a name="app_structure"></a>
 Features should be contained in a separate module. The `core` module should contain shared code, for example *apis* or *databases* that are needed in multiple feature modules. The `app` module contains Android app related (*ui*) code. Depending on the project size 
@@ -46,6 +51,7 @@ When adding a new module, create a library module and add `apply from: rootProje
 
 Remember however: app and module structure should be thought through separately for every project.
 
+
 ## Module/Package structure <a name="module_structure"></a>
 * Model classes should be located in a `model` package.
 * Network related classes and interfaces (e.g. networking api's) are located in a `remote` package.
@@ -54,12 +60,25 @@ Remember however: app and module structure should be thought through separately 
 
 These rules can be applied to either whole *modules* or *packages* depending on if you have feature modules or feature packages. An example for such a module/package structure can be found [here](https://github.com/tailoredmedia/AndroidAppTemplateExample).
 
+
+### Predefined Modules <a name="predefined_structure"></a>
+Despite you and your *brain* being the judge of how the project should best be structured, at least **three** modules should be present:
+
+1. `core`: A base Kotlin or Android module containing reusable (business logic) code; such as Api, Database or Repos.
+2. `uibase`: An Android base module containing reusable UI components.
+3. `app`: An Android module containing the application.
+
+When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `library-module-android.gradle` or `library-module.gradle`.
+
+
 ## Testing <a name="testing"></a>
 * Every module should contain tests for its use cases.
 * `test`: Write unit tests for every `Reactor`. Mockito or PowerMock can be used to mock objects and verify correct behaviour. Add the `RxSchedulersOverrideRule` to prevent errors with RxJava.
 * `androidTest`: Write UI tests for common actions in your app. Use JUnit 4 Tests with Espresso. Some helper methods are available in EspressoUtils.
 
+
 ## Other <a name="other"></a>
+
 
 ### Dependencies <a name="dependencies"></a>
 
@@ -77,6 +96,7 @@ To conform to the rules configure AndroidStudio accordingly: [RULES](https://git
 
 ### fastlane <a name="fastlane"></a>
 [fastlane](https://fastlane.tools/) is an automation framework that can be used to for deployment and release processes for Android or iOS apps. It is recommended to setup your Project with *fastlane*. 
+
 
 ### Naming Conventions <a name="naming_conventions"></a>
 **Bold** rules should be applied. *Italic* rules are optional.
@@ -100,6 +120,7 @@ To conform to the rules configure AndroidStudio accordingly: [RULES](https://git
 * [Koin](https://insert-koin.io/)
 * [Room](http://www.vogella.com/tutorials/AndroidSQLite/article.html)
 * [Retrofit](http://www.vogella.com/tutorials/Retrofit/article.html)
+
 
 ## License <a name="license"></a>
 ```

@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.local
+package com.tailoredapps.androidapptemplate.core.model
 
-import android.content.Context
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
-
-interface PrefService
-
-class SharedPrefService(context: Context) : PrefService {
-    private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-}
+data class AppBuildInfo(
+    val debug: Boolean,
+    val buildType: String,
+    val flavor: String,
+    val versionCode: Int,
+    val versionName: String,
+    val baseUrl: String
+)

@@ -12,7 +12,7 @@ dependencies {
     /**
      * DI
      */
-    api deps.koin.values()
+    api deps.koin.core
 
     /**
      * Rx

@@ -16,14 +16,24 @@
 
 package com.tailoredapps.androidapptemplate
 
-import com.squareup.leakcanary.LeakCanary
-import com.tailoredapps.androidapptemplate.core.model.BaseUrl
+import android.content.Context
+import android.content.pm.ApplicationInfo
+import com.tailoredapps.androidapptemplate.core.model.AppBuildInfo
 import com.tailoredapps.androidapptemplate.detail.detailModule
-import org.koin.android.ext.koin.androidApplication
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 internal val appModule = module {
-    single { BaseUrl(BuildConfig.BASE_URL) }
+    single { provideAppBuildInfo(context = androidContext()) }
 }
+
+private fun provideAppBuildInfo(context: Context): AppBuildInfo = AppBuildInfo(
+    debug = (context.applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE) != 0,
+    buildType = BuildConfig.BUILD_TYPE,
+    flavor = BuildConfig.FLAVOR,
+    versionCode = BuildConfig.VERSION_CODE,
+    versionName = BuildConfig.VERSION_NAME,
+    baseUrl = BuildConfig.BASE_URL
+)
 
 internal val appModules = listOf(appModule, detailModule)
