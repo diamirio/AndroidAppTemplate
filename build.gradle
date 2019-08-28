@@ -3,27 +3,32 @@ apply plugin: 'com.vanniktech.dependency.graph.generator'
 
 buildscript {
     ext.buildConfig = [
-            targetSdkVersion : 28,
+            targetSdkVersion : 29,
             minSdkVersion    : 21,
-            compileSdkVersion: 28
+            compileSdkVersion: 29
     ]
 
     repositories {
         google()
         jcenter()
+        maven { url "https://plugins.gradle.org/m2/" }
     }
 
     dependencies {
-        classpath BuildScriptDependencies.AndroidBuildTools
-        classpath BuildScriptDependencies.KotlinPlugin
-        classpath BuildScriptDependencies.NavigationSafeArgs
+        classpath Libs.com_android_tools_build_gradle
+        classpath Libs.kotlin_gradle_plugin
 
-        classpath BuildScriptDependencies.DependencyVersions
-        classpath BuildScriptDependencies.EasyLauncher
-        classpath BuildScriptDependencies.GraphViz
-        classpath BuildScriptDependencies.DependencyGraph
+        classpath Libs.navigation_safe_args_gradle_plugin
+
+        classpath Libs.easylauncher
+        classpath Libs.graphviz_java
+        classpath Libs.gradle_dependency_graph_generator_plugin
+
+        classpath Libs.buildsrcversions
     }
 }
+
+apply plugin: "de.fayard.buildSrcVersions"
 
 allprojects {
     apply from: rootProject.file("ktlint.gradle")

@@ -1,22 +1,26 @@
 apply from: rootProject.file("library-module.gradle")
+apply from: rootProject.file("test-dependencies.gradle")
 
 dependencies {
-    api ModuleDependencies.KotlinStd
+    api Libs.kotlin_stdlib_jdk7
 
-    implementation AndroidAppUtil.Network
-    api AndroidAppUtil.Optional
+    implementation Libs.util_network
+    api Libs.util_async
+    api Libs.util_optional
 
-    api Koin.Core
+    api Libs.koin_core
 
-    api Rx.Java
-    api Rx.Kotlin
-    api Rx.Relay
+    api Libs.rxjava
+    api Libs.rxkotlin
+    api Libs.rxrelay
 
-    implementation Networking.values()
+    implementation Libs.retrofit
+    implementation Libs.converter_gson
+    implementation Libs.adapter_rxjava2
+    implementation Libs.okhttp
+    implementation Libs.logging_interceptor
 
-    api ModuleDependencies.Gson
-    api ModuleDependencies.Timber
-    api ModuleDependencies.Threeten
-
-    testImplementation Tests.values()
+    api Libs.gson
+    api Libs.timber
+    api Libs.threetenabp
 }

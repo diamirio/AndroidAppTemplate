@@ -80,11 +80,11 @@ Despite you and your *brain* being the judge of how the project should best be s
 
 ### Dependencies <a name="dependencies"></a>
 
-**All** dependencies should be located in the `Dependencies.kt` file in the `buildSrc` folder. To implement them in your module use `implementation ModuleDependencies.XXX`,  `implementation XXX.YYY` for a dependency contained in a dependency group or `implementation XXX.values()` for all dependencies from a group.
+**All** dependencies are located in the `Libs.kt` file in the `buildSrc` folder. To implement them use `implementation Libs.XXX`.
 
-Checking whether project dependencies are ready to be updated, use `./gradlew dependencyUpdates`. 
+Checking whether dependencies are ready to be updated, use `./gradlew buildSrcUpdates`. Afterwards the newer version is added as comments to the `Versions.kt` file. Look [here](https://github.com/jmfayard/buildSrcVersions) for the `buildSrcVersions` gradle plugin that is used for that.
 
-To generate the current dependency graph, use `./gradlew generateDependencyGraph` (`../build/reports/dependency-graph/`).
+To generate the current dependency graph, use `./gradlew generateDependencyGraph` (afterwards located in `../build/reports/dependency-graph/`).
 
 
 ### ktlint <a name="ktlint"></a>

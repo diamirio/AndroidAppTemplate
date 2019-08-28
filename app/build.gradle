@@ -96,19 +96,17 @@ androidExtensions {
     experimental = true
 }
 
+apply from: rootProject.file("test-dependencies.gradle")
+
 dependencies {
     implementation project(path: ':core')
     implementation project(path: ':uibase')
 
-    implementation AndroidAppUtil.values()
-    implementation Lifecycle.Extensions
-    kapt Lifecycle.Compiler
+    implementation Libs.lifecycle_extensions
+    kapt Libs.lifecycle_compiler
 
-    implementation Glide.Core
-    kapt Glide.Compiler
-
-    testImplementation Tests.values()
-    androidTestImplementation AndroidTests.values()
+    implementation Libs.glide
+    kapt Libs.com_github_bumptech_glide_compiler
 }
 
 
