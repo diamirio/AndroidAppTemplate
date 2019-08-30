@@ -18,7 +18,7 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
     * [Dependencies](#dependencies)
     * [ktlint](#ktlint)
     * [fastlane](#fastlane)
-    * [Naming Conventions](#naming_conventions)
+    * [Resource Naming Conventions](#resource_naming_conventions)
 * [Recommended Reading](#recommended_reading)
 * [License](#license)
 
@@ -99,7 +99,7 @@ To conform to the rules configure AndroidStudio accordingly: [RULES](https://git
 [fastlane](https://fastlane.tools/) is an automation framework that can be used to for deployment and release processes for Android or iOS apps. It is recommended to setup your Project with *fastlane*. 
 
 
-### Naming Conventions <a name="naming_conventions"></a>
+### Resource Naming Conventions <a name="resource_naming_conventions"></a>
 **Bold** rules should be applied. *Italic* rules are optional.
 
 | Component        | Rule             | Example                   |
