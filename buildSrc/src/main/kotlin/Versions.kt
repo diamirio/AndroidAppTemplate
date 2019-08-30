@@ -40,7 +40,7 @@ object Versions {
 
     const val com_github_bumptech_glide: String = "4.9.0"
 
-    const val ktlint: String = "0.31.0"
+    const val ktlint: String = "0.34.2"
 
     const val material: String = "1.0.0"
 
