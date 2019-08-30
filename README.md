@@ -66,7 +66,7 @@ These rules can be applied to either whole *modules* or *packages* depending on 
 Despite you and your *brain* being the judge of how the project should best be structured, at least **three** modules should be present:
 
 1. `core`: A base Kotlin or Android module containing reusable (business logic) code; such as Api, Database or Repos.
-2. `uibase`: An Android base module containing reusable UI components.
+2. `base-ui`: An base Android module containing reusable UI components.
 3. `app`: An Android module containing the application.
 
 When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `library-module-android.gradle` or `library-module.gradle`.

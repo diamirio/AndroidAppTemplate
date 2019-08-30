@@ -110,7 +110,7 @@ dependencies {
     /**
      * UI
      */
-    implementation project(path: ':uibase')
+    implementation project(path: ':base-ui')
 
     implementation deps.ui.values()
     implementation deps.lifecycle.core

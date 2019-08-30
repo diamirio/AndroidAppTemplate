@@ -21,7 +21,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.uibase.BaseActivity
+import com.tailoredapps.androidapptemplate.base.ui.BaseActivity
 import kotlinx.android.synthetic.main.activity_main_appbar.*
 
 class MainActivity : BaseActivity(R.layout.activity_main) {

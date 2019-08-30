@@ -23,8 +23,8 @@ import at.florianschuster.reaktor.android.koin.reactor
 import com.tailoredapps.androidapptemplate.R
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.core.model.Model
-import com.tailoredapps.androidapptemplate.uibase.BaseFragment
-import com.tailoredapps.androidapptemplate.uibase.BaseReactor
+import com.tailoredapps.androidapptemplate.base.ui.BaseFragment
+import com.tailoredapps.androidapptemplate.base.ui.BaseReactor
 
 class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<DetailReactor> {
     override val reactor: DetailReactor by reactor()
