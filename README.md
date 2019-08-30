@@ -16,6 +16,7 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 * [Testing](#testing)
 * [Other](#other)
     * [Dependencies](#dependencies)
+        * [How to add a dependency](#adddependencies)
     * [ktlint](#ktlint)
     * [fastlane](#fastlane)
     * [Naming Conventions](#naming_conventions)
@@ -83,9 +84,22 @@ Despite you and your *brain* being the judge of how the project should best be s
 
 **All** dependencies are located in the `Libs.kt` file in the `buildSrc` folder. To implement them use `implementation Libs.XXX`.
 
-Checking whether dependencies are ready to be updated, use `./gradlew buildSrcUpdates`. Afterwards the newer version is added as comments to the `Versions.kt` file. Look [here](https://github.com/jmfayard/buildSrcVersions) for the `buildSrcVersions` gradle plugin that is used for that.
+Checking whether dependencies are ready to be updated, use `./gradlew buildSrcVersions`. Afterwards the newer version is added as comments to the `Versions.kt` file. Look [here](https://github.com/jmfayard/buildSrcVersions) for the `buildSrcVersions` gradle plugin that is used for that.
 
 To generate the current dependency graph, use `./gradlew generateDependencyGraph` (afterwards located in `../build/reports/dependency-graph/`).
+
+
+#### How to add a Dependency <a name="adddependencies"></a>
+
+If you want to add a new dependency, add it to the module's `build.gradle` as you would normally:
+
+``` groovy
+def room_version = "1.0.0"
+implementation "androidx.room:room-runtime:$room_version"
+```
+
+Afterwards execute `./gradlew buildSrcVersions`. This task then extracts the dependency, adds it to `Libs.kt`, adds its version to `Version.kt` and automatically adds any updates next to the version if there is any.
+**Do not** add your dependency manually to `Libs.kt` - this works but is discouraged.
 
 
 ### ktlint <a name="ktlint"></a>

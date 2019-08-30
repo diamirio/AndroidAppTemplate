@@ -21,10 +21,10 @@ buildscript {
         classpath Libs.navigation_safe_args_gradle_plugin
 
         classpath Libs.easylauncher
-        classpath Libs.graphviz_java
-        classpath Libs.gradle_dependency_graph_generator_plugin
 
         classpath Libs.buildsrcversions
+        classpath Libs.gradle_dependency_graph_generator_plugin
+        classpath Libs.graphviz_java
     }
 }
 
@@ -41,4 +41,8 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+buildSrcVersions {
+    indent = "    "
 }
