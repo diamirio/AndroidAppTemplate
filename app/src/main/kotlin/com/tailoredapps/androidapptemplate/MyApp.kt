@@ -21,7 +21,7 @@ import at.florianschuster.reaktor.Reaktor
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
 import com.tailoredapps.androidapptemplate.core.coreModules
-import com.tailoredapps.androidapptemplate.base.ui.uiBaseModule
+import com.tailoredapps.androidapptemplate.base.ui.baseUIModule
 import io.reactivex.plugins.RxJavaPlugins
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -45,7 +45,7 @@ class MyApp : Application() {
         startKoin {
             androidContext(this@MyApp)
             androidLogger(Level.INFO)
-            modules(coreModules + uiBaseModule + appModules)
+            modules(coreModules + baseUIModule + appModules)
         }
     }
 

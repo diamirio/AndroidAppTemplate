@@ -20,6 +20,6 @@ import com.squareup.leakcanary.LeakCanary
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
-val uiBaseModule = module {
+val baseUIModule = module {
     single { LeakCanary.install(androidApplication()) }
 }
