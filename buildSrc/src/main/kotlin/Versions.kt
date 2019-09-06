@@ -30,11 +30,11 @@ object Versions {
 
     const val androidx_test: String = "1.2.0"
 
-    const val reaktor_android_koin: String = "1.0.17" // available: "1.0.18"
+    const val reaktor_android_koin: String = "1.0.18"
 
     const val easylauncher: String = "1.3.1"
 
-    const val com_android_tools_build_gradle: String = "3.4.1" // available: "3.5.0"
+    const val com_android_tools_build_gradle: String = "3.5.0"
 
     const val lint_gradle: String = "26.4.1" // available: "26.5.0"
 
@@ -48,11 +48,11 @@ object Versions {
 
     const val gson: String = "2.8.5"
 
-    const val com_google_truth_truth: String = "1.0-rc2" // available: "1.0"
+    const val com_google_truth_truth: String = "1.0"
 
-    const val com_jakewharton_rxbinding3: String = "3.0.0-alpha2" // available: "3.0.0"
+    const val com_jakewharton_rxbinding3: String = "3.0.0"
 
-    const val rxrelay: String = "2.1.0" // available: "2.1.1"
+    const val rxrelay: String = "2.1.1"
 
     const val threetenabp: String = "1.2.1"
 
@@ -62,23 +62,23 @@ object Versions {
 
     const val com_squareup_leakcanary: String = "1.6.3"
 
-    const val com_squareup_okhttp3: String = "4.0.0" // available: "4.1.0"
+    const val com_squareup_okhttp3: String = "4.1.0"
 
-    const val com_squareup_retrofit2: String = "2.6.0" // available: "2.6.1"
+    const val com_squareup_retrofit2: String = "2.6.1"
 
-    const val com_tailoredapps_androidutil: String = "14" // available: "16"
+    const val com_tailoredapps_androidutil: String = "16"
 
     const val gradle_dependency_graph_generator_plugin: String = "0.5.0"
 
     const val buildsrcversions: String = "0.4.2"
 
-    const val graphviz_java: String = "0.5.3" // available: "0.10.0"
+    const val graphviz_java: String = "0.10.0"
 
     const val mockk: String = "1.9.3"
 
     const val rxandroid: String = "2.1.1"
 
-    const val rxjava: String = "2.2.11" // available: "2.2.12"
+    const val rxjava: String = "2.2.12"
 
     const val rxkotlin: String = "2.4.0"
 
@@ -86,7 +86,7 @@ object Versions {
 
     const val kluent: String = "1.51" // available: "1.53"
 
-    const val org_jetbrains_kotlin: String = "1.3.40" // available: "1.3.50"
+    const val org_jetbrains_kotlin: String = "1.3.50"
 
     const val org_koin: String = "2.0.1"
 
