@@ -1,32 +1,38 @@
 apply from: rootProject.file("library-module-android.gradle")
 
 dependencies {
-    api deps.kotlin
+    implementation Libs.kotlin_stdlib_jdk7
 
-    /**
-     * Ui
-     */
-    api deps.reaktor.values()
-    api deps.ui.values()
-    api deps.navigation.values()
-    api deps.androidutil.viewstate
+    api Libs.reaktor_android_koin
 
-    /**
-     * DI
-     */
-    api deps.koin.values()
+    api Libs.appcompat
+    api Libs.material
+    api Libs.fragment
+    api Libs.constraintlayout
+    api Libs.core_ktx
 
-    /**
-     * Rx
-     */
-    api deps.rxjava.core
-    api deps.rxjava.android
-    api deps.rxjava.relay
-    api deps.rxbinding.values()
+    api Libs.navigation_ui_ktx
+    api Libs.navigation_fragment_ktx
 
-    /**
-     * util
-     */
-    debugApi deps.leakcanary.op
-    releaseApi deps.leakcanary.noop
+    api Libs.util_ui
+    api Libs.util_viewstate
+    api Libs.util_permissions
+
+    api Libs.koin_android
+    api Libs.koin_androidx_scope
+    api Libs.koin_androidx_viewmodel
+
+    api Libs.rxandroid
+
+    api Libs.rxbinding
+    api Libs.rxbinding_core
+    api Libs.rxbinding_appcompat
+    api Libs.rxbinding_drawerlayout
+    api Libs.rxbinding_recyclerview
+    api Libs.rxbinding_material
+    api Libs.rxbinding_swiperefreshlayout
+    api Libs.rxbinding_viewpager
+
+    debugApi Libs.leakcanary_android
+    releaseApi Libs.leakcanary_android_no_op
 }

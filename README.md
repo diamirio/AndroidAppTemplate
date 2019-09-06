@@ -16,6 +16,7 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 * [Testing](#testing)
 * [Other](#other)
     * [Dependencies](#dependencies)
+        * [How to add a dependency](#adddependencies)
     * [ktlint](#ktlint)
     * [fastlane](#fastlane)
     * [Resource Naming Conventions](#resource_naming_conventions)
@@ -66,7 +67,7 @@ These rules can be applied to either whole *modules* or *packages* depending on 
 Despite you and your *brain* being the judge of how the project should best be structured, at least **three** modules should be present:
 
 1. `core`: A base Kotlin or Android module containing reusable (business logic) code; such as Api, Database or Repos.
-2. `base-ui`: An base Android module containing reusable UI components.
+2. `base-ui`: A base Android module containing reusable UI components.
 3. `app`: An Android module containing the application.
 
 When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `library-module-android.gradle` or `library-module.gradle`.
@@ -83,9 +84,30 @@ When creating new modules, you should probably use (apply) one of the predefined
 
 ### Dependencies <a name="dependencies"></a>
 
-**All** dependencies should be located in a `dependencies.gradle`. To implement them in your module use `implementation deps.XXX`.
+**All** dependencies are located in the `Libs.kt` file in the `buildSrc` folder. To implement them use `implementation Libs.XXX`.
 
-Checking whether project dependencies are ready to be updated use `./gradlew dependencyUpdates`. 
+Checking whether dependencies are ready to be updated, use `./gradlew buildSrcVersions`. Afterwards the newer version is added as comments to the `Versions.kt` file. Look [here](https://github.com/jmfayard/buildSrcVersions) for the `buildSrcVersions` gradle plugin that is used for that.
+
+To generate the current dependency graph, use `./gradlew generateDependencyGraph` (afterwards located in `../build/reports/dependency-graph/`).
+
+
+#### How to add a Dependency <a name="adddependencies"></a>
+
+If you want to add a new dependency, add it to the module's `build.gradle` as you would normally:
+
+``` groovy
+def room_version = "1.0.0"
+implementation "androidx.room:room-runtime:$room_version"
+```
+
+Afterwards execute `./gradlew buildSrcVersions`. This task then extracts the dependency, adds it to `Libs.kt`, adds its version to `Version.kt` and automatically adds any updates next to the version if there is any.
+**Do not** add your dependency manually to `Libs.kt` - this works but is discouraged.
+
+After the plugin has added your dependency to the `Libs.kt` file, replace the lines in your `build.gradle`:
+
+``` groovy
+implementation Libs.room_runtime
+```
 
 ### ktlint <a name="ktlint"></a>
 [ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is recommended to keep the code base clean and readable. Use 
