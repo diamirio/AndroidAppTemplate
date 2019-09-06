@@ -1,5 +1,4 @@
 apply from: rootProject.file("library-module.gradle")
-apply from: rootProject.file("test-dependencies.gradle")
 
 dependencies {
     api Libs.kotlin_stdlib_jdk7

@@ -100,11 +100,9 @@ androidExtensions {
     experimental = true
 }
 
-apply from: rootProject.file("test-dependencies.gradle")
-
 dependencies {
     implementation project(path: ':core')
-    implementation project(path: ':uibase')
+    implementation project(path: ':base-ui')
 
     implementation Libs.lifecycle_extensions
     kapt Libs.lifecycle_compiler
