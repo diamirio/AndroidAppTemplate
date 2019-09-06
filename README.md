@@ -101,6 +101,11 @@ implementation "androidx.room:room-runtime:$room_version"
 Afterwards execute `./gradlew buildSrcVersions`. This task then extracts the dependency, adds it to `Libs.kt`, adds its version to `Version.kt` and automatically adds any updates next to the version if there is any.
 **Do not** add your dependency manually to `Libs.kt` - this works but is discouraged.
 
+After the plugin has added your dependency to the `Libs.kt` file, replace the lines in your `build.gradle`:
+
+``` groovy
+implementation Libs.room_runtime
+```
 
 ### ktlint <a name="ktlint"></a>
 [ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is recommended to keep the code base clean and readable. Use 
