@@ -23,7 +23,7 @@ import org.koin.dsl.module
 
 internal val coreModule = module {
     single { GsonBuilder().create() }
-    single { CoreDataRepo(api = get(), prefService = get()) as DataRepo }
+    single<DataRepo> { CoreDataRepo(api = get(), database = get()) }
 }
 
 val coreModules = listOf(coreModule, localModule, remoteModule)
