@@ -100,6 +100,9 @@ androidExtensions {
     experimental = true
 }
 
+apply from: rootProject.file("test-dependencies.gradle")
+apply from: rootProject.file("test-dependencies-android.gradle")
+
 dependencies {
     implementation project(path: ':core')
     implementation project(path: ':base-ui')

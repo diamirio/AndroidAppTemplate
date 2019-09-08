@@ -3,13 +3,14 @@ apply from: rootProject.file("library-module-android.gradle")
 dependencies {
     implementation Libs.kotlin_stdlib_jdk7
 
-    api Libs.reaktor_android_koin
-
     api Libs.appcompat
-    api Libs.material
+    api Libs.activity_ktx
     api Libs.fragment
-    api Libs.constraintlayout
     api Libs.core_ktx
+    api Libs.constraintlayout
+    api Libs.material
+    api Libs.browser
+    api Libs.collection_ktx
 
     api Libs.navigation_ui_ktx
     api Libs.navigation_fragment_ktx
@@ -17,6 +18,8 @@ dependencies {
     api Libs.util_ui
     api Libs.util_viewstate
     api Libs.util_permissions
+
+    api Libs.reaktor_android_koin
 
     api Libs.koin_android
     api Libs.koin_androidx_scope

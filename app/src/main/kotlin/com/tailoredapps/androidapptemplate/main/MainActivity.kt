@@ -35,8 +35,6 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
     override fun onSupportNavigateUp(): Boolean = navController.navigateUp()
 
     override fun onBackPressed() {
-        if (!navController.popBackStack()) {
-            super.onBackPressed()
-        }
+        if (!navController.popBackStack()) super.onBackPressed()
     }
 }

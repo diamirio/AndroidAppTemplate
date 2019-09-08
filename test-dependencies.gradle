@@ -1,0 +1,13 @@
+dependencies {
+    testImplementation Libs.junit_junit
+    testImplementation Libs.mockito_core
+    testImplementation Libs.mockito_kotlin_kt1_1
+    testImplementation Libs.powermock_module_junit4
+    testImplementation Libs.powermock_module_junit4_rule
+    testImplementation Libs.powermock_api_mockito2
+    testImplementation Libs.kotlin_reflect
+    testImplementation Libs.jsr305
+    testImplementation Libs.mockk
+    testImplementation Libs.kluent
+    testImplementation Libs.koin_test
+}

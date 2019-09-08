@@ -8,9 +8,25 @@ import kotlin.String
  */
 object Libs {
     /**
-     * http://developer.android.com/tools/extras/support-library.html
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val activity_ktx: String = "androidx.activity:activity-ktx:" + Versions.activity_ktx
+
+    /**
+     * https://developer.android.com/jetpack/androidx
      */
     const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
+
+    /**
+     * http://developer.android.com/tools/extras/support-library.html
+     */
+    const val browser: String = "androidx.browser:browser:" + Versions.browser
+
+    /**
+     * http://developer.android.com/tools/extras/support-library.html
+     */
+    const val collection_ktx: String = "androidx.collection:collection-ktx:" +
+            Versions.collection_ktx
 
     /**
      * http://tools.android.com
@@ -24,7 +40,7 @@ object Libs {
     const val core_ktx: String = "androidx.core:core-ktx:" + Versions.core_ktx
 
     /**
-     * http://developer.android.com/tools/extras/support-library.html
+     * https://developer.android.com/jetpack/androidx
      */
     const val fragment: String = "androidx.fragment:fragment:" + Versions.fragment
 
@@ -119,6 +135,11 @@ object Libs {
      * https://github.com/akaita/easylauncher-gradle-plugin
      */
     const val easylauncher: String = "com.akaita.android:easylauncher:" + Versions.easylauncher
+
+    /**
+     * https://developer.android.com/studio
+     */
+    const val aapt2: String = "com.android.tools.build:aapt2:" + Versions.aapt2
 
     /**
      * https://developer.android.com/studio
@@ -387,6 +408,13 @@ object Libs {
      * https://kotlinlang.org/
      */
     const val kotlin_reflect: String = "org.jetbrains.kotlin:kotlin-reflect:" +
+            Versions.org_jetbrains_kotlin
+
+    /**
+     * https://kotlinlang.org/
+     */
+    const val kotlin_scripting_compiler_embeddable: String =
+            "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:" +
             Versions.org_jetbrains_kotlin
 
     /**
