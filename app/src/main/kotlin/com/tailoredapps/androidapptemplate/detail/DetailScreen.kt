@@ -26,7 +26,7 @@ import com.tailoredapps.androidapptemplate.core.model.Model
 import com.tailoredapps.androidapptemplate.base.ui.BaseFragment
 import com.tailoredapps.androidapptemplate.base.ui.BaseReactor
 
-class DetailFragment : BaseFragment(R.layout.fragment_detail), ReactorView<DetailReactor> {
+class DetailFragment : BaseFragment(layout = R.layout.fragment_detail), ReactorView<DetailReactor> {
     override val reactor: DetailReactor by reactor()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
