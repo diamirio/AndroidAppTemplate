@@ -36,7 +36,7 @@ object Versions {
 
     const val androidx_test: String = "1.2.0"
 
-    const val reaktor_android_koin: String = "1.0.18"
+    const val reaktor_android_koin: String = "1.1.0"
 
     const val easylauncher: String = "1.3.1"
 
@@ -46,7 +46,7 @@ object Versions {
 
     const val lint_gradle: String = "26.5.0"
 
-    const val com_github_bumptech_glide: String = "4.9.0"
+    const val com_github_bumptech_glide: String = "4.10.0"
 
     const val ktlint: String = "0.34.2"
 
@@ -70,9 +70,9 @@ object Versions {
 
     const val com_squareup_leakcanary: String = "1.6.3"
 
-    const val com_squareup_okhttp3: String = "4.1.1"
+    const val com_squareup_okhttp3: String = "4.2.0"
 
-    const val com_squareup_retrofit2: String = "2.6.1"
+    const val com_squareup_retrofit2: String = "2.6.2"
 
     const val com_tailoredapps_androidutil: String = "16"
 
@@ -80,7 +80,7 @@ object Versions {
 
     const val buildsrcversions: String = "0.4.2"
 
-    const val graphviz_java: String = "0.10.0"
+    const val graphviz_java: String = "0.10.0" // available: "0.11.0"
 
     const val mockk: String = "1.9.3"
 
@@ -92,7 +92,7 @@ object Versions {
 
     const val junit_junit: String = "4.12"
 
-    const val kluent: String = "1.51" // available: "1.54"
+    const val kluent: String = "1.51" // available: "1.55"
 
     const val org_jetbrains_kotlin: String = "1.3.50"
 
