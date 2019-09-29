@@ -27,8 +27,8 @@ import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.android.inject
 
 abstract class BaseActivity(
-    @LayoutRes protected val layout: Int
-) : AppCompatActivity(), ViewState by VS() {
+    @LayoutRes layout: Int
+) : AppCompatActivity(layout), ViewState by VS() {
     private val refWatcher: RefWatcher by inject()
 
     open val disposables = CompositeDisposable()
@@ -37,7 +37,6 @@ abstract class BaseActivity(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         restoreStateFrom(savedInstanceState)
-        setContentView(layout)
     }
 
     @CallSuper
