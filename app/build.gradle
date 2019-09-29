@@ -90,6 +90,10 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
+
+    lintOptions {
+        abortOnError true
+    }
 }
 
 androidExtensions {
@@ -97,10 +101,11 @@ androidExtensions {
 }
 
 apply from: rootProject.file("test-dependencies.gradle")
+apply from: rootProject.file("test-dependencies-android.gradle")
 
 dependencies {
     implementation project(path: ':core')
-    implementation project(path: ':uibase')
+    implementation project(path: ':base-ui')
 
     implementation Libs.lifecycle_extensions
     kapt Libs.lifecycle_compiler

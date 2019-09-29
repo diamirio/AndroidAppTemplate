@@ -21,8 +21,10 @@ import at.florianschuster.reaktor.Reaktor
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
 import com.tailoredapps.androidapptemplate.core.coreModules
-import com.tailoredapps.androidapptemplate.uibase.uiBaseModule
+import com.tailoredapps.androidapptemplate.base.ui.baseUIModule
+import com.tailoredapps.androidapptemplate.core.model.AppBuildInfo
 import io.reactivex.plugins.RxJavaPlugins
+import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -40,13 +42,17 @@ class MyApp : Application() {
         Timber.plant(Timber.DebugTree())
         AndroidThreeTen.init(this)
         RxJavaPlugins.setErrorHandler(Timber::e)
-        Reaktor.handleErrorsWith(handler = Timber::e)
 
         startKoin {
             androidContext(this@MyApp)
             androidLogger(Level.INFO)
-            modules(coreModules + uiBaseModule + appModules)
+            modules(coreModules + baseUIModule + appModules)
         }
+
+        Reaktor.attachErrorHandler(
+            escalateCrashes = get<AppBuildInfo>().debug,
+            handler = Timber::e
+        )
     }
 
     companion object {

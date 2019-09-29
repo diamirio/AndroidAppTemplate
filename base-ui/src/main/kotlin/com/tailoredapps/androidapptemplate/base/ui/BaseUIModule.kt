@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.uibase
+package com.tailoredapps.androidapptemplate.base.ui
 
 import com.squareup.leakcanary.LeakCanary
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
-val uiBaseModule = module {
+val baseUIModule = module {
     single { LeakCanary.install(androidApplication()) }
 }

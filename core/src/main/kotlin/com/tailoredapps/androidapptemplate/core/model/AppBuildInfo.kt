@@ -16,4 +16,11 @@
 
 package com.tailoredapps.androidapptemplate.core.model
 
-data class BaseUrl(val url: String)
+data class AppBuildInfo(
+    val debug: Boolean,
+    val buildType: String,
+    val flavor: String,
+    val versionCode: Int,
+    val versionName: String,
+    val baseUrl: String
+)

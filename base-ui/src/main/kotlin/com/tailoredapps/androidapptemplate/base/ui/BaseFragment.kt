@@ -14,31 +14,27 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.uibase
+package com.tailoredapps.androidapptemplate.base.ui
 
 import android.os.Bundle
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.squareup.leakcanary.RefWatcher
 import com.tailoredapps.androidutil.viewstate.VS
 import com.tailoredapps.androidutil.viewstate.ViewState
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.android.inject
 
-abstract class BaseActivity(
-    @LayoutRes protected val layout: Int
-) : AppCompatActivity(), ViewState by VS() {
+abstract class BaseFragment(
+    @LayoutRes layout: Int
+) : Fragment(layout), ViewState by VS() {
+    protected val navController: NavController get() = findNavController()
     private val refWatcher: RefWatcher by inject()
 
     open val disposables = CompositeDisposable()
-
-    @CallSuper
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        restoreStateFrom(savedInstanceState)
-        setContentView(layout)
-    }
 
     @CallSuper
     override fun onSaveInstanceState(outState: Bundle) {
@@ -47,9 +43,19 @@ abstract class BaseActivity(
     }
 
     @CallSuper
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        restoreStateFrom(savedInstanceState)
+    }
+
+    @CallSuper
+    override fun onDestroyView() {
+        super.onDestroyView()
+        disposables.clear()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
-        disposables.clear()
         refWatcher.watch(this)
     }
 }

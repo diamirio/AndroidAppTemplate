@@ -21,10 +21,10 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.uibase.BaseActivity
+import com.tailoredapps.androidapptemplate.base.ui.BaseActivity
 import kotlinx.android.synthetic.main.activity_main_appbar.*
 
-class MainActivity : BaseActivity(R.layout.activity_main) {
+class MainActivity : BaseActivity(layout = R.layout.activity_main) {
     private val navController: NavController by lazy { findNavController(R.id.navHost) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +35,6 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
     override fun onSupportNavigateUp(): Boolean = navController.navigateUp()
 
     override fun onBackPressed() {
-        if (!navController.popBackStack()) {
-            super.onBackPressed()
-        }
+        if (!navController.popBackStack()) super.onBackPressed()
     }
 }

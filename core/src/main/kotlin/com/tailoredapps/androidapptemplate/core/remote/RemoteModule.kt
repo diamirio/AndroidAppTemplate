@@ -17,8 +17,7 @@
 package com.tailoredapps.androidapptemplate.core.remote
 
 import com.google.gson.Gson
-import com.tailoredapps.androidapptemplate.core.BuildConfig
-import com.tailoredapps.androidapptemplate.core.model.BaseUrl
+import com.tailoredapps.androidapptemplate.core.model.AppBuildInfo
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -29,22 +28,23 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 internal val remoteModule = module {
     factory { HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY } }
-    single { provideOkHttpClient(loggingInterceptor = get()) }
-    single { provideApi<MyApi>(okHttpClient = get(), gson = get(), baseUrl = get()) }
+    single { provideOkHttpClient(loggingInterceptor = get(), appBuildInfo = get()) }
+    single { provideApi<MyApi>(okHttpClient = get(), gson = get(), appBuildInfo = get()) }
 }
 
 private fun provideOkHttpClient(
-    loggingInterceptor: HttpLoggingInterceptor
+    loggingInterceptor: HttpLoggingInterceptor,
+    appBuildInfo: AppBuildInfo
 ) = OkHttpClient().newBuilder().apply {
-    if (BuildConfig.DEBUG) addInterceptor(loggingInterceptor)
+    if (appBuildInfo.debug) addInterceptor(loggingInterceptor)
 }.build()
 
 private inline fun <reified T> provideApi(
     okHttpClient: OkHttpClient,
     gson: Gson,
-    baseUrl: BaseUrl
+    appBuildInfo: AppBuildInfo
 ): T = Retrofit.Builder().apply {
-    baseUrl(baseUrl.url)
+    baseUrl(appBuildInfo.baseUrl)
     client(okHttpClient)
     addConverterFactory(GsonConverterFactory.create(gson))
     addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
