@@ -110,8 +110,7 @@ dependencies {
     implementation Libs.lifecycle_extensions
     kapt Libs.lifecycle_compiler
 
-    implementation Libs.glide
-    kapt Libs.com_github_bumptech_glide_compiler
+    implementation Libs.coil
 }
 
 

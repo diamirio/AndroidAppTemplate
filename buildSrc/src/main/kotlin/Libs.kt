@@ -153,18 +153,6 @@ object Libs {
     const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
 
     /**
-     * https://github.com/bumptech/glide
-     */
-    const val com_github_bumptech_glide_compiler: String = "com.github.bumptech.glide:compiler:" +
-            Versions.com_github_bumptech_glide
-
-    /**
-     * https://github.com/bumptech/glide
-     */
-    const val glide: String = "com.github.bumptech.glide:glide:" +
-            Versions.com_github_bumptech_glide
-
-    /**
      * https://github.com/shyiko/ktlint
      */
     const val ktlint: String = "com.github.shyiko:ktlint:" + Versions.ktlint
@@ -350,6 +338,11 @@ object Libs {
      * https://github.com/nidi3/graphviz-java
      */
     const val graphviz_java: String = "guru.nidi:graphviz-java:" + Versions.graphviz_java
+
+    /**
+     * https://github.com/coil-kt/coil
+     */
+    const val coil: String = "io.coil-kt:coil:" + Versions.coil
 
     /**
      * http://mockk.io

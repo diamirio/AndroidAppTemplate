@@ -46,8 +46,6 @@ object Versions {
 
     const val lint_gradle: String = "26.5.0"
 
-    const val com_github_bumptech_glide: String = "4.10.0"
-
     const val ktlint: String = "0.34.2"
 
     const val material: String = "1.0.0"
@@ -80,7 +78,9 @@ object Versions {
 
     const val buildsrcversions: String = "0.4.2"
 
-    const val graphviz_java: String = "0.10.0" // available: "0.11.0"
+    const val graphviz_java: String = "0.11.0"
+
+    const val coil: String = "0.7.0"
 
     const val mockk: String = "1.9.3"
 
