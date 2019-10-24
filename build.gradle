@@ -25,24 +25,17 @@ buildscript {
         classpath Libs.buildsrcversions
         classpath Libs.gradle_dependency_graph_generator_plugin
         classpath Libs.graphviz_java
+
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.0.0"
     }
 }
 
 apply plugin: "de.fayard.buildSrcVersions"
+apply plugin: "org.jlleitschuh.gradle.ktlint"
 
 allprojects {
-    apply from: rootProject.file("ktlint.gradle")
-
     repositories {
         google()
         jcenter()
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-
-buildSrcVersions {
-    indent = "    "
 }

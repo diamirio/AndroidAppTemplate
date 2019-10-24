@@ -114,15 +114,18 @@ Afterwards execute `./gradlew buildSrcVersions`. This task then extracts the dep
 After the plugin has added your dependency to the `Libs.kt` file, replace the lines in your `build.gradle`:
 
 ``` groovy
-implementation Libs.room_runtime
+implementation(Libs.room_runtime)
 ```
 
 ### ktlint <a name="ktlint"></a>
-[ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is **strongly** recommended to keep the code base clean and readable. Use 
-* `./gradlew ktlint` to lint your code.
-* `./gradlew ktlintFormat` to automatically format all your code according to the linting rules.
+[ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is required to keep the code base clean and readable.
 
-To conform to the rules configure AndroidStudio accordingly: [RULES](https://github.com/pinterest/ktlint#-with-intellij-idea).
+Use `./gradlew ktlintCheck` to lint your code.
+
+To conform to the rules either:
+
+* configure AndroidStudio [accordingly](https://github.com/pinterest/ktlint#-with-intellij-idea).
+* use `./gradlew ktlintApplyToIdea` to overwrite IDE style files. Read more [here](https://github.com/JLLeitschuh/ktlint-gradle).
 
 
 ### fastlane <a name="fastlane"></a>
