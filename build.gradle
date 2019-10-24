@@ -15,18 +15,18 @@ buildscript {
     }
 
     dependencies {
-        classpath Libs.com_android_tools_build_gradle
-        classpath Libs.kotlin_gradle_plugin
+        classpath(Libs.com_android_tools_build_gradle)
+        classpath(Libs.kotlin_gradle_plugin)
 
-        classpath Libs.navigation_safe_args_gradle_plugin
+        classpath(Libs.navigation_safe_args_gradle_plugin)
 
-        classpath Libs.easylauncher
+        classpath(Libs.easylauncher)
 
-        classpath Libs.buildsrcversions
-        classpath Libs.gradle_dependency_graph_generator_plugin
-        classpath Libs.graphviz_java
+        classpath(Libs.buildsrcversions)
+        classpath(Libs.gradle_dependency_graph_generator_plugin)
+        classpath(Libs.graphviz_java)
 
-        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.0.0"
+        classpath(Libs.ktlint_gradle)
     }
 }
 
