@@ -8,15 +8,11 @@ sourceSets {
 }
 
 compileKotlin {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
-    }
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
 }
 
 compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
-    }
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
 }
 
 apply from: rootProject.file("test-dependencies.gradle")

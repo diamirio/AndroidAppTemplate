@@ -1,41 +1,41 @@
 apply from: rootProject.file("library-module-android.gradle")
 
 dependencies {
-    implementation Libs.kotlin_stdlib_jdk7
+    implementation(Libs.kotlin_stdlib)
 
-    api Libs.appcompat
-    api Libs.activity_ktx
-    api Libs.fragment
-    api Libs.core_ktx
-    api Libs.constraintlayout
-    api Libs.material
-    api Libs.browser
-    api Libs.collection_ktx
+    api(Libs.appcompat)
+    api(Libs.activity_ktx)
+    api(Libs.fragment_ktx)
+    api(Libs.core_ktx)
+    api(Libs.constraintlayout)
+    api(Libs.material)
+    api(Libs.browser)
+    api(Libs.collection_ktx)
 
-    api Libs.navigation_ui_ktx
-    api Libs.navigation_fragment_ktx
+    api(Libs.navigation_ui_ktx)
+    api(Libs.navigation_fragment_ktx)
 
-    api Libs.util_ui
-    api Libs.util_viewstate
-    api Libs.util_permissions
+    api(Libs.util_ui)
+    api(Libs.util_viewstate)
+    api(Libs.util_permissions)
 
-    api Libs.reaktor_android_koin
+    api(Libs.reaktor_android_koin)
 
-    api Libs.koin_android
-    api Libs.koin_androidx_scope
-    api Libs.koin_androidx_viewmodel
+    api(Libs.koin_android)
+    api(Libs.koin_androidx_scope)
+    api(Libs.koin_androidx_viewmodel)
 
-    api Libs.rxandroid
+    api(Libs.rxandroid)
 
-    api Libs.rxbinding
-    api Libs.rxbinding_core
-    api Libs.rxbinding_appcompat
-    api Libs.rxbinding_drawerlayout
-    api Libs.rxbinding_recyclerview
-    api Libs.rxbinding_material
-    api Libs.rxbinding_swiperefreshlayout
-    api Libs.rxbinding_viewpager
+    api(Libs.rxbinding)
+    api(Libs.rxbinding_core)
+    api(Libs.rxbinding_appcompat)
+    api(Libs.rxbinding_drawerlayout)
+    api(Libs.rxbinding_recyclerview)
+    api(Libs.rxbinding_material)
+    api(Libs.rxbinding_swiperefreshlayout)
+    api(Libs.rxbinding_viewpager)
 
-    debugApi Libs.leakcanary_android
-    releaseApi Libs.leakcanary_android_no_op
+    debugApi(Libs.leakcanary_android)
+    releaseApi(Libs.leakcanary_android_no_op)
 }
