@@ -20,7 +20,7 @@ object Versions {
 
   const val constraintlayout: String = "1.1.3"
 
-  const val core_ktx: String = "1.1.0"
+  const val core_ktx: String = "1.2.0-beta01"
 
   const val fragment_ktx: String = "1.1.0"
 
@@ -48,7 +48,7 @@ object Versions {
 
   const val com_github_bumptech_glide: String = "4.10.0"
 
-  const val material: String = "1.0.0"
+  const val material: String = "1.2.0-alpha01"
 
   const val gson: String = "2.8.6"
 

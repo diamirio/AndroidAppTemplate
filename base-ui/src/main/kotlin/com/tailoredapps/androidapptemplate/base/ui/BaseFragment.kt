@@ -26,13 +26,12 @@ import com.squareup.leakcanary.RefWatcher
 import com.tailoredapps.androidutil.viewstate.VS
 import com.tailoredapps.androidutil.viewstate.ViewState
 import io.reactivex.disposables.CompositeDisposable
-import org.koin.android.ext.android.inject
+import org.koin.android.ext.android.get
 
 abstract class BaseFragment(
     @LayoutRes layout: Int
 ) : Fragment(layout), ViewState by VS() {
     protected val navController: NavController get() = findNavController()
-    private val refWatcher: RefWatcher by inject()
 
     open val disposables = CompositeDisposable()
 
@@ -56,6 +55,6 @@ abstract class BaseFragment(
 
     override fun onDestroy() {
         super.onDestroy()
-        refWatcher.watch(this)
+        get<RefWatcher>().watch(this)
     }
 }
