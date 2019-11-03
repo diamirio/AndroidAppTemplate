@@ -15,4 +15,4 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
 }
 
-apply from: rootProject.file("test-dependencies.gradle")
+apply from: rootProject.file("gradle/test-dependencies.gradle")

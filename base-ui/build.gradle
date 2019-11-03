@@ -1,4 +1,4 @@
-apply from: rootProject.file("library-module-android.gradle")
+apply from: rootProject.file("gradle/library-module-android.gradle")
 
 dependencies {
     implementation(Libs.kotlin_stdlib)

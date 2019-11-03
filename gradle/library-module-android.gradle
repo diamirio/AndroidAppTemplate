@@ -31,5 +31,5 @@ android {
     }
 }
 
-apply from: rootProject.file("test-dependencies.gradle")
-apply from: rootProject.file("test-dependencies-android.gradle")
+apply from: rootProject.file("gradle/test-dependencies.gradle")
+apply from: rootProject.file("gradle/test-dependencies-android.gradle")

@@ -60,7 +60,7 @@ Despite you and your *brain* being the judge of how the project should best be s
 2. `base-ui`: A base Android module containing reusable UI components.
 3. `app`: An Android module containing the application.
 
-When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `library-module-android.gradle` or `library-module.gradle`.
+When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `gradle/library-module-android.gradle` or `gradle/library-module.gradle`.
 
 
 ## Module/Package structure <a name="module_structure"></a>
@@ -78,12 +78,12 @@ Every module should contain tests for its use cases:
 * `test`: Write unit tests for every `Reactor` or `Service`/`Repository`. Mockito or PowerMock can be used to mock objects and verify correct behaviour. Add the `RxSchedulersOverrideRule` to prevent errors with RxJava.
 * `androidTest`: Write UI tests for common actions in your app. Use JUnit 4 Tests with Espresso. Some helper methods are available in EspressoUtils.
 
-The dependencies for testing are located in the `test-dependencies-android.gradle` and `test-dependencies.gradle` files. If your `module` already implements `library-module-android.gradle` or `library-module.gradle`, then these dependencies are automatically added to the `module`.
+The dependencies for testing are located in the `gradle/test-dependencies-android.gradle` and `gradle/test-dependencies.gradle` files. If your `module` already implements `gradle/library-module-android.gradle` or `gradle/library-module.gradle`, then these dependencies are automatically added to the `module`.
 
 If your module does not implement these standard library gradle files, add the test dependencies with:
 
 ``` groovy
-apply from: rootProject.file("XXX.gradle")
+apply from: rootProject.file("gradle/XXX.gradle")
 ```
 
 
