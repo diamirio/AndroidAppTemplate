@@ -20,11 +20,9 @@ import android.os.Bundle
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import com.squareup.leakcanary.RefWatcher
 import com.tailoredapps.androidutil.viewstate.VS
 import com.tailoredapps.androidutil.viewstate.ViewState
 import io.reactivex.disposables.CompositeDisposable
-import org.koin.android.ext.android.get
 
 abstract class BaseActivity(
     @LayoutRes layout: Int
@@ -48,6 +46,5 @@ abstract class BaseActivity(
     override fun onDestroy() {
         super.onDestroy()
         disposables.clear()
-        get<RefWatcher>().watch(this)
     }
 }

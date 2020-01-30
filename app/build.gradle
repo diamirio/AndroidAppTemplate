@@ -92,6 +92,7 @@ android {
     }
 
     lintOptions {
+        warningsAsErrors true
         abortOnError true
     }
 }
@@ -106,9 +107,6 @@ apply from: rootProject.file("gradle/test-dependencies-android.gradle")
 dependencies {
     implementation(project(path: ":core"))
     implementation(project(path: ":base-ui"))
-
-    implementation(Libs.lifecycle_extensions)
-    kapt(Libs.lifecycle_compiler)
 
     implementation(Libs.glide)
     kapt(Libs.com_github_bumptech_glide_compiler)

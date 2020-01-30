@@ -1,5 +1,4 @@
 apply plugin: 'com.github.ben-manes.versions'
-apply plugin: 'com.vanniktech.dependency.graph.generator'
 
 buildscript {
     ext.buildConfig = [
@@ -17,15 +16,9 @@ buildscript {
     dependencies {
         classpath(Libs.com_android_tools_build_gradle)
         classpath(Libs.kotlin_gradle_plugin)
-
         classpath(Libs.navigation_safe_args_gradle_plugin)
-
         classpath(Libs.easylauncher)
-
         classpath(Libs.de_fayard_refreshversions_gradle_plugin)
-        classpath(Libs.gradle_dependency_graph_generator_plugin)
-        classpath(Libs.graphviz_java)
-
         classpath(Libs.ktlint_gradle)
     }
 }

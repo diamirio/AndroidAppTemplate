@@ -22,15 +22,14 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.squareup.leakcanary.RefWatcher
 import com.tailoredapps.androidutil.viewstate.VS
 import com.tailoredapps.androidutil.viewstate.ViewState
 import io.reactivex.disposables.CompositeDisposable
-import org.koin.android.ext.android.get
 
 abstract class BaseFragment(
     @LayoutRes layout: Int
 ) : Fragment(layout), ViewState by VS() {
+
     protected val navController: NavController get() = findNavController()
 
     open val disposables = CompositeDisposable()
@@ -51,10 +50,5 @@ abstract class BaseFragment(
     override fun onDestroyView() {
         super.onDestroyView()
         disposables.clear()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        get<RefWatcher>().watch(this)
     }
 }

@@ -4,14 +4,15 @@ dependencies {
     implementation(Libs.kotlin_stdlib)
 
     api(Libs.appcompat)
+    api(Libs.core_ktx)
     api(Libs.activity_ktx)
     api(Libs.fragment_ktx)
-    api(Libs.core_ktx)
     api(Libs.constraintlayout)
     api(Libs.material)
     api(Libs.browser)
-    api(Libs.collection_ktx)
 
+    api(Libs.lifecycle_runtime_ktx)
+    api(Libs.lifecycle_viewmodel_ktx)
     api(Libs.navigation_ui_ktx)
     api(Libs.navigation_fragment_ktx)
 
@@ -26,7 +27,6 @@ dependencies {
     api(Libs.koin_androidx_viewmodel)
 
     api(Libs.rxandroid)
-
     api(Libs.rxbinding)
     api(Libs.rxbinding_core)
     api(Libs.rxbinding_appcompat)
@@ -37,5 +37,5 @@ dependencies {
     api(Libs.rxbinding_viewpager)
 
     debugApi(Libs.leakcanary_android)
-    releaseApi(Libs.leakcanary_android_no_op)
+    releaseApi(Libs.leakcanary_object_watcher_android)
 }

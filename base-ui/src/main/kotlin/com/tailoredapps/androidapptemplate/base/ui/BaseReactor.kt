@@ -18,18 +18,16 @@ package com.tailoredapps.androidapptemplate.base.ui
 
 import androidx.annotation.CallSuper
 import at.florianschuster.reaktor.android.ViewModelReactor
-import com.squareup.leakcanary.RefWatcher
-import org.koin.core.KoinComponent
-import org.koin.core.get
+import leakcanary.AppWatcher
 
 abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
     initialState: State,
     initialAction: Action? = null
-) : ViewModelReactor<Action, Mutation, State>(initialState, initialAction), KoinComponent {
+) : ViewModelReactor<Action, Mutation, State>(initialState, initialAction) {
 
     @CallSuper
     override fun onCleared() {
         super.onCleared()
-        get<RefWatcher>().watch(this)
+        AppWatcher.objectWatcher.watch(this, "BaseReactor.onCleared")
     }
 }

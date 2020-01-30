@@ -19,9 +19,7 @@ package com.tailoredapps.androidapptemplate
 import android.app.Application
 import at.florianschuster.reaktor.Reaktor
 import com.jakewharton.threetenabp.AndroidThreeTen
-import com.squareup.leakcanary.LeakCanary
 import com.tailoredapps.androidapptemplate.core.coreModules
-import com.tailoredapps.androidapptemplate.base.ui.baseUIModule
 import com.tailoredapps.androidapptemplate.core.model.AppBuildInfo
 import io.reactivex.plugins.RxJavaPlugins
 import org.koin.android.ext.android.get
@@ -35,7 +33,6 @@ class MyApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        if (LeakCanary.isInAnalyzerProcess(this)) return
 
         instance = this
 
@@ -46,7 +43,7 @@ class MyApp : Application() {
         startKoin {
             androidContext(this@MyApp)
             androidLogger(Level.INFO)
-            modules(coreModules + baseUIModule + appModules)
+            modules(coreModules + appModules)
         }
 
         Reaktor.attachErrorHandler(

@@ -96,8 +96,6 @@ apply from: rootProject.file("gradle/XXX.gradle")
 
 Checking whether dependencies are ready to be updated, use `./gradlew buildSrcVersions`. Afterwards the newer version is added as comments to the `Versions.kt` file. Look [here](https://github.com/jmfayard/buildSrcVersions) for the `buildSrcVersions` gradle plugin that is used for that.
 
-To generate the current dependency graph, use `./gradlew generateDependencyGraph` (afterwards located in `../build/reports/dependency-graph/`).
-
 
 #### How to add a Dependency <a name="adddependencies"></a>
 

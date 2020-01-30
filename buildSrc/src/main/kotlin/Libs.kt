@@ -115,8 +115,9 @@ object Libs {
     /**
      * http://github.com/square/leakcanary/
      */
-    const val leakcanary_android_no_op: String =
-            "com.squareup.leakcanary:leakcanary-android-no-op:" + Versions.com_squareup_leakcanary
+    const val leakcanary_object_watcher_android: String =
+            "com.squareup.leakcanary:leakcanary-object-watcher-android:" +
+            Versions.com_squareup_leakcanary
 
     /**
      * https://developer.android.com/testing
@@ -134,12 +135,6 @@ object Libs {
      * https://developer.android.com/testing
      */
     const val espresso_intents: String = "androidx.test.espresso:espresso-intents:" +
-            Versions.androidx_test_espresso
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val espresso_web: String = "androidx.test.espresso:espresso-web:" +
             Versions.androidx_test_espresso
 
     /**
@@ -211,6 +206,12 @@ object Libs {
             Versions.org_jetbrains_kotlin
 
     /**
+     * https://kotlinlang.org/
+     */
+    const val kotlin_test: String = "org.jetbrains.kotlin:kotlin-test:" +
+            Versions.org_jetbrains_kotlin
+
+    /**
      * https://developer.android.com/topic/libraries/architecture/index.html
      */
     const val navigation_fragment_ktx: String = "androidx.navigation:navigation-fragment-ktx:" +
@@ -229,15 +230,15 @@ object Libs {
             Versions.androidx_navigation
 
     /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
+     * https://developer.android.com/jetpack/androidx
      */
-    const val lifecycle_compiler: String = "androidx.lifecycle:lifecycle-compiler:" +
+    const val lifecycle_runtime_ktx: String = "androidx.lifecycle:lifecycle-runtime-ktx:" +
             Versions.androidx_lifecycle
 
     /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
+     * https://developer.android.com/jetpack/androidx
      */
-    const val lifecycle_extensions: String = "androidx.lifecycle:lifecycle-extensions:" +
+    const val lifecycle_viewmodel_ktx: String = "androidx.lifecycle:lifecycle-viewmodel-ktx:" +
             Versions.androidx_lifecycle
 
     /**
@@ -283,13 +284,6 @@ object Libs {
      */
     const val junit_junit: String = "junit:junit:" + Versions.junit_junit
 
-    /**
-     * http://github.com/vanniktech/gradle-dependency-graph-generator-plugin/
-     */
-    const val gradle_dependency_graph_generator_plugin: String =
-            "com.vanniktech:gradle-dependency-graph-generator-plugin:" +
-            Versions.gradle_dependency_graph_generator_plugin
-
     const val de_fayard_refreshversions_gradle_plugin: String =
             "de.fayard.refreshVersions:de.fayard.refreshVersions.gradle.plugin:" +
             Versions.de_fayard_refreshversions_gradle_plugin
@@ -305,17 +299,6 @@ object Libs {
      */
     const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:" +
             Versions.constraintlayout
-
-    /**
-     * http://developer.android.com/tools/extras/support-library.html
-     */
-    const val collection_ktx: String = "androidx.collection:collection-ktx:" +
-            Versions.collection_ktx
-
-    /**
-     * https://github.com/nidi3/graphviz-java
-     */
-    const val graphviz_java: String = "guru.nidi:graphviz-java:" + Versions.graphviz_java
 
     const val ktlint_gradle: String = "org.jlleitschuh.gradle:ktlint-gradle:" +
             Versions.ktlint_gradle
@@ -372,13 +355,11 @@ object Libs {
     const val rxkotlin: String = "io.reactivex.rxjava2:rxkotlin:" + Versions.rxkotlin
 
     /**
-     * http://developer.android.com/tools/extras/support-library.html
+     * https://developer.android.com/jetpack/androidx
      */
     const val browser: String = "androidx.browser:browser:" + Versions.browser
 
     const val rxrelay: String = "com.jakewharton.rxrelay2:rxrelay:" + Versions.rxrelay
-
-    const val kluent: String = "org.amshove.kluent:kluent:" + Versions.kluent
 
     /**
      * https://github.com/pinterest/ktlint
@@ -404,11 +385,6 @@ object Libs {
      * http://mockk.io
      */
     const val mockk: String = "io.mockk:mockk:" + Versions.mockk
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val truth: String = "androidx.test.ext:truth:" + Versions.truth
 
     /**
      * https://github.com/google/gson
