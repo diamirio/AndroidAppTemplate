@@ -14,8 +14,6 @@ object Versions {
 
     const val com_jakewharton_rxbinding3: String = "3.1.0"
 
-    const val com_github_bumptech_glide: String = "4.11.0"
-
     const val com_squareup_leakcanary: String = "2.1"
 
     const val androidx_test_espresso: String = "3.2.0"
@@ -81,6 +79,8 @@ object Versions {
     const val aapt2: String = "3.5.3-5435860"
 
     const val mockk: String = "1.9.3"
+
+    const val coil: String = "0.9.2"
 
     const val gson: String = "2.8.6"
 

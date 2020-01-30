@@ -95,18 +95,6 @@ object Libs {
             Versions.com_jakewharton_rxbinding3
 
     /**
-     * https://github.com/bumptech/glide
-     */
-    const val com_github_bumptech_glide_compiler: String = "com.github.bumptech.glide:compiler:" +
-            Versions.com_github_bumptech_glide
-
-    /**
-     * https://github.com/bumptech/glide
-     */
-    const val glide: String = "com.github.bumptech.glide:glide:" +
-            Versions.com_github_bumptech_glide
-
-    /**
      * http://github.com/square/leakcanary/
      */
     const val leakcanary_android: String = "com.squareup.leakcanary:leakcanary-android:" +
@@ -385,6 +373,11 @@ object Libs {
      * http://mockk.io
      */
     const val mockk: String = "io.mockk:mockk:" + Versions.mockk
+
+    /**
+     * https://github.com/coil-kt/coil
+     */
+    const val coil: String = "io.coil-kt:coil:" + Versions.coil
 
     /**
      * https://github.com/google/gson
