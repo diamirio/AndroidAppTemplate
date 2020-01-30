@@ -164,7 +164,7 @@ The goal of these conventions is to reduce the effort needed to read and underst
 
 ## License <a name="license"></a>
 ```
-Copyright 2019 Tailored Media GmbH.
+Copyright 2020 Tailored Media GmbH.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
