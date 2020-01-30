@@ -80,7 +80,7 @@ object Versions {
 
     const val mockk: String = "1.9.3"
 
-    const val coil: String = "0.7.0" // available: "0.9.2"
+    const val coil: String = "0.9.2"
 
     const val gson: String = "2.8.6"
 
