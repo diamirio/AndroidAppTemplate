@@ -10,9 +10,11 @@ import kotlin.String
  * YOU are responsible for updating manually the dependency version.
  */
 object Versions {
-    const val com_tailoredapps_androidutil: String = "16"
+    const val org_jetbrains_kotlinx_kotlinx_coroutines: String = "1.3.3"
 
-    const val com_jakewharton_rxbinding3: String = "3.1.0"
+    const val io_github_reactivecircus_flowbinding: String = "0.9.0"
+
+    const val com_tailoredapps_androidutil: String = "16"
 
     const val com_squareup_leakcanary: String = "2.1"
 
@@ -48,6 +50,8 @@ object Versions {
 
     const val activity_ktx: String = "1.1.0"
 
+    const val control_core: String = "0.2.3"
+
     const val easylauncher: String = "1.3.1"
 
     const val fragment_ktx: String = "1.2.0"
@@ -56,23 +60,17 @@ object Versions {
 
     const val threetenabp: String = "1.2.2"
 
-    const val appcompat: String = "1.1.0"
+    const val viewpager2: String = "1.0.0"
 
-    const val rxandroid: String = "2.1.1"
+    const val appcompat: String = "1.1.0"
 
     const val core_ktx: String = "1.2.0-beta01"
 
     const val material: String = "1.2.0-alpha01"
 
-    const val rxkotlin: String = "2.4.0"
-
     const val browser: String = "1.2.0"
 
-    const val rxrelay: String = "2.1.1"
-
     const val ktlint: String = "0.35.0" // available: "0.36.0"
-
-    const val rxjava: String = "2.2.17"
 
     const val timber: String = "4.7.1"
 

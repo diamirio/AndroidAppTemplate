@@ -17,17 +17,16 @@
 package com.tailoredapps.androidapptemplate.base.ui
 
 import androidx.annotation.CallSuper
-import at.florianschuster.reaktor.android.ViewModelReactor
+import androidx.lifecycle.ViewModel
+import at.florianschuster.control.ControllerDelegate
 import leakcanary.AppWatcher
 
-abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
-    initialState: State,
-    initialAction: Action? = null
-) : ViewModelReactor<Action, Mutation, State>(initialState, initialAction) {
+abstract class DelegateViewModel<Action, State> : ViewModel(), ControllerDelegate<Action, State> {
 
     @CallSuper
     override fun onCleared() {
         super.onCleared()
-        AppWatcher.objectWatcher.watch(this, "BaseReactor.onCleared")
+        controller.cancel()
+        AppWatcher.objectWatcher.watch(this, "${this::class.java.simpleName}.onCleared")
     }
 }

@@ -17,12 +17,9 @@
 package com.tailoredapps.androidapptemplate
 
 import android.app.Application
-import at.florianschuster.reaktor.Reaktor
+import at.florianschuster.control.ControlLogConfiguration
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.tailoredapps.androidapptemplate.core.coreModules
-import com.tailoredapps.androidapptemplate.core.model.AppBuildInfo
-import io.reactivex.plugins.RxJavaPlugins
-import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -34,11 +31,9 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        instance = this
-
         Timber.plant(Timber.DebugTree())
+
         AndroidThreeTen.init(this)
-        RxJavaPlugins.setErrorHandler(Timber::e)
 
         startKoin {
             androidContext(this@MyApp)
@@ -46,14 +41,11 @@ class MyApp : Application() {
             modules(coreModules + appModules)
         }
 
-        Reaktor.attachErrorHandler(
-            escalateCrashes = get<AppBuildInfo>().debug,
-            handler = Timber::e
+        ControlLogConfiguration.default = ControlLogConfiguration.Custom(
+            tag = getString(R.string.app_name),
+            elaborate = true,
+            operations = { Timber.v(it) },
+            errors = Timber::e
         )
-    }
-
-    companion object {
-        lateinit var instance: MyApp
-            private set
     }
 }

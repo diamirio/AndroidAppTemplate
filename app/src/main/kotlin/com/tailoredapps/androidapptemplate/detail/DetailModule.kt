@@ -16,9 +16,9 @@
 
 package com.tailoredapps.androidapptemplate.detail
 
-import at.florianschuster.reaktor.android.koin.reactor
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 internal val detailModule = module {
-    reactor { DetailReactor(dataRepo = get()) }
+    viewModel { DetailViewModel(dataRepo = get()) }
 }
