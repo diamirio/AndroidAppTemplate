@@ -25,8 +25,8 @@ import org.junit.runners.model.Statement
 
 class RxSchedulersOverrideRule : TestRule {
 
-    override fun apply(base: Statement, description: Description): Statement {
-        return object : Statement() {
+    override fun apply(base: Statement, description: Description): Statement =
+        object : Statement() {
             @Throws(Throwable::class)
             override fun evaluate() {
                 val schedulerFunction = Function<Scheduler, Scheduler> { Schedulers.trampoline() }
@@ -45,5 +45,4 @@ class RxSchedulersOverrideRule : TestRule {
                 RxJavaPlugins.reset()
             }
         }
-    }
 }

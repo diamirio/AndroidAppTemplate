@@ -92,6 +92,7 @@ android {
     }
 
     lintOptions {
+        warningsAsErrors true
         abortOnError true
     }
 }
@@ -100,17 +101,14 @@ androidExtensions {
     experimental = true
 }
 
-apply from: rootProject.file("test-dependencies.gradle")
-apply from: rootProject.file("test-dependencies-android.gradle")
+apply from: rootProject.file("gradle/test-dependencies.gradle")
+apply from: rootProject.file("gradle/test-dependencies-android.gradle")
 
 dependencies {
-    implementation project(path: ':core')
-    implementation project(path: ':base-ui')
+    implementation(project(path: ":core"))
+    implementation(project(path: ":base-ui"))
 
-    implementation Libs.lifecycle_extensions
-    kapt Libs.lifecycle_compiler
-
-    implementation Libs.coil
+    implementation(Libs.coil)
 }
 
 

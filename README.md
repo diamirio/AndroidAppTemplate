@@ -60,7 +60,7 @@ Despite you and your *brain* being the judge of how the project should best be s
 2. `base-ui`: A base Android module containing reusable UI components.
 3. `app`: An Android module containing the application.
 
-When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `library-module-android.gradle` or `library-module.gradle`.
+When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `gradle/library-module-android.gradle` or `gradle/library-module.gradle`.
 
 
 ## Module/Package structure <a name="module_structure"></a>
@@ -78,12 +78,12 @@ Every module should contain tests for its use cases:
 * `test`: Write unit tests for every `Reactor` or `Service`/`Repository`. Mockito or PowerMock can be used to mock objects and verify correct behaviour. Add the `RxSchedulersOverrideRule` to prevent errors with RxJava.
 * `androidTest`: Write UI tests for common actions in your app. Use JUnit 4 Tests with Espresso. Some helper methods are available in EspressoUtils.
 
-The dependencies for testing are located in the `test-dependencies-android.gradle` and `test-dependencies.gradle` files. If your `module` already implements `library-module-android.gradle` or `library-module.gradle`, then these dependencies are automatically added to the `module`.
+The dependencies for testing are located in the `gradle/test-dependencies-android.gradle` and `gradle/test-dependencies.gradle` files. If your `module` already implements `gradle/library-module-android.gradle` or `gradle/library-module.gradle`, then these dependencies are automatically added to the `module`.
 
 If your module does not implement these standard library gradle files, add the test dependencies with:
 
 ``` groovy
-apply from: rootProject.file("XXX.gradle")
+apply from: rootProject.file("gradle/XXX.gradle")
 ```
 
 
@@ -95,8 +95,6 @@ apply from: rootProject.file("XXX.gradle")
 **All** dependencies are located in the `Libs.kt` file in the `buildSrc` folder. To implement them use `implementation Libs.XXX`.
 
 Checking whether dependencies are ready to be updated, use `./gradlew buildSrcVersions`. Afterwards the newer version is added as comments to the `Versions.kt` file. Look [here](https://github.com/jmfayard/buildSrcVersions) for the `buildSrcVersions` gradle plugin that is used for that.
-
-To generate the current dependency graph, use `./gradlew generateDependencyGraph` (afterwards located in `../build/reports/dependency-graph/`).
 
 
 #### How to add a Dependency <a name="adddependencies"></a>
@@ -114,15 +112,18 @@ Afterwards execute `./gradlew buildSrcVersions`. This task then extracts the dep
 After the plugin has added your dependency to the `Libs.kt` file, replace the lines in your `build.gradle`:
 
 ``` groovy
-implementation Libs.room_runtime
+implementation(Libs.room_runtime)
 ```
 
 ### ktlint <a name="ktlint"></a>
-[ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is **strongly** recommended to keep the code base clean and readable. Use 
-* `./gradlew ktlint` to lint your code.
-* `./gradlew ktlintFormat` to automatically format all your code according to the linting rules.
+[ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is required to keep the code base clean and readable.
 
-To conform to the rules configure AndroidStudio accordingly: [RULES](https://github.com/pinterest/ktlint#-with-intellij-idea).
+Use `./gradlew ktlintCheck` to lint your code.
+
+To conform to the rules either:
+
+* configure AndroidStudio [accordingly](https://github.com/pinterest/ktlint#-with-intellij-idea).
+* use `./gradlew ktlintApplyToIdea` to overwrite IDE style files. Read more [here](https://github.com/JLLeitschuh/ktlint-gradle).
 
 
 ### fastlane <a name="fastlane"></a>

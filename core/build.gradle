@@ -1,25 +1,25 @@
-apply from: rootProject.file("library-module.gradle")
+apply from: rootProject.file("gradle/library-module.gradle")
 
 dependencies {
-    api Libs.kotlin_stdlib_jdk7
+    api(Libs.kotlin_stdlib)
 
-    implementation Libs.util_network
-    api Libs.util_async
-    api Libs.util_optional
+    implementation(Libs.util_network)
+    api(Libs.util_async)
+    api(Libs.util_optional)
 
-    api Libs.koin_core
+    api(Libs.koin_core)
 
-    api Libs.rxjava
-    api Libs.rxkotlin
-    api Libs.rxrelay
+    api(Libs.rxjava)
+    api(Libs.rxkotlin)
+    api(Libs.rxrelay)
 
-    implementation Libs.retrofit
-    implementation Libs.converter_gson
-    implementation Libs.adapter_rxjava2
-    implementation Libs.okhttp
-    implementation Libs.logging_interceptor
+    implementation(Libs.retrofit)
+    implementation(Libs.converter_gson)
+    implementation(Libs.adapter_rxjava2)
+    implementation(Libs.okhttp)
+    implementation(Libs.logging_interceptor)
 
-    api Libs.gson
-    api Libs.timber
-    api Libs.threetenabp
+    api(Libs.gson)
+    api(Libs.timber)
+    api(Libs.threetenabp)
 }

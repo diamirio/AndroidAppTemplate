@@ -1,0 +1,6 @@
+dependencies {
+    testImplementation(Libs.kotlin_test)
+    testImplementation(Libs.junit_junit)
+    testImplementation(Libs.mockk)
+    testImplementation(Libs.koin_test)
+}
