@@ -8,12 +8,9 @@ dependencies {
     api(Libs.kotlinx_coroutines_core)
     api(Libs.threetenabp)
     api(Libs.timber)
-    api(Libs.util_async)
-    api(Libs.util_optional)
 
     implementation(Libs.converter_gson)
     implementation(Libs.logging_interceptor)
     implementation(Libs.okhttp)
     implementation(Libs.retrofit)
-    implementation(Libs.util_network)
 }

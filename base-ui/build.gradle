@@ -18,7 +18,6 @@ dependencies {
     api(Libs.navigation_ui_ktx)
     api(Libs.util_permissions)
     api(Libs.util_ui)
-    api(Libs.util_viewstate)
     api(Libs.viewpager2)
 
     debugApi(Libs.leakcanary_android)

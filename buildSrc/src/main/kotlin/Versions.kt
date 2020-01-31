@@ -42,8 +42,6 @@ object Versions {
 
     const val de_fayard_refreshversions_gradle_plugin: String = "0.7.0" // available: "0.8.6"
 
-    const val reaktor_android_koin: String = "1.1.0"
-
     const val constraintlayout: String = "1.1.3"
 
     const val ktlint_gradle: String = "9.1.1"

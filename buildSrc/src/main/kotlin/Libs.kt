@@ -105,24 +105,6 @@ object Libs {
     /**
      * https://github.com/tailoredmedia/AndroidAppUtil
      */
-    const val util_async: String = "com.tailoredapps.androidutil:util-async:" +
-            Versions.com_tailoredapps_androidutil
-
-    /**
-     * https://github.com/tailoredmedia/AndroidAppUtil
-     */
-    const val util_network: String = "com.tailoredapps.androidutil:util-network:" +
-            Versions.com_tailoredapps_androidutil
-
-    /**
-     * https://github.com/tailoredmedia/AndroidAppUtil
-     */
-    const val util_optional: String = "com.tailoredapps.androidutil:util-optional:" +
-            Versions.com_tailoredapps_androidutil
-
-    /**
-     * https://github.com/tailoredmedia/AndroidAppUtil
-     */
     const val util_permissions: String = "com.tailoredapps.androidutil:util-permissions:" +
             Versions.com_tailoredapps_androidutil
 
@@ -130,12 +112,6 @@ object Libs {
      * https://github.com/tailoredmedia/AndroidAppUtil
      */
     const val util_ui: String = "com.tailoredapps.androidutil:util-ui:" +
-            Versions.com_tailoredapps_androidutil
-
-    /**
-     * https://github.com/tailoredmedia/AndroidAppUtil
-     */
-    const val util_viewstate: String = "com.tailoredapps.androidutil:util-viewstate:" +
             Versions.com_tailoredapps_androidutil
 
     /**
@@ -313,12 +289,6 @@ object Libs {
     const val de_fayard_refreshversions_gradle_plugin: String =
             "de.fayard.refreshVersions:de.fayard.refreshVersions.gradle.plugin:" +
             Versions.de_fayard_refreshversions_gradle_plugin
-
-    /**
-     * https://github.com/floschu/Reaktor
-     */
-    const val reaktor_android_koin: String = "at.florianschuster.reaktor:reaktor-android-koin:" +
-            Versions.reaktor_android_koin
 
     /**
      * http://tools.android.com
