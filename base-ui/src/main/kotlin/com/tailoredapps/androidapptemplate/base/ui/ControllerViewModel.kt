@@ -19,15 +19,21 @@ package com.tailoredapps.androidapptemplate.base.ui
 
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModel
-import at.florianschuster.control.ControllerDelegate
+import at.florianschuster.control.Controller
+import kotlinx.coroutines.flow.Flow
 import leakcanary.AppWatcher
 
-abstract class DelegateViewModel<Action, State> : ViewModel(), ControllerDelegate<Action, State> {
+abstract class ControllerViewModel<Action, State> : ViewModel() {
+
+    abstract val controller: Controller<Action, *, State>
+
+    fun dispatch(action: Action) = controller.dispatch(action)
+    val currentState: State get() = controller.currentState
+    val state: Flow<State> get() = controller.state
 
     @CallSuper
     override fun onCleared() {
         super.onCleared()
-        controller.cancel()
         AppWatcher.objectWatcher.watch(this, "${this::class.java.simpleName}.onCleared")
     }
 }

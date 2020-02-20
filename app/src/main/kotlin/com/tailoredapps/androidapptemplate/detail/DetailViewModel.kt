@@ -17,14 +17,16 @@
 
 package com.tailoredapps.androidapptemplate.detail
 
+import androidx.lifecycle.viewModelScope
 import at.florianschuster.control.Controller
-import com.tailoredapps.androidapptemplate.base.ui.DelegateViewModel
+import at.florianschuster.control.createController
+import com.tailoredapps.androidapptemplate.base.ui.ControllerViewModel
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.core.model.Model
 
 class DetailViewModel(
     private val dataRepo: DataRepo
-) : DelegateViewModel<DetailViewModel.Action, DetailViewModel.State>() {
+) : ControllerViewModel<DetailViewModel.Action, DetailViewModel.State>() {
 
     sealed class Action
 
@@ -35,7 +37,8 @@ class DetailViewModel(
         val logoUrl: String = "https://user-images.githubusercontent.com/2580292/59103107-390a7b80-892e-11e9-9466-774d413697ee.jpg"
     )
 
-    override val controller: Controller<Action, Mutation, State> = Controller(
+    override val controller: Controller<Action, Mutation, State> = viewModelScope.createController(
+        tag = "detail_viewmodel_controller",
         initialState = State()
     )
 }

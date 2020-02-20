@@ -18,7 +18,7 @@
 package com.tailoredapps.androidapptemplate
 
 import android.app.Application
-import at.florianschuster.control.ControlLogConfiguration
+import at.florianschuster.control.ControllerLog
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.tailoredapps.androidapptemplate.core.coreModules
 import org.koin.android.ext.koin.androidContext
@@ -42,11 +42,7 @@ class MyApp : Application() {
             modules(coreModules + appModules)
         }
 
-        ControlLogConfiguration.default = ControlLogConfiguration.Custom(
-            tag = getString(R.string.app_name),
-            elaborate = true,
-            operations = { Timber.v(it) },
-            errors = Timber::e
-        )
+        // delete this if you do not want your logcat spammed
+        ControllerLog.default = ControllerLog.Custom { Timber.v(it) }
     }
 }
