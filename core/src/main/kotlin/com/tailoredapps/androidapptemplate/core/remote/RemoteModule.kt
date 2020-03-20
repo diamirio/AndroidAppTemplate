@@ -1,5 +1,6 @@
 /*
- * Copyright 2019 Florian Schuster.
+ * Copyright 2020 Tailored Media GmbH.
+ * Created by Florian Schuster.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -18,12 +19,10 @@ package com.tailoredapps.androidapptemplate.core.remote
 
 import com.google.gson.Gson
 import com.tailoredapps.androidapptemplate.core.model.AppBuildInfo
-import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 internal val remoteModule = module {
@@ -35,7 +34,7 @@ internal val remoteModule = module {
 private fun provideOkHttpClient(
     loggingInterceptor: HttpLoggingInterceptor,
     appBuildInfo: AppBuildInfo
-) = OkHttpClient().newBuilder().apply {
+): OkHttpClient = OkHttpClient().newBuilder().apply {
     if (appBuildInfo.debug) addInterceptor(loggingInterceptor)
 }.build()
 
@@ -47,5 +46,4 @@ private inline fun <reified T> provideApi(
     baseUrl(appBuildInfo.baseUrl)
     client(okHttpClient)
     addConverterFactory(GsonConverterFactory.create(gson))
-    addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
 }.build().create(T::class.java)

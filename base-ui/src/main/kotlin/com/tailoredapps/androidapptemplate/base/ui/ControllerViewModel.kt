@@ -1,5 +1,6 @@
 /*
- * Copyright 2019 Florian Schuster.
+ * Copyright 2020 Tailored Media GmbH.
+ * Created by Florian Schuster.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -17,17 +18,22 @@
 package com.tailoredapps.androidapptemplate.base.ui
 
 import androidx.annotation.CallSuper
-import at.florianschuster.reaktor.android.ViewModelReactor
+import androidx.lifecycle.ViewModel
+import at.florianschuster.control.Controller
+import kotlinx.coroutines.flow.Flow
 import leakcanary.AppWatcher
 
-abstract class BaseReactor<Action : Any, Mutation : Any, State : Any>(
-    initialState: State,
-    initialAction: Action? = null
-) : ViewModelReactor<Action, Mutation, State>(initialState, initialAction) {
+abstract class ControllerViewModel<Action, State> : ViewModel() {
+
+    abstract val controller: Controller<Action, *, State>
+
+    fun dispatch(action: Action) = controller.dispatch(action)
+    val currentState: State get() = controller.currentState
+    val state: Flow<State> get() = controller.state
 
     @CallSuper
     override fun onCleared() {
         super.onCleared()
-        AppWatcher.objectWatcher.watch(this, "BaseReactor.onCleared")
+        AppWatcher.objectWatcher.watch(this, "${this::class.java.simpleName}.onCleared")
     }
 }

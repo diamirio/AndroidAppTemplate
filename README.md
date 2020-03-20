@@ -1,6 +1,8 @@
 ![Android App Template Logo](https://user-images.githubusercontent.com/2580292/59103107-390a7b80-892e-11e9-9466-774d413697ee.jpg)
 
-![Kotlin](https://img.shields.io/badge/Language-Kotlin-orange.svg) ![Android](https://img.shields.io/badge/Platform-Android-green.svg) ![MVI](https://img.shields.io/badge/Architecture-MVI-red.svg)
+![Android](https://img.shields.io/badge/Platform-Android-green.svg)
+![Kotlin](https://img.shields.io/badge/Language-Kotlin-orange.svg) 
+![Reactive](https://img.shields.io/badge/Reactive-coroutines-blue.svg)
 
 This is an Android app template which can be used for new projects. A small example app is available [here](https://github.com/tailoredmedia/AndroidAppTemplateExample).
 
@@ -75,7 +77,7 @@ These rules can be applied to either whole *modules* or *packages* depending on 
 ## Testing <a name="testing"></a>
 Every module should contain tests for its use cases:
 
-* `test`: Write unit tests for every `Reactor` or `Service`/`Repository`. Mockito or PowerMock can be used to mock objects and verify correct behaviour. Add the `RxSchedulersOverrideRule` to prevent errors with RxJava.
+* `test`: Write unit tests for every `ViewModel` or `Service`/`Repository`. Mockito or PowerMock can be used to mock objects and verify correct behaviour.
 * `androidTest`: Write UI tests for common actions in your app. Use JUnit 4 Tests with Espresso. Some helper methods are available in EspressoUtils.
 
 The dependencies for testing are located in the `gradle/test-dependencies-android.gradle` and `gradle/test-dependencies.gradle` files. If your `module` already implements `gradle/library-module-android.gradle` or `gradle/library-module.gradle`, then these dependencies are automatically added to the `module`.
@@ -151,9 +153,10 @@ The goal of these conventions is to reduce the effort needed to read and underst
 
 ## Recommended Reading <a name="recommended_reading"></a>
 * [Kotlin](https://kotlinlang.org/docs/reference/)
-* [RxJava](http://www.vogella.com/tutorials/RxJava/article.html)
+* [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines/basics.html)
+* [Kotlin Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)
 * [Navigation Architecture Component](https://developer.android.com/topic/libraries/architecture/navigation/)
-* [Reaktor](https://github.com/floschu/Reaktor)
+* [control](https://github.com/floschu/control/)
 * [Koin](https://insert-koin.io/)
 * [Retrofit](http://www.vogella.com/tutorials/Retrofit/article.html)
 * [Room](http://www.vogella.com/tutorials/AndroidSQLite/article.html)
@@ -161,7 +164,7 @@ The goal of these conventions is to reduce the effort needed to read and underst
 
 ## License <a name="license"></a>
 ```
-Copyright 2019 Tailored Media GmbH.
+Copyright 2020 Tailored Media GmbH.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -8,22 +8,99 @@ import kotlin.String
  */
 object Libs {
     /**
-     * https://github.com/tailoredmedia/AndroidAppUtil
+     * https://github.com/Kotlin/kotlinx.coroutines
      */
-    const val util_async: String = "com.tailoredapps.androidutil:util-async:" +
-            Versions.com_tailoredapps_androidutil
+    const val kotlinx_coroutines_core: String = "org.jetbrains.kotlinx:kotlinx-coroutines-core:" +
+            Versions.org_jetbrains_kotlinx_kotlinx_coroutines
 
     /**
-     * https://github.com/tailoredmedia/AndroidAppUtil
+     * https://github.com/Kotlin/kotlinx.coroutines
      */
-    const val util_network: String = "com.tailoredapps.androidutil:util-network:" +
-            Versions.com_tailoredapps_androidutil
+    const val kotlinx_coroutines_test: String = "org.jetbrains.kotlinx:kotlinx-coroutines-test:" +
+            Versions.org_jetbrains_kotlinx_kotlinx_coroutines
 
     /**
-     * https://github.com/tailoredmedia/AndroidAppUtil
+     * https://github.com/reactivecircus/FlowBinding
      */
-    const val util_optional: String = "com.tailoredapps.androidutil:util-optional:" +
-            Versions.com_tailoredapps_androidutil
+    const val flowbinding_preference: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-preference:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_swiperefreshlayout: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_activity: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-activity:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_android: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-android:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_appcompat: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-appcompat:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_core: String = "io.github.reactivecircus.flowbinding:flowbinding-core:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_drawerlayout: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-drawerlayout:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_lifecycle: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-lifecycle:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_material: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-material:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_navigation: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-navigation:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_recyclerview: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_viewpager2: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:" +
+            Versions.io_github_reactivecircus_flowbinding
 
     /**
      * https://github.com/tailoredmedia/AndroidAppUtil
@@ -36,63 +113,6 @@ object Libs {
      */
     const val util_ui: String = "com.tailoredapps.androidutil:util-ui:" +
             Versions.com_tailoredapps_androidutil
-
-    /**
-     * https://github.com/tailoredmedia/AndroidAppUtil
-     */
-    const val util_viewstate: String = "com.tailoredapps.androidutil:util-viewstate:" +
-            Versions.com_tailoredapps_androidutil
-
-    /**
-     * https://github.com/JakeWharton/RxBinding/
-     */
-    const val rxbinding: String = "com.jakewharton.rxbinding3:rxbinding:" +
-            Versions.com_jakewharton_rxbinding3
-
-    /**
-     * https://github.com/JakeWharton/RxBinding/
-     */
-    const val rxbinding_appcompat: String = "com.jakewharton.rxbinding3:rxbinding-appcompat:" +
-            Versions.com_jakewharton_rxbinding3
-
-    /**
-     * https://github.com/JakeWharton/RxBinding/
-     */
-    const val rxbinding_core: String = "com.jakewharton.rxbinding3:rxbinding-core:" +
-            Versions.com_jakewharton_rxbinding3
-
-    /**
-     * https://github.com/JakeWharton/RxBinding/
-     */
-    const val rxbinding_drawerlayout: String =
-            "com.jakewharton.rxbinding3:rxbinding-drawerlayout:" +
-            Versions.com_jakewharton_rxbinding3
-
-    /**
-     * https://github.com/JakeWharton/RxBinding/
-     */
-    const val rxbinding_material: String = "com.jakewharton.rxbinding3:rxbinding-material:" +
-            Versions.com_jakewharton_rxbinding3
-
-    /**
-     * https://github.com/JakeWharton/RxBinding/
-     */
-    const val rxbinding_recyclerview: String =
-            "com.jakewharton.rxbinding3:rxbinding-recyclerview:" +
-            Versions.com_jakewharton_rxbinding3
-
-    /**
-     * https://github.com/JakeWharton/RxBinding/
-     */
-    const val rxbinding_swiperefreshlayout: String =
-            "com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:" +
-            Versions.com_jakewharton_rxbinding3
-
-    /**
-     * https://github.com/JakeWharton/RxBinding/
-     */
-    const val rxbinding_viewpager: String = "com.jakewharton.rxbinding3:rxbinding-viewpager:" +
-            Versions.com_jakewharton_rxbinding3
 
     /**
      * http://github.com/square/leakcanary/
@@ -128,12 +148,6 @@ object Libs {
     /**
      * https://github.com/square/retrofit/
      */
-    const val adapter_rxjava2: String = "com.squareup.retrofit2:adapter-rxjava2:" +
-            Versions.com_squareup_retrofit2
-
-    /**
-     * https://github.com/square/retrofit/
-     */
     const val converter_gson: String = "com.squareup.retrofit2:converter-gson:" +
             Versions.com_squareup_retrofit2
 
@@ -144,13 +158,13 @@ object Libs {
             Versions.com_squareup_retrofit2
 
     /**
-     * https://github.com/square/okhttp
+     * https://square.github.io/okhttp/
      */
     const val logging_interceptor: String = "com.squareup.okhttp3:logging-interceptor:" +
             Versions.com_squareup_okhttp3
 
     /**
-     * https://github.com/square/okhttp
+     * https://square.github.io/okhttp/
      */
     const val okhttp: String = "com.squareup.okhttp3:okhttp:" + Versions.com_squareup_okhttp3
 
@@ -190,7 +204,7 @@ object Libs {
     /**
      * https://kotlinlang.org/
      */
-    const val kotlin_stdlib: String = "org.jetbrains.kotlin:kotlin-stdlib:" +
+    const val kotlin_stdlib_jdk8: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:" +
             Versions.org_jetbrains_kotlin
 
     /**
@@ -277,12 +291,6 @@ object Libs {
             Versions.de_fayard_refreshversions_gradle_plugin
 
     /**
-     * https://github.com/floschu/Reaktor
-     */
-    const val reaktor_android_koin: String = "at.florianschuster.reaktor:reaktor-android-koin:" +
-            Versions.reaktor_android_koin
-
-    /**
      * http://tools.android.com
      */
     const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:" +
@@ -295,6 +303,12 @@ object Libs {
      * https://developer.android.com/jetpack/androidx
      */
     const val activity_ktx: String = "androidx.activity:activity-ktx:" + Versions.activity_ktx
+
+    /**
+     * https://github.com/floschu/control
+     */
+    const val control_core: String = "at.florianschuster.control:control-core:" +
+            Versions.control_core
 
     /**
      * https://github.com/akaita/easylauncher-gradle-plugin
@@ -320,15 +334,15 @@ object Libs {
     /**
      * https://developer.android.com/jetpack/androidx
      */
+    const val viewpager2: String = "androidx.viewpager2:viewpager2:" + Versions.viewpager2
+
+    /**
+     * https://developer.android.com/jetpack/androidx
+     */
     const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
 
     /**
-     * https://github.com/ReactiveX/RxAndroid
-     */
-    const val rxandroid: String = "io.reactivex.rxjava2:rxandroid:" + Versions.rxandroid
-
-    /**
-     * http://developer.android.com/tools/extras/support-library.html
+     * https://developer.android.com/jetpack/androidx
      */
     const val core_ktx: String = "androidx.core:core-ktx:" + Versions.core_ktx
 
@@ -338,26 +352,14 @@ object Libs {
     const val material: String = "com.google.android.material:material:" + Versions.material
 
     /**
-     * https://github.com/ReactiveX/RxKotlin
-     */
-    const val rxkotlin: String = "io.reactivex.rxjava2:rxkotlin:" + Versions.rxkotlin
-
-    /**
      * https://developer.android.com/jetpack/androidx
      */
     const val browser: String = "androidx.browser:browser:" + Versions.browser
-
-    const val rxrelay: String = "com.jakewharton.rxrelay2:rxrelay:" + Versions.rxrelay
 
     /**
      * https://github.com/pinterest/ktlint
      */
     const val ktlint: String = "com.pinterest:ktlint:" + Versions.ktlint
-
-    /**
-     * https://github.com/ReactiveX/RxJava
-     */
-    const val rxjava: String = "io.reactivex.rxjava2:rxjava:" + Versions.rxjava
 
     /**
      * https://github.com/JakeWharton/timber
