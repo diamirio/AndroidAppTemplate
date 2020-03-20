@@ -19,19 +19,20 @@ package com.tailoredapps.androidapptemplate
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.tailoredapps.androidapptemplate.R
-import kotlinx.android.synthetic.main.activity_main_appbar.*
+import com.tailoredapps.androidapptemplate.base.ui.viewBinding
+import com.tailoredapps.androidapptemplate.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
 
-    private val navController: NavController by lazy { findNavController(R.id.navHost) }
+    private val binding by viewBinding(ActivityMainBinding::inflate)
+    private val navController by lazy { findNavController(R.id.navHost) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        toolbar.setupWithNavController(navController)
+        setContentView(binding.root)
+        binding.layoutActivityMainAppBar.toolbar.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean = navController.navigateUp()

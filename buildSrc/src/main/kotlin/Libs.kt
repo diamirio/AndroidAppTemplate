@@ -331,6 +331,8 @@ object Libs {
     const val threetenabp: String = "com.jakewharton.threetenabp:threetenabp:" +
             Versions.threetenabp
 
+    const val viewbinding: String = "androidx.databinding:viewbinding:" + Versions.viewbinding
+
     /**
      * https://developer.android.com/jetpack/androidx
      */

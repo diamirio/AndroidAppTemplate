@@ -11,6 +11,7 @@ import kotlin.String
  */
 object Versions {
     const val org_jetbrains_kotlinx_kotlinx_coroutines: String = "1.3.5"
+             // available: "1.3.5-1.4-M1-release-99"
 
     const val io_github_reactivecircus_flowbinding: String = "0.9.0"
 
@@ -57,6 +58,8 @@ object Versions {
     const val lint_gradle: String = "26.6.1"
 
     const val threetenabp: String = "1.2.2"
+
+    const val viewbinding: String = "3.6.1"
 
     const val viewpager2: String = "1.0.0"
 

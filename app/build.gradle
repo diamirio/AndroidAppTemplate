@@ -95,10 +95,13 @@ android {
         warningsAsErrors true
         abortOnError true
     }
+
+    viewBinding.enabled = true
 }
 
 androidExtensions {
     experimental = true
+    features = ["parcelize"] // unable to disable synthetics, so only allow others
 }
 
 apply from: rootProject.file("gradle/test-dependencies.gradle")
@@ -110,7 +113,6 @@ dependencies {
 
     implementation(Libs.coil)
 }
-
 
 easylauncher {
     iconNames "@mipmap/ic_launcher_foreground"
