@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.main
+package com.tailoredapps.androidapptemplate
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

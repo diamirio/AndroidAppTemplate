@@ -23,13 +23,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import at.florianschuster.control.bind
+import at.florianschuster.control.distinctMap
 import coil.api.load
 import com.tailoredapps.androidapptemplate.R
 import kotlinx.android.synthetic.main.fragment_detail.*
-import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailView : Fragment(R.layout.fragment_detail) {
@@ -41,9 +40,8 @@ class DetailView : Fragment(R.layout.fragment_detail) {
         super.onViewCreated(view, savedInstanceState)
 
         // bind state via viewModel.state
-        viewModel.state.map { it.logoUrl }
-            .distinctUntilChanged()
-            .onEach { url ->
+        viewModel.state.distinctMap(DetailViewModel.State::logoUrl)
+            .bind { url ->
                 ivLogo.load(url) { crossfade(durationMillis = 1000) }
             }
             .launchIn(scope = viewLifecycleOwner.lifecycleScope)

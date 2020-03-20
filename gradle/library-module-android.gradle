@@ -11,6 +11,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
@@ -27,6 +31,7 @@ android {
     }
 
     lintOptions {
+        warningsAsErrors true
         abortOnError true
     }
 }
