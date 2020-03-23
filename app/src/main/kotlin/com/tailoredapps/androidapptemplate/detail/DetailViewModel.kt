@@ -38,7 +38,6 @@ class DetailViewModel(
     )
 
     override val controller: Controller<Action, Mutation, State> = viewModelScope.createController(
-        tag = "detail_viewmodel_controller",
         initialState = State()
     )
 }
