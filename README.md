@@ -30,6 +30,7 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
 * Kotlin
 * AndroidX Jetpack
 * AAC Navigation for in-app navigation
+* ViewBinding
 * Koin for dependency injection
 * Retrofit/OkHttp/Gson for networking
 * Reaktor (MVI) as architectural pattern
@@ -156,6 +157,7 @@ The goal of these conventions is to reduce the effort needed to read and underst
 * [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines/basics.html)
 * [Kotlin Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)
 * [Navigation Architecture Component](https://developer.android.com/topic/libraries/architecture/navigation/)
+* [ViewBinding](https://developer.android.com/topic/libraries/view-binding)
 * [control](https://github.com/floschu/control/)
 * [Koin](https://insert-koin.io/)
 * [Retrofit](http://www.vogella.com/tutorials/Retrofit/article.html)
