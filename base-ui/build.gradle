@@ -25,7 +25,7 @@ dependencies {
     api(Libs.koin_android)
     api(Libs.koin_androidx_scope)
     api(Libs.koin_androidx_viewmodel)
-    api(Libs.koin_fragment)
+    api(Libs.koin_androidx_fragment)
     api(Libs.kotlin_stdlib_jdk8)
     api(Libs.lifecycle_runtime_ktx)
     api(Libs.lifecycle_viewmodel_ktx)
