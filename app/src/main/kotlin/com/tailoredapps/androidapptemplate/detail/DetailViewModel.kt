@@ -28,6 +28,10 @@ class DetailViewModel(
     private val dataRepo: DataRepo
 ) : ControllerViewModel<DetailViewModel.Action, DetailViewModel.State>() {
 
+    init {
+        println("FRAGFACT VIEWMODEL: ${hashCode()}")
+    }
+
     sealed class Action
 
     sealed class Mutation

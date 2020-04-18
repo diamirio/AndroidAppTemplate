@@ -27,11 +27,18 @@ import at.florianschuster.control.distinctMap
 import coil.api.load
 import com.tailoredapps.androidapptemplate.R
 import com.tailoredapps.androidapptemplate.base.ui.viewBinding
+import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.databinding.FragmentDetailBinding
 import kotlinx.coroutines.flow.launchIn
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DetailView : Fragment(R.layout.fragment_detail) {
+class DetailView(
+    /**
+     * This is just to show that injection in fragments work.
+     * Please do not use a repo or service in the view.
+     */
+    private val dataRepo: DataRepo
+) : Fragment(R.layout.fragment_detail) {
 
     private val binding by viewBinding(FragmentDetailBinding::bind)
     private val navController by lazy(::findNavController)

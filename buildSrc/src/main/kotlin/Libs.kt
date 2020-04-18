@@ -29,13 +29,6 @@ object Libs {
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
-    const val flowbinding_swiperefreshlayout: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
     const val flowbinding_activity: String =
             "io.github.reactivecircus.flowbinding:flowbinding-activity:" +
             Versions.io_github_reactivecircus_flowbinding
@@ -93,6 +86,13 @@ object Libs {
      */
     const val flowbinding_recyclerview: String =
             "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_swiperefreshlayout: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:" +
             Versions.io_github_reactivecircus_flowbinding
 
     /**
@@ -259,6 +259,9 @@ object Libs {
     const val androidx_test_runner: String = "androidx.test:runner:" + Versions.androidx_test
 
     const val koin_android: String = "org.koin:koin-android:" + Versions.org_koin
+
+    const val koin_androidx_fragment: String = "org.koin:koin-androidx-fragment:" +
+            Versions.org_koin
 
     const val koin_androidx_scope: String = "org.koin:koin-androidx-scope:" + Versions.org_koin
 
