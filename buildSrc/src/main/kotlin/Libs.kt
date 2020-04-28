@@ -29,13 +29,6 @@ object Libs {
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
-    const val flowbinding_swiperefreshlayout: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
     const val flowbinding_activity: String =
             "io.github.reactivecircus.flowbinding:flowbinding-activity:" +
             Versions.io_github_reactivecircus_flowbinding
@@ -93,6 +86,13 @@ object Libs {
      */
     const val flowbinding_recyclerview: String =
             "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_swiperefreshlayout: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:" +
             Versions.io_github_reactivecircus_flowbinding
 
     /**
@@ -243,6 +243,9 @@ object Libs {
     const val lifecycle_viewmodel_ktx: String = "androidx.lifecycle:lifecycle-viewmodel-ktx:" +
             Versions.androidx_lifecycle
 
+    const val lifecycle_runtime_testing: String = "androidx.lifecycle:lifecycle-runtime-testing:" +
+            Versions.androidx_lifecycle
+
     /**
      * https://developer.android.com/testing
      */
@@ -295,6 +298,12 @@ object Libs {
      */
     const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:" +
             Versions.constraintlayout
+
+    /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val fragment_testing: String = "androidx.fragment:fragment-testing:" +
+            Versions.fragment_testing
 
     const val ktlint_gradle: String = "org.jlleitschuh.gradle:ktlint-gradle:" +
             Versions.ktlint_gradle
