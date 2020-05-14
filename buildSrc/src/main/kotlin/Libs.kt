@@ -263,6 +263,9 @@ object Libs {
 
     const val koin_android: String = "org.koin:koin-android:" + Versions.org_koin
 
+    const val koin_androidx_fragment: String = "org.koin:koin-androidx-fragment:" +
+            Versions.org_koin
+
     const val koin_androidx_scope: String = "org.koin:koin-androidx-scope:" + Versions.org_koin
 
     const val koin_androidx_viewmodel: String = "org.koin:koin-androidx-viewmodel:" +

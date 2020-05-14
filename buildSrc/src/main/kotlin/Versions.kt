@@ -21,21 +21,21 @@ object Versions {
 
     const val androidx_test_espresso: String = "3.2.0"
 
-    const val com_squareup_retrofit2: String = "2.7.2" // available: "2.8.1"
+    const val com_squareup_retrofit2: String =  "2.8.1"
 
-    const val com_squareup_okhttp3: String = "4.4.1" // available: "4.5.0"
+    const val com_squareup_okhttp3: String =  "4.5.0"
 
-    const val org_jetbrains_kotlin: String = "1.3.70" // available: "1.3.71"
+    const val org_jetbrains_kotlin: String = "1.3.71"
 
-    const val androidx_navigation: String = "2.2.1" // available: "2.2.2"
+    const val androidx_navigation: String =  "2.2.2"
 
     const val androidx_lifecycle: String = "2.3.0-alpha01"
 
     const val androidx_test: String = "1.2.0"
 
-    const val org_koin: String = "2.1.4" // available: "2.1.5"
+    const val org_koin: String = "2.1.5"
 
-    const val com_android_tools_build_gradle: String = "3.6.1" // available: "3.6.3"
+    const val com_android_tools_build_gradle: String =  "3.6.3"
 
     const val androidx_test_ext_junit: String = "1.1.1"
 
@@ -51,17 +51,17 @@ object Versions {
 
     const val activity_ktx: String = "1.1.0"
 
-    const val control_core: String = "0.7.1" // available: "0.8.2"
+    const val control_core: String = "0.8.0"
 
     const val easylauncher: String = "1.3.1"
 
-    const val fragment_ktx: String = "1.2.3" // available: "1.2.4"
+    const val fragment_ktx: String =  "1.2.4"
 
-    const val lint_gradle: String = "26.6.1" // available: "26.6.3"
+    const val lint_gradle: String =  "26.6.3"
 
-    const val threetenabp: String = "1.2.2" // available: "1.2.3"
+    const val threetenabp: String =  "1.2.3"
 
-    const val viewbinding: String = "3.6.1" // available: "3.6.3"
+    const val viewbinding: String =  "3.6.3"
 
     const val viewpager2: String = "1.0.0"
 
