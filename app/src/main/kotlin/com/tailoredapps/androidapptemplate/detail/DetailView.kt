@@ -38,7 +38,8 @@ class DetailView : Fragment(R.layout.fragment_detail) {
 
     init {
         launchWhenViewStartedCancelWhenViewStopped {
-            // bind state via viewModel.state
+
+            // bind viewModel.state via viewModel.state
             viewModel.state.distinctMap(DetailViewModel.State::logoUrl)
                 .bind { url ->
                     binding.ivLogo.load(url) { crossfade(durationMillis = 1000) }

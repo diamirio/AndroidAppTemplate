@@ -70,7 +70,13 @@ internal class LaunchWhenStartedCancelWhenStoppedScopeTest {
         scenario.moveToState(Lifecycle.State.STARTED)
         scenario.onFragment { fragment -> assertTrue(assertNotNull(fragment.job).isActive) }
 
-        scenario.onFragment { fragment -> assertEquals(2, fragment.callCounter) }
+        scenario.moveToState(Lifecycle.State.CREATED)
+        scenario.onFragment { fragment -> assertFalse(assertNotNull(fragment.job).isActive) }
+
+        scenario.moveToState(Lifecycle.State.STARTED)
+        scenario.onFragment { fragment -> assertTrue(assertNotNull(fragment.job).isActive) }
+
+        scenario.onFragment { fragment -> assertEquals(3, fragment.callCounter) }
     }
 
     class TestFragment : Fragment() {

@@ -16,6 +16,9 @@ import kotlinx.coroutines.launch
  * [Lifecycle.Event.ON_START]. The [CoroutineScope] provided in [block] is
  * canceled when the state reaches [Lifecycle.Event.ON_STOP].
  *
+ * The [CoroutineScope.coroutineContext] provided in [block], consists of a
+ * [SupervisorJob] and [Dispatchers.Main.immediate].
+ *
  *
  * Example:
  *
