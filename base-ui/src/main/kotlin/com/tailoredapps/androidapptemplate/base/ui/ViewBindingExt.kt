@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.RecyclerView
@@ -59,17 +60,13 @@ fun <B : ViewBinding> Fragment.viewBinding(
     private var binding: B? = null
 
     init {
-        lifecycle.addObserver(object : DefaultLifecycleObserver {
-            override fun onCreate(owner: LifecycleOwner) {
-                viewLifecycleOwnerLiveData.observe(this@viewBinding) { viewLifecycleOwner ->
-                    viewLifecycleOwner.lifecycle.addObserver(object : DefaultLifecycleObserver {
-                        override fun onDestroy(owner: LifecycleOwner) {
-                            binding = null
-                        }
-                    })
+        lifecycle.onCreate {
+            viewLifecycleOwnerLiveData.observe(this@viewBinding) { viewLifecycleOwner ->
+                viewLifecycleOwner.lifecycle.onDestroy {
+                    binding = null
                 }
             }
-        })
+        }
     }
 
     override fun getValue(thisRef: Fragment, property: KProperty<*>): B {
@@ -107,3 +104,17 @@ fun <B : ViewBinding> Fragment.viewBinding(
 inline fun <B : ViewBinding> View.viewBinding(
     crossinline bindingInflater: (LayoutInflater) -> B
 ): B = bindingInflater(LayoutInflater.from(context))
+
+/**
+ * Invokes [block] when [Lifecycle] goes into [Lifecycle.Event.ON_CREATE].
+ */
+private inline fun Lifecycle.onCreate(crossinline block: () -> Unit) {
+    addObserver(LifecycleEventObserver { _, event -> if (event == Lifecycle.Event.ON_CREATE) block() })
+}
+
+/**
+ * Invokes [block] when [Lifecycle] goes into [Lifecycle.Event.ON_DESTROY].
+ */
+private inline fun Lifecycle.onDestroy(crossinline block: () -> Unit) {
+    addObserver(LifecycleEventObserver { _, event -> if (event == Lifecycle.Event.ON_DESTROY) block() })
+}

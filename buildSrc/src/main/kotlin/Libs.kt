@@ -22,13 +22,6 @@ object Libs {
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
-    const val flowbinding_preference: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-preference:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
     const val flowbinding_activity: String =
             "io.github.reactivecircus.flowbinding:flowbinding-activity:" +
             Versions.io_github_reactivecircus_flowbinding
@@ -79,6 +72,13 @@ object Libs {
      */
     const val flowbinding_navigation: String =
             "io.github.reactivecircus.flowbinding:flowbinding-navigation:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_preference: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-preference:" +
             Versions.io_github_reactivecircus_flowbinding
 
     /**
@@ -247,6 +247,17 @@ object Libs {
             Versions.androidx_lifecycle
 
     /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:" + Versions.androidx_fragment
+
+    /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val fragment_testing: String = "androidx.fragment:fragment-testing:" +
+            Versions.androidx_fragment
+
+    /**
      * https://developer.android.com/testing
      */
     const val androidx_test_core: String = "androidx.test:core:" + Versions.androidx_test
@@ -302,12 +313,6 @@ object Libs {
     const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:" +
             Versions.constraintlayout
 
-    /**
-     * https://developer.android.com/jetpack/androidx
-     */
-    const val fragment_testing: String = "androidx.fragment:fragment-testing:" +
-            Versions.fragment_testing
-
     const val ktlint_gradle: String = "org.jlleitschuh.gradle:ktlint-gradle:" +
             Versions.ktlint_gradle
 
@@ -326,11 +331,6 @@ object Libs {
      * https://github.com/akaita/easylauncher-gradle-plugin
      */
     const val easylauncher: String = "com.akaita.android:easylauncher:" + Versions.easylauncher
-
-    /**
-     * https://developer.android.com/jetpack/androidx
-     */
-    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:" + Versions.fragment_ktx
 
     /**
      * https://developer.android.com/studio
