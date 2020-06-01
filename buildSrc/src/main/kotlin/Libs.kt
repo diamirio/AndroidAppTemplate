@@ -22,20 +22,6 @@ object Libs {
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
-    const val flowbinding_activity: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-activity:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
-    const val flowbinding_android: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-android:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
     const val flowbinding_appcompat: String =
             "io.github.reactivecircus.flowbinding:flowbinding-appcompat:" +
             Versions.io_github_reactivecircus_flowbinding
@@ -63,13 +49,6 @@ object Libs {
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
-    const val flowbinding_material: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-material:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
     const val flowbinding_navigation: String =
             "io.github.reactivecircus.flowbinding:flowbinding-navigation:" +
             Versions.io_github_reactivecircus_flowbinding
@@ -84,6 +63,34 @@ object Libs {
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
+    const val flowbinding_viewpager2: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_activity: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-activity:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_android: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-android:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_material: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-material:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
     const val flowbinding_recyclerview: String =
             "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:" +
             Versions.io_github_reactivecircus_flowbinding
@@ -93,13 +100,6 @@ object Libs {
      */
     const val flowbinding_swiperefreshlayout: String =
             "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
-    const val flowbinding_viewpager2: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:" +
             Versions.io_github_reactivecircus_flowbinding
 
     /**
@@ -146,13 +146,13 @@ object Libs {
             Versions.androidx_test_espresso
 
     /**
-     * https://github.com/square/retrofit/
+     * https://github.com/square/retrofit
      */
     const val converter_gson: String = "com.squareup.retrofit2:converter-gson:" +
             Versions.com_squareup_retrofit2
 
     /**
-     * https://github.com/square/retrofit/
+     * https://github.com/square/retrofit
      */
     const val retrofit: String = "com.squareup.retrofit2:retrofit:" +
             Versions.com_squareup_retrofit2
@@ -354,6 +354,11 @@ object Libs {
      * https://developer.android.com/jetpack/androidx
      */
     const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
+
+    /**
+     * https://github.com/floschu/loco
+     */
+    const val loco_core: String = "at.florianschuster.loco:loco-core:" + Versions.loco_core
 
     /**
      * https://developer.android.com/jetpack/androidx

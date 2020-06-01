@@ -22,9 +22,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import at.florianschuster.control.bind
 import at.florianschuster.control.distinctMap
+import at.florianschuster.loco.launchOnViewLifecycleStartCancelOnViewLifecycleStop
 import coil.api.load
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.base.ui.launchWhenViewStartedCancelWhenViewStopped
 import com.tailoredapps.androidapptemplate.base.ui.viewBinding
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.databinding.FragmentDetailBinding
@@ -44,14 +44,14 @@ class DetailView(
     private val viewModel by viewModel<DetailViewModel>()
 
     init {
-        launchWhenViewStartedCancelWhenViewStopped {
+        launchOnViewLifecycleStartCancelOnViewLifecycleStop {
 
             // bind viewModel.state via viewModel.state
             viewModel.state.distinctMap(DetailViewModel.State::logoUrl)
                 .bind { url ->
                     binding.ivLogo.load(url) { crossfade(durationMillis = 1000) }
                 }
-                .launchIn(scope = viewLifecycleOwner.lifecycleScope)
+                .launchIn(scope = this)
 
             // bind actions via viewModel.dispatch
         }

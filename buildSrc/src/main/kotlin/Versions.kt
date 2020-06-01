@@ -10,7 +10,7 @@ import kotlin.String
  * YOU are responsible for updating manually the dependency version.
  */
 object Versions {
-    const val org_jetbrains_kotlinx_kotlinx_coroutines: String = "1.3.6"
+    const val org_jetbrains_kotlinx_kotlinx_coroutines: String = "1.3.7"
 
     const val io_github_reactivecircus_flowbinding: String = "0.11.1"
 
@@ -20,9 +20,9 @@ object Versions {
 
     const val androidx_test_espresso: String = "3.2.0"
 
-    const val com_squareup_retrofit2: String = "2.8.1"
+    const val com_squareup_retrofit2: String = "2.9.0"
 
-    const val com_squareup_okhttp3: String = "4.6.0"
+    const val com_squareup_okhttp3: String = "4.7.2"
 
     const val org_jetbrains_kotlin: String = "1.3.72"
 
@@ -36,7 +36,7 @@ object Versions {
 
     const val org_koin: String = "2.1.5"
 
-    const val com_android_tools_build_gradle: String = "3.6.3"
+    const val com_android_tools_build_gradle: String = "3.6.3" // available: "4.0.0"
 
     const val androidx_test_ext_junit: String = "1.1.1"
 
@@ -50,21 +50,23 @@ object Versions {
 
     const val activity_ktx: String = "1.1.0"
 
-    const val control_core: String = "0.10.0"
+    const val control_core: String = "0.11.0"
 
     const val easylauncher: String = "1.3.1"
 
-    const val lint_gradle: String = "26.6.3"
+    const val lint_gradle: String = "26.6.3" // available: "27.0.0"
 
     const val threetenabp: String = "1.2.4"
 
-    const val viewbinding: String = "3.6.3"
+    const val viewbinding: String = "3.6.3" // available: "4.0.0"
 
     const val viewpager2: String = "1.0.0"
 
     const val appcompat: String = "1.1.0"
 
-    const val core_ktx: String = "1.2.0"
+    const val loco_core: String = "0.0.1"
+
+    const val core_ktx: String = "1.3.0"
 
     const val material: String = "1.2.0-alpha01"
 
@@ -74,18 +76,18 @@ object Versions {
 
     const val timber: String = "4.7.1"
 
-    const val aapt2: String = "3.6.3-6040484"
+    const val aapt2: String = "3.6.3-6040484" // available: "4.0.0-6051327"
 
     const val mockk: String = "1.10.0"
 
-    const val coil: String = "0.10.1"
+    const val coil: String = "0.11.0"
 
     const val gson: String = "2.8.6"
 
     /**
-     * Current version: "6.3"
+     * Current version: "6.4"
      * See issue 19: How to update Gradle itself?
      * https://github.com/jmfayard/buildSrcVersions/issues/19
      */
-    const val gradleLatestVersion: String = "6.4"
+    const val gradleLatestVersion: String = "6.4.1"
 }
