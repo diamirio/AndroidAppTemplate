@@ -29,6 +29,7 @@ dependencies {
     api(Libs.kotlin_stdlib_jdk8)
     api(Libs.lifecycle_runtime_ktx)
     api(Libs.lifecycle_viewmodel_ktx)
+    api(Libs.loco_core)
     api(Libs.material)
     api(Libs.navigation_fragment_ktx)
     api(Libs.navigation_ui_ktx)

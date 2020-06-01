@@ -25,7 +25,7 @@ import leakcanary.AppWatcher
 
 abstract class ControllerViewModel<Action, State> : ViewModel() {
 
-    abstract val controller: Controller<Action, *, State>
+    protected abstract val controller: Controller<Action, *, State>
 
     fun dispatch(action: Action) = controller.dispatch(action)
     val currentState: State get() = controller.currentState
