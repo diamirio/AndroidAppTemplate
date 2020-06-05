@@ -22,27 +22,6 @@ object Libs {
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
-    const val flowbinding_preference: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-preference:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
-    const val flowbinding_activity: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-activity:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
-    const val flowbinding_android: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-android:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
     const val flowbinding_appcompat: String =
             "io.github.reactivecircus.flowbinding:flowbinding-appcompat:" +
             Versions.io_github_reactivecircus_flowbinding
@@ -70,15 +49,43 @@ object Libs {
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
-    const val flowbinding_material: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-material:" +
+    const val flowbinding_navigation: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-navigation:" +
             Versions.io_github_reactivecircus_flowbinding
 
     /**
      * https://github.com/reactivecircus/FlowBinding
      */
-    const val flowbinding_navigation: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-navigation:" +
+    const val flowbinding_preference: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-preference:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_viewpager2: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_activity: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-activity:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_android: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-android:" +
+            Versions.io_github_reactivecircus_flowbinding
+
+    /**
+     * https://github.com/reactivecircus/FlowBinding
+     */
+    const val flowbinding_material: String =
+            "io.github.reactivecircus.flowbinding:flowbinding-material:" +
             Versions.io_github_reactivecircus_flowbinding
 
     /**
@@ -93,13 +100,6 @@ object Libs {
      */
     const val flowbinding_swiperefreshlayout: String =
             "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:" +
-            Versions.io_github_reactivecircus_flowbinding
-
-    /**
-     * https://github.com/reactivecircus/FlowBinding
-     */
-    const val flowbinding_viewpager2: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:" +
             Versions.io_github_reactivecircus_flowbinding
 
     /**
@@ -146,13 +146,13 @@ object Libs {
             Versions.androidx_test_espresso
 
     /**
-     * https://github.com/square/retrofit/
+     * https://github.com/square/retrofit
      */
     const val converter_gson: String = "com.squareup.retrofit2:converter-gson:" +
             Versions.com_squareup_retrofit2
 
     /**
-     * https://github.com/square/retrofit/
+     * https://github.com/square/retrofit
      */
     const val retrofit: String = "com.squareup.retrofit2:retrofit:" +
             Versions.com_squareup_retrofit2
@@ -243,6 +243,20 @@ object Libs {
     const val lifecycle_viewmodel_ktx: String = "androidx.lifecycle:lifecycle-viewmodel-ktx:" +
             Versions.androidx_lifecycle
 
+    const val lifecycle_runtime_testing: String = "androidx.lifecycle:lifecycle-runtime-testing:" +
+            Versions.androidx_lifecycle
+
+    /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:" + Versions.androidx_fragment
+
+    /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val fragment_testing: String = "androidx.fragment:fragment-testing:" +
+            Versions.androidx_fragment
+
     /**
      * https://developer.android.com/testing
      */
@@ -319,11 +333,6 @@ object Libs {
     const val easylauncher: String = "com.akaita.android:easylauncher:" + Versions.easylauncher
 
     /**
-     * https://developer.android.com/jetpack/androidx
-     */
-    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:" + Versions.fragment_ktx
-
-    /**
      * https://developer.android.com/studio
      */
     const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
@@ -345,6 +354,11 @@ object Libs {
      * https://developer.android.com/jetpack/androidx
      */
     const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
+
+    /**
+     * https://github.com/floschu/loco
+     */
+    const val loco_core: String = "at.florianschuster.loco:loco-core:" + Versions.loco_core
 
     /**
      * https://developer.android.com/jetpack/androidx

@@ -25,15 +25,14 @@ import com.tailoredapps.androidapptemplate.base.ui.viewBinding
 import com.tailoredapps.androidapptemplate.databinding.ActivityMainBinding
 import org.koin.androidx.fragment.android.setupKoinFragmentFactory
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
-    private val binding by viewBinding(ActivityMainBinding::inflate)
+    private val binding by viewBinding(ActivityMainBinding::bind)
     private val navController by lazy { findNavController(R.id.navHost) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setupKoinFragmentFactory()
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
         binding.layoutActivityMainAppBar.toolbar.setupWithNavController(navController)
     }
 

@@ -38,8 +38,8 @@ class MyApp : Application() {
         AndroidThreeTen.init(this)
 
         startKoin {
-            androidContext(this@MyApp)
             androidLogger(Level.INFO)
+            androidContext(this@MyApp)
             fragmentFactory()
             modules(coreModules + appModules)
         }
