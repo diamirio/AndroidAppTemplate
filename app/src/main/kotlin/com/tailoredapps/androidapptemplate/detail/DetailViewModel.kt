@@ -37,7 +37,7 @@ class DetailViewModel(
         val logoUrl: String = "https://user-images.githubusercontent.com/2580292/59103107-390a7b80-892e-11e9-9466-774d413697ee.jpg"
     )
 
-    override val controller: Controller<Action, Mutation, State> = viewModelScope.createController(
+    override val controller: Controller<Action, State> = viewModelScope.createController<Action, Mutation, State>(
         initialState = State()
     )
 }

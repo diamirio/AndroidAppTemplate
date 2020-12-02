@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Tailored Media GmbH.
- * Created by Florian Schuster.
+ * Created by Stefan Geyer.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -17,23 +17,11 @@
 
 package com.tailoredapps.androidapptemplate.base.ui
 
-import androidx.annotation.CallSuper
-import androidx.lifecycle.ViewModel
-import at.florianschuster.control.Controller
+import at.florianschuster.control.EffectController
 import kotlinx.coroutines.flow.Flow
-import leakcanary.AppWatcher
 
-abstract class ControllerViewModel<Action, State> : ViewModel() {
+abstract class EffectControllerViewModel<Action, State, Effect>: ControllerViewModel<Action, State>() {
+    abstract override val controller: EffectController<Action, State, Effect>
 
-    protected abstract val controller: Controller<Action, State>
-
-    fun dispatch(action: Action) = controller.dispatch(action)
-    val currentState: State get() = controller.currentState
-    val state: Flow<State> get() = controller.state
-
-    @CallSuper
-    override fun onCleared() {
-        super.onCleared()
-        AppWatcher.objectWatcher.watch(this, "${this::class.java.simpleName}.onCleared")
-    }
+    val effects: Flow<Effect> get() = controller.effects
 }

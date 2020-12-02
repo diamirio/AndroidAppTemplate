@@ -18,12 +18,11 @@
 package com.tailoredapps.androidapptemplate.detail
 
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import at.florianschuster.control.bind
 import at.florianschuster.control.distinctMap
 import at.florianschuster.loco.launchOnViewLifecycleStartCancelOnViewLifecycleStop
-import coil.api.load
+import coil.load
 import com.tailoredapps.androidapptemplate.R
 import com.tailoredapps.androidapptemplate.base.ui.viewBinding
 import com.tailoredapps.androidapptemplate.core.DataRepo

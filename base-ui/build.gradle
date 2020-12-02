@@ -1,6 +1,6 @@
 apply from: rootProject.file("gradle/library-module-android.gradle")
 
-android.viewBinding.enabled = true
+android.buildFeatures.viewBinding = true
 
 dependencies {
     api(Libs.activity_ktx)
