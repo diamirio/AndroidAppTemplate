@@ -36,7 +36,7 @@ object Versions {
 
     const val org_koin: String = "2.2.1"
 
-    const val com_android_tools_build_gradle: String = "4.1.1"
+    const val com_android_tools_build_gradle: String = "4.2.2"
 
     const val androidx_test_ext_junit: String = "1.1.2"
 

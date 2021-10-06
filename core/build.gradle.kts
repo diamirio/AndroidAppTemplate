@@ -1,4 +1,8 @@
-apply from: rootProject.file("gradle/library-module.gradle")
+plugins {
+    id("com.tailored.gradle.kotlin-library")
+}
+
+apply(from = rootProject.file("gradle/test-dependencies.gradle"))
 
 dependencies {
     api(Libs.control_core)

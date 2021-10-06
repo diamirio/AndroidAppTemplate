@@ -1,4 +1,9 @@
-apply from: rootProject.file("gradle/library-module-android.gradle")
+plugins {
+    id("com.tailored.gradle.android-library")
+}
+
+apply(from = rootProject.file("gradle/test-dependencies.gradle"))
+apply(from = rootProject.file("gradle/test-dependencies-android.gradle"))
 
 android.buildFeatures.viewBinding = true
 
