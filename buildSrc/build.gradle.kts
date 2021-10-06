@@ -19,10 +19,10 @@ dependencies {
     compileOnly(gradleApi())
 
     // Android gradle plugin
-    implementation("com.android.tools.build:gradle:4.2.2")
+    implementation("com.android.tools.build:gradle:_")
 
     // Kotlin gradle plugin
-    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.20")
+    compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:_")
 }
 
 tasks {
