@@ -92,7 +92,7 @@ object Libs {
 
     const val util_ui: String = "com.tailoredapps.androidutil:util-ui:_"
 
-    const val de_fayard_buildsrclibs_gradle_plugin: String = "de.fayard.buildSrcLibs:de.fayard.buildSrcLibs.gradle.plugin:_"
+    //const val de_fayard_buildsrclibs_gradle_plugin: String = "de.fayard.buildSrcLibs:de.fayard.buildSrcLibs.gradle.plugin:_"
 
     const val coil: String = "io.coil-kt:coil:_"
 

@@ -6,8 +6,6 @@ import org.gradle.api.plugins.JavaLibraryPlugin
 import org.gradle.api.tasks.SourceSet
 import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.kotlin.dsl.getByType
-import org.jetbrains.kotlin.gradle.plugin.KaptExtension
-import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
 
 class KotlinLibraryModulePlugin : Plugin<Project> {
 
@@ -23,11 +21,11 @@ class KotlinLibraryModulePlugin : Plugin<Project> {
 
     }
 
-    private fun Project.configureSourceSets() {
-        project.extensions.getByType<SourceSetContainer>().apply {
-            getByName(SourceSet.MAIN_SOURCE_SET_NAME).java.srcDir("src/main/kotlin")
-            getByName(SourceSet.TEST_SOURCE_SET_NAME).java.srcDir("src/test/kotlin")
-        }
-    }
+}
 
+private fun Project.configureSourceSets() {
+    project.extensions.getByType<SourceSetContainer>().apply {
+        getByName(SourceSet.MAIN_SOURCE_SET_NAME).java.srcDir("src/main/kotlin")
+        getByName(SourceSet.TEST_SOURCE_SET_NAME).java.srcDir("src/test/kotlin")
+    }
 }
