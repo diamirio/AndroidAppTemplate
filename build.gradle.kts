@@ -3,17 +3,7 @@ plugins {
     id("com.akaita.android.easylauncher") version "1.3.1" apply false
     id("androidx.navigation.safeargs.kotlin") version "2.3.5" apply false
     id("org.jetbrains.kotlin.jvm") version "1.5.30" apply false
-}
-
-// TODO: Remove this and move it to plugins syntax
-buildscript {
-    repositories {
-        maven { url = uri("https://maven.tailored-apps.com/repository/proxy-google/") }
-    }
-
-    dependencies {
-        classpath(Libs.com_android_tools_build_gradle)
-    }
+    id("com.android.application") version "4.2.2" apply false
 }
 
 allprojects {

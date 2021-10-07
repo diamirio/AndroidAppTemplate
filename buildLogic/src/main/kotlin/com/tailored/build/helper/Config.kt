@@ -1,4 +1,4 @@
-package com.tailored.gradle.helper
+package com.tailored.build.helper
 
 object Config {
 

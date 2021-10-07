@@ -1,4 +1,4 @@
-package com.tailored.gradle
+package com.tailored.build
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

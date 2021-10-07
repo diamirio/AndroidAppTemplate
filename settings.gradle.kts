@@ -25,4 +25,5 @@ refreshVersions {
     enableBuildSrcLibs()
 }
 
-include(":app", ":core", ":base-ui")
+includeBuild("buildLogic")
+include("app", "core", "base-ui")

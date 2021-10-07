@@ -1,7 +1,7 @@
-package com.tailored.gradle
+package com.tailored.build
 
-import com.tailored.gradle.helper.androidLibrary
-import com.tailored.gradle.helper.Config
+import com.tailored.build.helper.androidLibrary
+import com.tailored.build.helper.Config
 import com.android.build.gradle.BaseExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
