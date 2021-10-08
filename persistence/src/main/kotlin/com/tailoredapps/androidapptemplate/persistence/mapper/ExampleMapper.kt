@@ -11,6 +11,7 @@ internal fun ExampleEntity.toObject(): Example {
 
 internal fun Example.toEntity(): ExampleEntity {
     return ExampleEntity(
+        key = 0,
         exampleField = exampleField
     )
 }

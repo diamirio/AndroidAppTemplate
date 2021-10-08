@@ -61,6 +61,9 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":remote"))
+    implementation(project(":persistence"))
+    implementation(project(":repository"))
     implementation(project(":base-ui"))
 
     implementation(Libs.coil)

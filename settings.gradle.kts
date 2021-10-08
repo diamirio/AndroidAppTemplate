@@ -24,4 +24,4 @@ refreshVersions {
     enableBuildSrcLibs()
 }
 
-include("app", "core", "base-ui", "remote", "persistence")
+include("app", "core", "base-ui", "remote", "persistence", "repository")

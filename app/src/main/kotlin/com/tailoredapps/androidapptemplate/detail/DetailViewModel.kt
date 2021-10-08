@@ -21,15 +21,15 @@ import androidx.lifecycle.viewModelScope
 import at.florianschuster.control.Controller
 import at.florianschuster.control.createController
 import com.tailoredapps.androidapptemplate.base.ui.ControllerViewModel
-import com.tailoredapps.androidapptemplate.core.DataRepo
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import com.tailoredapps.androidapptemplate.core.model.Example
+import com.tailoredapps.androidapptemplate.repository.Repository
 
 @FlowPreview
 @ExperimentalCoroutinesApi
 class DetailViewModel(
-    private val dataRepo: DataRepo
+    private val repo: Repository
 ) : ControllerViewModel<DetailViewModel.Action, DetailViewModel.State>() {
 
     sealed class Action

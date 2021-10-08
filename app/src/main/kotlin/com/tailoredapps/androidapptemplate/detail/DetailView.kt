@@ -25,8 +25,8 @@ import at.florianschuster.loco.launchOnViewLifecycleStartCancelOnViewLifecycleSt
 import coil.load
 import com.tailoredapps.androidapptemplate.R
 import com.tailoredapps.androidapptemplate.base.ui.viewBinding
-import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.databinding.FragmentDetailBinding
+import com.tailoredapps.androidapptemplate.repository.Repository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.launchIn
@@ -39,7 +39,7 @@ class DetailView(
      * This is just to show that injection in fragments work.
      * Please do not use a repo or service in the view.
      */
-    private val dataRepo: DataRepo
+    private val repo: Repository
 ) : Fragment(R.layout.fragment_detail) {
 
     private val binding by viewBinding(FragmentDetailBinding::bind)
