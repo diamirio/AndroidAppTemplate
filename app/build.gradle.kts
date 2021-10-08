@@ -67,7 +67,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":base-ui"))
 
-    implementation(Libs.coil)
+    implementation(COIL.base)
 }
 
 /*
