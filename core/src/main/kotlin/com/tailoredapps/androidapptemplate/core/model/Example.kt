@@ -15,6 +15,10 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.remote
+package com.tailoredapps.androidapptemplate.core.model
 
-interface MyApi
+data class Example(
+
+    val exampleField: String = ""
+
+)

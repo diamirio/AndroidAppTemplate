@@ -18,8 +18,7 @@
 package com.tailoredapps.androidapptemplate.core
 
 import com.tailoredapps.androidapptemplate.core.local.Database
-import com.tailoredapps.androidapptemplate.core.remote.MyApi
 
 interface DataRepo
 
-class CoreDataRepo(private val api: MyApi, private val database: Database) : DataRepo
+class CoreDataRepo(private val database: Database) : DataRepo

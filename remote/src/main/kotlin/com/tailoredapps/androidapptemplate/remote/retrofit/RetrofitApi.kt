@@ -15,6 +15,15 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.model
+package com.tailoredapps.androidapptemplate.remote.retrofit
 
-data class Model(val any: Any = Unit)
+import com.tailoredapps.androidapptemplate.remote.dtos.ExampleDto
+import retrofit2.http.GET
+
+internal interface RetrofitApi {
+
+    @GET
+    suspend fun getExample(): ExampleDto
+
+}
+
