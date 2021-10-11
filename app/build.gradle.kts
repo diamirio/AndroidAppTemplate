@@ -1,6 +1,7 @@
 plugins {
     id("android-app-convention")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.starter.easylauncher")
 }
 
 android {
@@ -67,4 +68,21 @@ dependencies {
     implementation(project(":base-ui"))
 
     implementation(Libs.coil)
+}
+
+
+easylauncher {
+    defaultFlavorNaming(true)
+
+    //val foregroundIconNamesMethod = javaClass.getMethod("foregroundIconNames", Array<String>::class.java).apply { isAccessible = true }
+    //foregroundIconNamesMethod.invoke(this, arrayOf("@mipmap/ic_launcher_foreground"))
+    //iconNames = arrayOf("@mipmap/ic_launcher_foreground")
+    //foregroundIconNames = arrayOf("@mipmap/ic_launcher_foreground")
+
+    buildTypes {
+        create("debug") {
+            setFilters(customRibbon(label = "debug", ribbonColor = "#47BAF2", labelColor = "#ffffff"))
+        }
+        create("release") {}
+    }
 }

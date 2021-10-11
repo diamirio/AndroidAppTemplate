@@ -1,6 +1,7 @@
 plugins {
     id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
     id("androidx.navigation.safeargs.kotlin") version "2.3.5" apply false
+    id("com.starter.easylauncher") version "4.1.1" apply false
 }
 
 allprojects {
