@@ -1,5 +1,3 @@
-package com.tailored.build.helper
-
 object Config {
 
     const val compileSdkVersion = 30

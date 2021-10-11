@@ -21,6 +21,8 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import com.tailoredapps.androidapptemplate.core.model.AppBuildInfo
 import com.tailoredapps.androidapptemplate.detail.detailModule
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -37,4 +39,6 @@ private fun provideAppBuildInfo(context: Context): AppBuildInfo = AppBuildInfo(
     baseUrl = BuildConfig.BASE_URL
 )
 
+@FlowPreview
+@ExperimentalCoroutinesApi
 internal val appModules = listOf(appModule, detailModule)

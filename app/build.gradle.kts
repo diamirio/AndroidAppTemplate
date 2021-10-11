@@ -1,6 +1,5 @@
 plugins {
-    id("com.tailored.gradle.android-app")
-    id("com.akaita.android.easylauncher")
+    id("android-app-convention")
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -27,7 +26,7 @@ android {
         }
     }
 
-    flavorDimensions.add("backend")
+    flavorDimensions("backend")
     productFlavors {
         create("dev") {
             applicationIdSuffix = ".dev"
@@ -60,28 +59,9 @@ android {
     }
 }
 
-apply(from = rootProject.file("gradle/test-dependencies.gradle"))
-apply(from = rootProject.file("gradle/test-dependencies-android.gradle"))
-
 dependencies {
     implementation(project(":core"))
     implementation(project(":base-ui"))
 
-    implementation(COIL.base)
+    implementation(Libs.coil)
 }
-
-/*
-easylauncher {
-    iconNames "@mipmap/ic_launcher_foreground"
-    foregroundIconNames "@mipmap/ic_launcher_foreground"
-
-    defaultFlavorNaming = true
-
-    buildTypes {
-        debug {
-            filters = customColorRibbonFilter("debug", "#47BAF2", "#ffffff")
-        }
-        release {}
-    }
-}
-*/

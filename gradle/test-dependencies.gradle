@@ -1,7 +1,0 @@
-dependencies {
-    testImplementation(Libs.junit_junit)
-    testImplementation(Libs.koin_test)
-    testImplementation(Libs.kotlin_test)
-    testImplementation(Libs.kotlinx_coroutines_test)
-    testImplementation(Libs.mockk)
-}

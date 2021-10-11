@@ -1,9 +1,6 @@
 plugins {
-    id("com.tailored.gradle.android-library")
+    id("android-library-convention")
 }
-
-apply(from = rootProject.file("gradle/test-dependencies.gradle"))
-apply(from = rootProject.file("gradle/test-dependencies-android.gradle"))
 
 android.buildFeatures.viewBinding = true
 
@@ -11,6 +8,7 @@ dependencies {
     api(Libs.loco_core)
     api(Libs.util_permissions)
     api(Libs.util_ui)
+    api(Libs.koin_android)
     api(Libs.koin_androidx_scope)
     api(Libs.koin_androidx_viewmodel)
     api(Libs.koin_androidx_fragment)
@@ -28,7 +26,6 @@ dependencies {
     api(Libs.flowbinding_viewpager2)
     api(Libs.control_core)
 
-    api(Koin.android)
     api(Kotlin.stdlib.jdk8)
     api(Google.android.material)
     api(AndroidX.core.ktx)

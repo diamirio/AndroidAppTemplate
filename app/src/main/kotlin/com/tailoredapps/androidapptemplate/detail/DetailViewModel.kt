@@ -23,7 +23,11 @@ import at.florianschuster.control.createController
 import com.tailoredapps.androidapptemplate.base.ui.ControllerViewModel
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.core.model.Model
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 
+@FlowPreview
+@ExperimentalCoroutinesApi
 class DetailViewModel(
     private val dataRepo: DataRepo
 ) : ControllerViewModel<DetailViewModel.Action, DetailViewModel.State>() {

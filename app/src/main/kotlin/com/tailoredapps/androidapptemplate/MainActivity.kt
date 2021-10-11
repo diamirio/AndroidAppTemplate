@@ -24,7 +24,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.tailoredapps.androidapptemplate.base.ui.viewBinding
 import com.tailoredapps.androidapptemplate.databinding.ActivityMainBinding
 import org.koin.androidx.fragment.android.setupKoinFragmentFactory
+import org.koin.core.KoinExperimentalAPI
 
+@KoinExperimentalAPI
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     private val binding by viewBinding(ActivityMainBinding::bind)

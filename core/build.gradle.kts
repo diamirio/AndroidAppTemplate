@@ -1,14 +1,12 @@
 plugins {
-    id("com.tailored.gradle.kotlin-library")
+    id("kotlin-library-convention")
 }
-
-apply(from = rootProject.file("gradle/test-dependencies.gradle"))
 
 dependencies {
     api(Libs.control_core)
     api(Libs.gson)
+    api(Libs.koin_core)
 
-    api(Koin.core)
     api(Kotlin.stdlib.jdk8)
     api(KotlinX.Coroutines.core)
     api(JakeWharton.timber)

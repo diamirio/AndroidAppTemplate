@@ -10,7 +10,6 @@ pluginManagement {
         eachPlugin {
             when (requested.id.id) {
                 "com.android.application" -> useModule("com.android.tools.build:gradle:${requested.version}")
-                "com.akaita.android.easylauncher" -> useModule("com.akaita.android:easylauncher:${requested.version}")
                 "androidx.navigation.safeargs.kotlin" -> useModule("androidx.navigation:navigation-safe-args-gradle-plugin:${requested.version}")
             }
         }
@@ -25,5 +24,4 @@ refreshVersions {
     enableBuildSrcLibs()
 }
 
-includeBuild("buildLogic")
 include("app", "core", "base-ui")

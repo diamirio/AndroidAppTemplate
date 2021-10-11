@@ -19,15 +19,20 @@ package com.tailoredapps.androidapptemplate
 
 import android.app.Application
 import at.florianschuster.control.ControllerLog
-import com.jakewharton.threetenabp.AndroidThreeTen
 import com.tailoredapps.androidapptemplate.core.coreModules
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.fragment.koin.fragmentFactory
+import org.koin.core.KoinExperimentalAPI
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import timber.log.Timber
 
+@ExperimentalCoroutinesApi
+@FlowPreview
+@KoinExperimentalAPI
 class MyApp : Application() {
 
     override fun onCreate() {
@@ -35,10 +40,8 @@ class MyApp : Application() {
 
         Timber.plant(Timber.DebugTree())
 
-        AndroidThreeTen.init(this)
-
         startKoin {
-            androidLogger(Level.INFO)
+            androidLogger(Level.ERROR)
             androidContext(this@MyApp)
             fragmentFactory()
             modules(coreModules + appModules)
