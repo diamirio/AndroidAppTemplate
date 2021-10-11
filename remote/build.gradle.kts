@@ -1,8 +1,6 @@
 plugins {
-    id("com.tailored.gradle.android-library")
+    id("android-library-convention")
 }
-
-apply(from = rootProject.file("gradle/test-dependencies.gradle"))
 
 dependencies {
     implementation(Libs.gson)
