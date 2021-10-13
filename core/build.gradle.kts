@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    api(Libs.koin_core)
+    implementation(Libs.koin_core)
 
-    api(Kotlin.stdlib.jdk8)
+    implementation(Kotlin.stdlib.jdk8)
 }

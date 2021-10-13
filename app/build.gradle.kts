@@ -67,7 +67,19 @@ dependencies {
     implementation(project(":repository"))
     implementation(project(":base-ui"))
 
+    implementation(JakeWharton.timber)
+    implementation(AndroidX.activityKtx)
+    implementation(AndroidX.constraintLayout)
+    implementation(AndroidX.appCompat)
+    implementation(AndroidX.navigation.fragmentKtx)
+    implementation(AndroidX.navigation.uiKtx)
+
     implementation(Libs.coil)
+    implementation(Libs.loco_core)
+    implementation(Libs.koin_android)
+    implementation(Libs.koin_androidx_scope)
+    implementation(Libs.koin_androidx_viewmodel)
+    implementation(Libs.koin_androidx_fragment)
 }
 
 
