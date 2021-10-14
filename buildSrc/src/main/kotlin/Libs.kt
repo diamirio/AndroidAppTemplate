@@ -12,33 +12,9 @@ import kotlin.String
  * See https://github.com/jmfayard/refreshVersions
  */
 object Libs {
-    const val activity_ktx: String = "androidx.activity:activity-ktx:_"
-
-    const val appcompat: String = "androidx.appcompat:appcompat:_"
-
-    const val browser: String = "androidx.browser:browser:_"
-
-    const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:_"
-
-    const val core_ktx: String = "androidx.core:core-ktx:_"
-
-    const val viewbinding: String = "androidx.databinding:viewbinding:_"
-
-    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:_"
-
     const val fragment_testing: String = "androidx.fragment:fragment-testing:_"
 
-    const val lifecycle_runtime_ktx: String = "androidx.lifecycle:lifecycle-runtime-ktx:_"
-
     const val lifecycle_runtime_testing: String = "androidx.lifecycle:lifecycle-runtime-testing:_"
-
-    const val lifecycle_viewmodel_ktx: String = "androidx.lifecycle:lifecycle-viewmodel-ktx:_"
-
-    const val navigation_fragment_ktx: String = "androidx.navigation:navigation-fragment-ktx:_"
-
-    const val navigation_safe_args_gradle_plugin: String = "androidx.navigation:navigation-safe-args-gradle-plugin:_"
-
-    const val navigation_ui_ktx: String = "androidx.navigation:navigation-ui-ktx:_"
 
     const val espresso_contrib: String = "androidx.test.espresso:espresso-contrib:_"
 
@@ -54,45 +30,17 @@ object Libs {
 
     const val androidx_test_runner: String = "androidx.test:runner:_"
 
-    const val viewpager2: String = "androidx.viewpager2:viewpager2:_"
-
     const val control_core: String = "at.florianschuster.control:control-core:_"
 
     const val loco_core: String = "at.florianschuster.loco:loco-core:_"
 
     const val easylauncher: String = "com.akaita.android:easylauncher:_"
 
-    const val com_android_tools_build_gradle: String = "com.android.tools.build:gradle:_"
-
-    const val lint_gradle: String = "com.android.tools.lint:lint-gradle:_"
-
-    const val material: String = "com.google.android.material:material:_"
-
     const val gson: String = "com.google.code.gson:gson:_"
-
-    const val threetenabp: String = "com.jakewharton.threetenabp:threetenabp:_"
-
-    const val timber: String = "com.jakewharton.timber:timber:_"
-
-    const val ktlint: String = "com.pinterest:ktlint:_"
-
-    const val leakcanary_android: String = "com.squareup.leakcanary:leakcanary-android:_"
-
-    const val leakcanary_object_watcher_android: String = "com.squareup.leakcanary:leakcanary-object-watcher-android:_"
-
-    const val logging_interceptor: String = "com.squareup.okhttp3:logging-interceptor:_"
-
-    const val okhttp: String = "com.squareup.okhttp3:okhttp:_"
-
-    const val converter_gson: String = "com.squareup.retrofit2:converter-gson:_"
-
-    const val retrofit: String = "com.squareup.retrofit2:retrofit:_"
 
     const val util_permissions: String = "com.tailoredapps.androidutil:util-permissions:_"
 
     const val util_ui: String = "com.tailoredapps.androidutil:util-ui:_"
-
-    //const val de_fayard_buildsrclibs_gradle_plugin: String = "de.fayard.buildSrcLibs:de.fayard.buildSrcLibs.gradle.plugin:_"
 
     const val coil: String = "io.coil-kt:coil:_"
 
@@ -124,25 +72,9 @@ object Libs {
 
     const val junit_junit: String = "junit:junit:_"
 
-    const val kotlin_annotation_processing_gradle: String = "org.jetbrains.kotlin:kotlin-annotation-processing-gradle:_"
-
-    const val kotlin_gradle_plugin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:_"
-
-    const val kotlin_parcelize_compiler: String = "org.jetbrains.kotlin:kotlin-parcelize-compiler:_"
-
-    const val kotlin_parcelize_runtime: String = "org.jetbrains.kotlin:kotlin-parcelize-runtime:_"
-
-    const val kotlin_scripting_compiler_embeddable: String = "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:_"
-
-    const val kotlin_stdlib_jdk8: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:_"
-
     const val kotlin_test: String = "org.jetbrains.kotlin:kotlin-test:_"
 
-    const val kotlinx_coroutines_core: String = "org.jetbrains.kotlinx:kotlinx-coroutines-core:_"
-
     const val kotlinx_coroutines_test: String = "org.jetbrains.kotlinx:kotlinx-coroutines-test:_"
-
-    const val ktlint_gradle: String = "org.jlleitschuh.gradle:ktlint-gradle:_"
 
     const val koin_android: String = "org.koin:koin-android:_"
 
