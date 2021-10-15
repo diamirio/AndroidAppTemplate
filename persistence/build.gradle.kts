@@ -13,5 +13,5 @@ dependencies {
     implementation(KotlinX.Coroutines.core)
     implementation(JakeWharton.timber)
 
-    implementation(project(":core"))
+    implementation(projects.core)
 }

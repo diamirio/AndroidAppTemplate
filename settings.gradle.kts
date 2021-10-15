@@ -25,3 +25,5 @@ refreshVersions {
 }
 
 include("app", "core", "base-ui", "remote", "persistence", "repository")
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

@@ -9,7 +9,7 @@ dependencies {
     implementation(KotlinX.Coroutines.core)
     implementation(JakeWharton.timber)
 
-    implementation(project(":core"))
-    implementation(project(":remote"))
-    implementation(project(":persistence"))
+    implementation(projects.core)
+    implementation(projects.remote)
+    implementation(projects.persistence)
 }

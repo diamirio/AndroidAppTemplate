@@ -61,11 +61,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
-    implementation(project(":remote"))
-    implementation(project(":persistence"))
-    implementation(project(":repository"))
-    implementation(project(":base-ui"))
+    implementation(projects.core)
+    implementation(projects.remote)
+    implementation(projects.persistence)
+    implementation(projects.repository)
+    implementation(projects.baseUi)
 
     implementation(JakeWharton.timber)
     implementation(AndroidX.activityKtx)
@@ -85,11 +85,6 @@ dependencies {
 
 easylauncher {
     defaultFlavorNaming(true)
-
-    //val foregroundIconNamesMethod = javaClass.getMethod("foregroundIconNames", Array<String>::class.java).apply { isAccessible = true }
-    //foregroundIconNamesMethod.invoke(this, arrayOf("@mipmap/ic_launcher_foreground"))
-    //iconNames = arrayOf("@mipmap/ic_launcher_foreground")
-    //foregroundIconNames = arrayOf("@mipmap/ic_launcher_foreground")
 
     buildTypes {
         create("debug") {

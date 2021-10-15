@@ -16,5 +16,5 @@ dependencies {
     implementation(Square.retrofit2.retrofit)
     implementation(Square.retrofit2.converter.gson)
 
-    implementation(project(":core"))
+    implementation(projects.core)
 }
