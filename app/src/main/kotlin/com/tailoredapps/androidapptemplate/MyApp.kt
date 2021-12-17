@@ -20,6 +20,9 @@ package com.tailoredapps.androidapptemplate
 import android.app.Application
 import at.florianschuster.control.ControllerLog
 import com.tailoredapps.androidapptemplate.core.coreModules
+import com.tailoredapps.androidapptemplate.persistence.persistenceModules
+import com.tailoredapps.androidapptemplate.remote.remoteModules
+import com.tailoredapps.androidapptemplate.repository.repositoryModules
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import org.koin.android.ext.koin.androidContext
@@ -44,7 +47,7 @@ class MyApp : Application() {
             androidLogger(Level.ERROR)
             androidContext(this@MyApp)
             fragmentFactory()
-            modules(coreModules + appModules)
+            modules(coreModules + remoteModules + persistenceModules + repositoryModules + appModules)
         }
 
         // delete this if you do not want your logcat spammed

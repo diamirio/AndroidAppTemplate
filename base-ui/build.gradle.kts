@@ -5,7 +5,14 @@ plugins {
 android.buildFeatures.viewBinding = true
 
 dependencies {
-    api(Libs.loco_core)
+    api(Libs.control_core)
+
+    implementation(Kotlin.stdlib.jdk8)
+    api(AndroidX.core.ktx)
+    api(AndroidX.fragmentKtx)
+    api(AndroidX.lifecycle.viewModelKtx)
+
+    /*api(Libs.loco_core)
     api(Libs.util_permissions)
     api(Libs.util_ui)
     api(Libs.koin_android)
@@ -24,21 +31,18 @@ dependencies {
     api(Libs.flowbinding_recyclerview)
     api(Libs.flowbinding_swiperefreshlayout)
     api(Libs.flowbinding_viewpager2)
-    api(Libs.control_core)
 
-    api(Kotlin.stdlib.jdk8)
     api(Google.android.material)
-    api(AndroidX.core.ktx)
+
     api(AndroidX.activityKtx)
     api(AndroidX.appCompat)
     api(AndroidX.browser)
     api(AndroidX.constraintLayout)
-    api(AndroidX.fragmentKtx)
     api(AndroidX.lifecycle.runtimeKtx)
     api(AndroidX.lifecycle.viewModelKtx)
     api(AndroidX.navigation.fragmentKtx)
     api(AndroidX.navigation.uiKtx)
-    api(AndroidX.viewPager2)
+    api(AndroidX.viewPager2)*/
 
     debugApi(Square.leakCanary.android)
     releaseApi(Square.leakCanary.objectWatcher.android)

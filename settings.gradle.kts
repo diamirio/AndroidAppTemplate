@@ -24,4 +24,6 @@ refreshVersions {
     enableBuildSrcLibs()
 }
 
-include("app", "core", "base-ui")
+include("app", "core", "base-ui", "remote", "persistence", "repository")
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

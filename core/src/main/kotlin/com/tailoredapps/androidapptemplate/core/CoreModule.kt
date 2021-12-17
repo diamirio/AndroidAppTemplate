@@ -17,14 +17,9 @@
 
 package com.tailoredapps.androidapptemplate.core
 
-import com.google.gson.GsonBuilder
-import com.tailoredapps.androidapptemplate.core.local.localModule
-import com.tailoredapps.androidapptemplate.core.remote.remoteModule
 import org.koin.dsl.module
 
 internal val coreModule = module {
-    single { GsonBuilder().create() }
-    single<DataRepo> { CoreDataRepo(api = get(), database = get()) }
 }
 
-val coreModules = listOf(coreModule, localModule, remoteModule)
+val coreModules = listOf(coreModule)

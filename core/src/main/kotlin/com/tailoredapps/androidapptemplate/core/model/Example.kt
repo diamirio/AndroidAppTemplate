@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.local
+package com.tailoredapps.androidapptemplate.core.model
 
-import org.koin.dsl.module
+data class Example(
 
-internal val localModule = module {
-    single<Database> { DatabaseImpl() }
-}
+    val exampleField: String = ""
+
+)

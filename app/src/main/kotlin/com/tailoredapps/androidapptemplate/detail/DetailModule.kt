@@ -26,6 +26,6 @@ import org.koin.dsl.module
 @FlowPreview
 @ExperimentalCoroutinesApi
 internal val detailModule = module {
-    fragment { DetailView(dataRepo = get()) }
-    viewModel { DetailViewModel(dataRepo = get()) }
+    fragment { DetailView(repo = get()) }
+    viewModel { DetailViewModel(repo = get()) }
 }
