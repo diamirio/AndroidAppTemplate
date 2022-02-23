@@ -17,13 +17,15 @@
 
 package com.tailoredapps.androidapptemplate.detail
 
+import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import at.florianschuster.control.bind
 import at.florianschuster.control.distinctMap
-import at.florianschuster.loco.launchOnViewLifecycleStartCancelOnViewLifecycleStop
 import coil.load
 import com.tailoredapps.androidapptemplate.R
+import com.tailoredapps.androidapptemplate.base.ui.repeatOnLifeCycleStart
 import com.tailoredapps.androidapptemplate.base.ui.viewBinding
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.databinding.FragmentDetailBinding
@@ -35,16 +37,16 @@ class DetailView(
      * This is just to show that injection in fragments work.
      * Please do not use a repo or service in the view.
      */
-    private val dataRepo: DataRepo
+    private val dataRepo: DataRepo,
 ) : Fragment(R.layout.fragment_detail) {
 
     private val binding by viewBinding(FragmentDetailBinding::bind)
     private val navController by lazy(::findNavController)
     private val viewModel by viewModel<DetailViewModel>()
 
-    init {
-        launchOnViewLifecycleStartCancelOnViewLifecycleStop {
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        repeatOnLifeCycleStart {
             // bind viewModel.state via viewModel.state
             viewModel.state.distinctMap(DetailViewModel.State::logoUrl)
                 .bind { url ->
@@ -53,6 +55,7 @@ class DetailView(
                 .launchIn(scope = this)
 
             // bind actions via viewModel.dispatch
+
         }
     }
 }

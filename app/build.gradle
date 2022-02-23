@@ -7,17 +7,17 @@ plugins {
 }
 
 android {
-    compileSdkVersion rootProject.ext.buildConfig.compileSdkVersion
+    compileSdkVersion Config.compileSdk
 
     defaultConfig {
-        versionCode 1
-        versionName '0.0.1'
+        versionCode Config.versionCode
+        versionName Config.versionName
 
-        applicationId "com.tailoredapps.androidapptemplate"
-        setProperty("archivesBaseName", "AndroidAppTemplate-v$versionName-b$versionCode")
+        applicationId Config.applicationId
+        setProperty("archivesBaseName", Config.archiveName)
 
-        targetSdkVersion rootProject.ext.buildConfig.targetSdkVersion
-        minSdkVersion rootProject.ext.buildConfig.minSdkVersion
+        targetSdkVersion Config.targetSdk
+        minSdkVersion Config.minSdk
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -47,13 +47,13 @@ android {
     productFlavors {
         dev {
             applicationIdSuffix ".dev"
-            resValue "string", "app_name", "AndroidAppTemplate Dev"
-            resValue "string", "leak_canary_display_activity_label", "AndroidAppTemplate Leaks"
+            resValue "string", "app_name", Config.appName + " Dev"
+            resValue "string", "leak_canary_display_activity_label", Config.appName + " Leaks"
             buildConfigField "String", "BASE_URL", "\"https://restcountries.eu/rest/v2/\""
             dimension "backend"
         }
         prod {
-            resValue "string", "app_name", "AndroidAppTemplate"
+            resValue "string", "app_name", Config.appName
             buildConfigField "String", "BASE_URL", "\"https://restcountries.eu/rest/v2/\""
             dimension "backend"
         }
@@ -82,12 +82,15 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = Config.javaVersion
+        targetCompatibility = Config.javaVersion
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11
+        jvmTarget = Config.javaVersion
+        // Some Flow / Coroutine APIs we use are experimental and therefore would flood the build
+        // log with warnings. Disabling those warnings here.
+        freeCompilerArgs += Config.kotlinFreeCompilerArgs
     }
 
     lintOptions {

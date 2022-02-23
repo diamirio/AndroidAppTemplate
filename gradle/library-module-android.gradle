@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion rootProject.ext.buildConfig.compileSdkVersion
+    compileSdkVersion Config.compileSdk
     defaultConfig {
-        targetSdkVersion rootProject.ext.buildConfig.targetSdkVersion
-        minSdkVersion rootProject.ext.buildConfig.minSdkVersion
+        targetSdkVersion Config.targetSdk
+        minSdkVersion Config.minSdk
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -22,12 +22,15 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility Config.javaVersion
+        targetCompatibility Config.javaVersion
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = Config.javaVersion
+        // Some Flow / Coroutine APIs we use are experimental and therefore would flood the build
+        // log with warnings. Disabling those warnings here.
+        freeCompilerArgs += Config.kotlinFreeCompilerArgs
     }
 
     lintOptions {

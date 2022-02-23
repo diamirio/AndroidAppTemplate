@@ -28,12 +28,13 @@ abstract class ControllerViewModel<Action, State> : ViewModel() {
     protected abstract val controller: Controller<Action, State>
 
     fun dispatch(action: Action) = controller.dispatch(action)
-    val currentState: State get() = controller.currentState
+    val currentState: State get() = controller.state.value
     val state: Flow<State> get() = controller.state
 
     @CallSuper
     override fun onCleared() {
         super.onCleared()
-        AppWatcher.objectWatcher.watch(this, "${this::class.java.simpleName}.onCleared")
+        AppWatcher.objectWatcher.expectWeaklyReachable(this,
+            "${this::class.java.simpleName}.onCleared")
     }
 }

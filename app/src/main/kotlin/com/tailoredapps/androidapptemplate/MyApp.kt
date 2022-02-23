@@ -38,13 +38,10 @@ class MyApp : Application() {
         AndroidThreeTen.init(this)
 
         startKoin {
-            androidLogger(Level.INFO)
+            androidLogger(Level.ERROR)
             androidContext(this@MyApp)
             fragmentFactory()
             modules(coreModules + appModules)
         }
-
-        // delete this if you do not want your logcat spammed
-        ControllerLog.default = ControllerLog.Custom { Timber.v(it) }
     }
 }

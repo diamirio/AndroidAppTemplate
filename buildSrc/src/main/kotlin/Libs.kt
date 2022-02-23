@@ -62,13 +62,7 @@ object Libs {
 
     const val control_core: String = "at.florianschuster.control:control-core:_"
 
-    const val loco_core: String = "at.florianschuster.loco:loco-core:_"
-
-    const val aapt2: String = "com.android.tools.build:aapt2:_"
-
     const val com_android_tools_build_gradle: String = "com.android.tools.build:gradle:_"
-
-    const val lint_gradle: String = "com.android.tools.lint:lint-gradle:_"
 
     const val material: String = "com.google.android.material:material:_"
 
@@ -92,10 +86,6 @@ object Libs {
     const val converter_gson: String = "com.squareup.retrofit2:converter-gson:_"
 
     const val retrofit: String = "com.squareup.retrofit2:retrofit:_"
-
-    const val util_permissions: String = "com.tailoredapps.androidutil:util-permissions:_"
-
-    const val util_ui: String = "com.tailoredapps.androidutil:util-ui:_"
 
     const val de_fayard_buildsrclibs_gradle_plugin: String =
             "de.fayard.buildSrcLibs:de.fayard.buildSrcLibs.gradle.plugin:_"
@@ -138,23 +128,33 @@ object Libs {
     const val flowbinding_viewpager2: String =
             "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:_"
 
+    const val koin_android: String = "io.insert-koin:koin-android:_"
+
+    const val koin_core: String = "io.insert-koin:koin-core:_"
+
+    const val koin_test: String = "io.insert-koin:koin-test:_"
+
     const val mockk: String = "io.mockk:mockk:_"
 
     const val junit_junit: String = "junit:junit:_"
 
-    const val kotlin_android_extensions: String =
-            "org.jetbrains.kotlin:kotlin-android-extensions:_"
-
-    const val kotlin_android_extensions_runtime: String =
-            "org.jetbrains.kotlin:kotlin-android-extensions-runtime:_"
+    const val org_jacoco_ant: String = "org.jacoco:org.jacoco.ant:_"
 
     const val kotlin_annotation_processing_gradle: String =
             "org.jetbrains.kotlin:kotlin-annotation-processing-gradle:_"
 
     const val kotlin_gradle_plugin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:_"
 
+    const val kotlin_parcelize_compiler: String =
+            "org.jetbrains.kotlin:kotlin-parcelize-compiler:_"
+
+    const val kotlin_parcelize_runtime: String =
+            "org.jetbrains.kotlin:kotlin-parcelize-runtime:_"
+
     const val kotlin_scripting_compiler_embeddable: String =
             "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:_"
+
+    const val kotlin_stdlib: String = "org.jetbrains.kotlin:kotlin-stdlib:_"
 
     const val kotlin_stdlib_jdk8: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:_"
 
@@ -167,16 +167,4 @@ object Libs {
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:_"
 
     const val ktlint_gradle: String = "org.jlleitschuh.gradle:ktlint-gradle:_"
-
-    const val koin_android: String = "org.koin:koin-android:_"
-
-    const val koin_androidx_fragment: String = "org.koin:koin-androidx-fragment:_"
-
-    const val koin_androidx_scope: String = "org.koin:koin-androidx-scope:_"
-
-    const val koin_androidx_viewmodel: String = "org.koin:koin-androidx-viewmodel:_"
-
-    const val koin_core: String = "org.koin:koin-core:_"
-
-    const val koin_test: String = "org.koin:koin-test:_"
 }
