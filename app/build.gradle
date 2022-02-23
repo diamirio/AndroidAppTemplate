@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id 'com.akaita.android.easylauncher'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
@@ -114,18 +113,4 @@ dependencies {
     implementation(project(path: ":base-ui"))
 
     implementation(Libs.coil)
-}
-
-easylauncher {
-    iconNames "@mipmap/ic_launcher_foreground"
-    foregroundIconNames "@mipmap/ic_launcher_foreground"
-
-    defaultFlavorNaming = true
-
-    buildTypes {
-        debug {
-            filters = customColorRibbonFilter("debug", "#47BAF2", "#ffffff")
-        }
-        release {}
-    }
 }

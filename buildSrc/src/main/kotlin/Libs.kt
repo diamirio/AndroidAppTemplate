@@ -328,11 +328,6 @@ object Libs {
             Versions.control_core
 
     /**
-     * https://github.com/akaita/easylauncher-gradle-plugin
-     */
-    const val easylauncher: String = "com.akaita.android:easylauncher:" + Versions.easylauncher
-
-    /**
      * https://developer.android.com/studio
      */
     const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle

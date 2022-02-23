@@ -52,8 +52,6 @@ object Versions {
 
     const val control_core: String = "0.13.1"
 
-    const val easylauncher: String = "1.3.1"
-
     const val lint_gradle: String = "27.1.1"
 
     const val threetenabp: String = "1.3.0"
