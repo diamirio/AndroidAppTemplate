@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         versionCode 1
-        versionName '1.0.0'
+        versionName '0.0.1'
 
         applicationId "com.tailoredapps.androidapptemplate"
         setProperty("archivesBaseName", "AndroidAppTemplate-v$versionName-b$versionCode")
