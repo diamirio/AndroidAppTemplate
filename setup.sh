@@ -71,21 +71,15 @@ packagePath=$(echo $packageName | sed 's/\./\//g')
 # set app name
 
 if [ "Darwin" == ${systemName} ]; then
-    sed -i '' "s/resValue \"string\", \"app_name\", \"AndroidAppTemplate/resValue \"string\", \"app_name\", \"$appName/g" ${baseDir}/app/build.gradle
+    sed -i '' "s/val appName = \"AndroidAppTemplate/val appName = \"$appName/g" ${baseDir}/buildSrc/src/main/kotlin/Config.kt
 else
-    sed -i "s/resValue \"string\", \"app_name\", \"AndroidAppTemplate/resValue \"string\", \"app_name\", \"$appName/g" ${baseDir}/app/build.gradle
+    sed -i "s/val appName = \"AndroidAppTemplate/val appName = \"$appName/g" ${baseDir}/buildSrc/src/main/kotlin/Config.kt
 fi
 
 if [ "Darwin" == ${systemName} ]; then
-    sed -i '' "s/resValue \"string\", \"leak_canary_display_activity_label\", \"AndroidAppTemplate/resValue \"string\", \"leak_canary_display_activity_label\", \"$appName/g" $baseDir/app/build.gradle
+    sed -i '' "s/val applicationId = \"com.tailoredapps.androidapptemplate/val applicationId = \"$packageName/g" ${baseDir}/buildSrc/src/main/kotlin/Config.kt
 else
-    sed -i "s/resValue \"string\", \"leak_canary_display_activity_label\", \"AndroidAppTemplate/resValue \"string\", \"leak_canary_display_activity_label\", \"$appName/g" $baseDir/app/build.gradle
-fi
-
-if [ "Darwin" == ${systemName} ]; then
-    sed -i '' "s/setProperty(\"archivesBaseName\", \"AndroidAppTemplate/setProperty(\"archivesBaseName\", \"$appNameNoWhiteSpace/g" ${baseDir}/app/build.gradle
-else
-    sed -i "s/setProperty(\"archivesBaseName\", \"AndroidAppTemplate/setProperty(\"archivesBaseName\", \"$appNameNoWhiteSpace/g" ${baseDir}/app/build.gradle
+    sed -i "s/val applicationId = \"com.tailoredapps.androidapptemplate/val applicationId = \"$packageName/g" ${baseDir}/buildSrc/src/main/kotlin/Config.kt
 fi
 
 
