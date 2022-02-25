@@ -15,6 +15,11 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.core.model
+package com.tailoredapps.androidapptemplate.ui.overview
 
-data class Model(val any: Any = Unit)
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
+
+internal val overviewModule = module {
+    viewModel { OverviewViewModel(dataRepo = get()) }
+}

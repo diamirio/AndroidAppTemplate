@@ -1,9 +1,10 @@
+import static de.fayard.refreshVersions.core.Versions.versionFor
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -93,13 +94,17 @@ android {
         freeCompilerArgs += Config.kotlinFreeCompilerArgs
     }
 
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versionFor(Libs.ui)
+    }
+
     lintOptions {
         warningsAsErrors true
         abortOnError true
-    }
-
-    buildFeatures {
-        viewBinding true
     }
 }
 
@@ -110,5 +115,6 @@ dependencies {
     implementation(project(path: ":core"))
     implementation(project(path: ":base-ui"))
 
-    implementation(Libs.coil)
+    implementation(Libs.coil_compose)
+    implementation(Libs.accompanist_systemuicontroller)
 }

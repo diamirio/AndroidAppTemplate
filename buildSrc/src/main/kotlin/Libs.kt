@@ -12,13 +12,25 @@ import kotlin.String
  * See https://github.com/jmfayard/refreshVersions
  */
 object Libs {
+    const val activity_compose: String = "androidx.activity:activity-compose:_"
+
     const val activity_ktx: String = "androidx.activity:activity-ktx:_"
 
-    const val appcompat: String = "androidx.appcompat:appcompat:_"
+    const val animation: String = "androidx.compose.animation:animation:_"
 
-    const val browser: String = "androidx.browser:browser:_"
+    const val androidx_compose_compiler_compiler: String =
+            "androidx.compose.compiler:compiler:_"
 
-    const val constraintlayout: String = "androidx.constraintlayout:constraintlayout:_"
+    const val androidx_compose_material_material: String =
+            "androidx.compose.material:material:_"
+
+    const val ui: String = "androidx.compose.ui:ui:_"
+
+    const val ui_test_junit4: String = "androidx.compose.ui:ui-test-junit4:_"
+
+    const val ui_tooling: String = "androidx.compose.ui:ui-tooling:_"
+
+    const val ui_tooling_preview: String = "androidx.compose.ui:ui-tooling-preview:_"
 
     const val core_ktx: String = "androidx.core:core-ktx:_"
 
@@ -33,14 +45,16 @@ object Libs {
     const val lifecycle_runtime_testing: String =
             "androidx.lifecycle:lifecycle-runtime-testing:_"
 
+    const val lifecycle_viewmodel_compose: String =
+            "androidx.lifecycle:lifecycle-viewmodel-compose:_"
+
     const val lifecycle_viewmodel_ktx: String =
             "androidx.lifecycle:lifecycle-viewmodel-ktx:_"
 
+    const val navigation_compose: String = "androidx.navigation:navigation-compose:_"
+
     const val navigation_fragment_ktx: String =
             "androidx.navigation:navigation-fragment-ktx:_"
-
-    const val navigation_safe_args_gradle_plugin: String =
-            "androidx.navigation:navigation-safe-args-gradle-plugin:_"
 
     const val navigation_ui_ktx: String = "androidx.navigation:navigation-ui-ktx:_"
 
@@ -58,13 +72,15 @@ object Libs {
 
     const val androidx_test_runner: String = "androidx.test:runner:_"
 
-    const val viewpager2: String = "androidx.viewpager2:viewpager2:_"
-
     const val control_core: String = "at.florianschuster.control:control-core:_"
 
     const val com_android_tools_build_gradle: String = "com.android.tools.build:gradle:_"
 
-    const val material: String = "com.google.android.material:material:_"
+    const val accompanist_systemuicontroller: String =
+            "com.google.accompanist:accompanist-systemuicontroller:_"
+
+    const val com_google_android_material_material: String =
+            "com.google.android.material:material:_"
 
     const val gson: String = "com.google.code.gson:gson:_"
 
@@ -87,45 +103,14 @@ object Libs {
 
     const val retrofit: String = "com.squareup.retrofit2:retrofit:_"
 
-    const val coil: String = "io.coil-kt:coil:_"
+    const val de_fayard_buildsrclibs_gradle_plugin: String =
+            "de.fayard.buildSrcLibs:de.fayard.buildSrcLibs.gradle.plugin:_"
 
-    const val flowbinding_activity: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-activity:_"
-
-    const val flowbinding_android: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-android:_"
-
-    const val flowbinding_appcompat: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-appcompat:_"
-
-    const val flowbinding_core: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-core:_"
-
-    const val flowbinding_drawerlayout: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-drawerlayout:_"
-
-    const val flowbinding_lifecycle: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-lifecycle:_"
-
-    const val flowbinding_material: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-material:_"
-
-    const val flowbinding_navigation: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-navigation:_"
-
-    const val flowbinding_preference: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-preference:_"
-
-    const val flowbinding_recyclerview: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:_"
-
-    const val flowbinding_swiperefreshlayout: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:_"
-
-    const val flowbinding_viewpager2: String =
-            "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:_"
+    const val coil_compose: String = "io.coil-kt:coil-compose:_"
 
     const val koin_android: String = "io.insert-koin:koin-android:_"
+
+    const val koin_androidx_compose: String = "io.insert-koin:koin-androidx-compose:_"
 
     const val koin_core: String = "io.insert-koin:koin-core:_"
 

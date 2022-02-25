@@ -15,25 +15,23 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.detail
+package com.tailoredapps.androidapptemplate.ui.overview
 
 import androidx.lifecycle.viewModelScope
 import at.florianschuster.control.Controller
 import at.florianschuster.control.createController
 import com.tailoredapps.androidapptemplate.base.ui.ControllerViewModel
 import com.tailoredapps.androidapptemplate.core.DataRepo
-import com.tailoredapps.androidapptemplate.core.model.Model
 
-class DetailViewModel(
+class OverviewViewModel(
     private val dataRepo: DataRepo
-) : ControllerViewModel<DetailViewModel.Action, DetailViewModel.State>() {
+) : ControllerViewModel<OverviewViewModel.Action, OverviewViewModel.State>() {
 
     sealed class Action
 
     sealed class Mutation
 
     data class State(
-        val model: Model = Model(),
         val logoUrl: String = "https://user-images.githubusercontent.com/2580292/59103107-390a7b80-892e-11e9-9466-774d413697ee.jpg"
     )
 

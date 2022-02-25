@@ -10,4 +10,5 @@ dependencies {
     androidTestImplementation(Libs.kotlin_test)
     androidTestImplementation(Libs.kotlinx_coroutines_test)
     androidTestImplementation(Libs.lifecycle_runtime_testing)
+    androidTestImplementation(Libs.ui_test_junit4)
 }
