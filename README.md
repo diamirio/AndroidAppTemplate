@@ -20,7 +20,6 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
     * [Dependencies](#dependencies)
         * [How to add a dependency](#adddependencies)
     * [ktlint](#ktlint)
-    * [fastlane](#fastlane)
     * [Resource Naming Conventions](#resource_naming_conventions)
 * [Recommended Reading](#recommended_reading)
 * [License](#license)
@@ -97,7 +96,7 @@ apply from: rootProject.file("gradle/XXX.gradle")
 
 **All** dependencies are located in the `Libs.kt` file in the `buildSrc` folder. To implement them use `implementation Libs.XXX`.
 
-Checking whether dependencies are ready to be updated, use `./gradlew buildSrcVersions`. Afterwards the newer version is added as comments to the `Versions.kt` file. Look [here](https://github.com/jmfayard/buildSrcVersions) for the `buildSrcVersions` gradle plugin that is used for that.
+Checking whether dependencies are ready to be updated, use `./gradlew refreshVersions`. Afterwards the newer version is added as comments to the `versions.properties` file. Look [here](https://jmfayard.github.io/refreshVersions/) for the `refreshVersions` gradle plugin that is used for that.
 
 
 #### How to add a Dependency <a name="adddependencies"></a>
@@ -109,7 +108,7 @@ def room_version = "1.0.0"
 implementation "androidx.room:room-runtime:$room_version"
 ```
 
-Afterwards execute `./gradlew buildSrcVersions`. This task then extracts the dependency, adds it to `Libs.kt`, adds its version to `Version.kt` and automatically adds any updates next to the version if there is any.
+Afterwards execute `./gradlew buildSrcVersions`. This task then extracts the dependency, adds it to `Libs.kt`, adds its version to `versions.properties` and automatically adds any updates next to the version if there is any.
 **Do not** add your dependency manually to `Libs.kt` - this works but is discouraged.
 
 After the plugin has added your dependency to the `Libs.kt` file, replace the lines in your `build.gradle`:
@@ -128,11 +127,6 @@ To conform to the rules either:
 * configure AndroidStudio [accordingly](https://github.com/pinterest/ktlint#-with-intellij-idea).
 * use `./gradlew ktlintApplyToIdea` to overwrite IDE style files. Read more [here](https://github.com/JLLeitschuh/ktlint-gradle).
 
-
-### fastlane <a name="fastlane"></a>
-[fastlane](https://fastlane.tools/) is an automation framework that can be used to for deployment and release processes for Android or iOS apps. It is recommended to setup your Project with *fastlane*. 
-
-[Setup](https://docs.fastlane.tools/getting-started/ios/setup/) *fastlane* either with RubyGems (`sudo gem install fastlane -NV`) or with Homebrew (`brew cask install fastlane`) and call `fastlane init` in your Project folder.
 
 ### Resource Naming Conventions <a name="resource_naming_conventions"></a>
 
