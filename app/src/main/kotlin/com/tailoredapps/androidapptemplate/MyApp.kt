@@ -38,7 +38,8 @@ class MyApp : Application() {
         AndroidThreeTen.init(this)
 
         startKoin {
-            androidLogger(Level.ERROR)
+            val logLevel = if (BuildConfig.DEBUG) Level.INFO else Level.ERROR
+            androidLogger(logLevel)
             androidContext(this@MyApp)
             fragmentFactory()
             modules(coreModules + appModules)
