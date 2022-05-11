@@ -25,7 +25,7 @@ import at.florianschuster.control.bind
 import at.florianschuster.control.distinctMap
 import coil.load
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.base.ui.repeatOnLifeCycleStart
+import com.tailoredapps.androidapptemplate.base.ui.launchWhenStartedCancelWhenStopped
 import com.tailoredapps.androidapptemplate.base.ui.viewBinding
 import com.tailoredapps.androidapptemplate.core.DataRepo
 import com.tailoredapps.androidapptemplate.databinding.FragmentDetailBinding
@@ -46,7 +46,7 @@ class DetailView(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        repeatOnLifeCycleStart {
+        launchWhenStartedCancelWhenStopped {
             // bind viewModel.state via viewModel.state
             viewModel.state.distinctMap(DetailViewModel.State::logoUrl)
                 .bind { url ->
