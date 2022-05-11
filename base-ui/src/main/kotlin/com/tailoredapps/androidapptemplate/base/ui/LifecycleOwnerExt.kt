@@ -10,21 +10,21 @@ import kotlinx.coroutines.launch
 
 
 /**
- * Convenience function to for [repeatOnLifecycle] with [Lifecycle.State.STARTED]
+ * Extension for [repeatOnLifecycle] with [Lifecycle.State.STARTED]
  */
 fun Fragment.launchWhenStartedCancelWhenStopped(scope: CoroutineScope.() -> Unit) {
     repeatOnLifeCycle(Lifecycle.State.STARTED, scope)
 }
 
 /**
- * Convenience function to for [repeatOnLifecycle] with [Lifecycle.State.CREATED]
+ * Extension for [repeatOnLifecycle] with [Lifecycle.State.CREATED]
  */
 fun Fragment.launchWhenCreatedCancelWhenDestroyed(scope: CoroutineScope.() -> Unit) {
     repeatOnLifeCycle(Lifecycle.State.CREATED, scope)
 }
 
 /**
- * Convenience function to for [repeatOnLifecycle] with [Lifecycle.State.RESUMED]
+ * Extension for [repeatOnLifecycle] with [Lifecycle.State.RESUMED]
  */
 fun Fragment.launchWhenResumedCancelWhenPaused(scope: CoroutineScope.() -> Unit) {
     repeatOnLifeCycle(Lifecycle.State.RESUMED, scope)
@@ -41,21 +41,21 @@ private fun Fragment.repeatOnLifeCycle(
 
 
 /**
- * Convenience function to for [repeatOnLifecycle] with [Lifecycle.State.STARTED]
+ * Extension for [repeatOnLifecycle] with [Lifecycle.State.STARTED]
  */
 fun AppCompatActivity.launchWhenStartedCancelWhenStopped(scope: CoroutineScope.() -> Unit) {
     repeatOnLifeCycle(Lifecycle.State.STARTED, scope)
 }
 
 /**
- * Convenience function to for [repeatOnLifecycle] with [Lifecycle.State.CREATED]
+ * Extension for [repeatOnLifecycle] with [Lifecycle.State.CREATED]
  */
 fun AppCompatActivity.launchWhenCreatedCancelWhenDestroyed(scope: CoroutineScope.() -> Unit) {
     repeatOnLifeCycle(Lifecycle.State.CREATED, scope)
 }
 
 /**
- * Convenience function to for [repeatOnLifecycle] with [Lifecycle.State.RESUMED]
+ * Extension for [repeatOnLifecycle] with [Lifecycle.State.RESUMED]
  */
 fun AppCompatActivity.launchWhenResumedCancelWhenPaused(scope: CoroutineScope.() -> Unit) {
     repeatOnLifeCycle(Lifecycle.State.RESUMED, scope)
