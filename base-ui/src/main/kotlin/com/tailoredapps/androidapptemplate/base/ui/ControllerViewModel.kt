@@ -21,6 +21,7 @@ import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModel
 import at.florianschuster.control.Controller
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 import leakcanary.AppWatcher
 
 abstract class ControllerViewModel<Action, State> : ViewModel() {
@@ -29,7 +30,7 @@ abstract class ControllerViewModel<Action, State> : ViewModel() {
 
     fun dispatch(action: Action) = controller.dispatch(action)
     val currentState: State get() = controller.state.value
-    val state: Flow<State> get() = controller.state
+    val state: StateFlow<State> get() = controller.state
 
     @CallSuper
     override fun onCleared() {
