@@ -4,7 +4,7 @@ plugins {
 }
 
 refreshVersions {
-    enableBuildSrcLibs() // <-- Add this
+    enableBuildSrcLibs()
 }
 
 include ':app', ':core', 'base-ui'
