@@ -87,6 +87,9 @@ object Libs {
 
     const val retrofit: String = "com.squareup.retrofit2:retrofit:_"
 
+    const val de_fayard_buildsrclibs_gradle_plugin: String =
+            "de.fayard.buildSrcLibs:de.fayard.buildSrcLibs.gradle.plugin:_"
+
     const val coil: String = "io.coil-kt:coil:_"
 
     const val flowbinding_activity: String =
