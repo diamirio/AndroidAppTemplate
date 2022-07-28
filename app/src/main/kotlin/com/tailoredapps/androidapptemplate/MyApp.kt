@@ -18,7 +18,6 @@
 package com.tailoredapps.androidapptemplate
 
 import android.app.Application
-import at.florianschuster.control.ControllerLog
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.tailoredapps.androidapptemplate.core.coreModules
 import org.koin.android.ext.koin.androidContext

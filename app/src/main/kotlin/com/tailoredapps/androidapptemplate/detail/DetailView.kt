@@ -57,7 +57,6 @@ class DetailView(
                 .launchIn(scope = this)
 
             // bind actions via viewModel.dispatch
-
         }
     }
 }
