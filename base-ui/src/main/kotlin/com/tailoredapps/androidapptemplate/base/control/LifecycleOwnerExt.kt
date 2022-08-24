@@ -1,4 +1,4 @@
-package com.tailoredapps.androidapptemplate.base.ui
+package com.tailoredapps.androidapptemplate.base.control
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle

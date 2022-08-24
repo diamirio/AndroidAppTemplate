@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'org.jlleitschuh.gradle.ktlint'
 }
 
 android {
@@ -99,7 +100,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion versionFor(Libs.ui)
+        kotlinCompilerExtensionVersion versionFor(Libs.androidx_compose_compiler_compiler)
     }
 
     lintOptions {
@@ -114,7 +115,4 @@ apply from: rootProject.file("gradle/test-dependencies-android.gradle")
 dependencies {
     implementation(project(path: ":core"))
     implementation(project(path: ":base-ui"))
-
-    implementation(Libs.coil_compose)
-    implementation(Libs.accompanist_systemuicontroller)
 }

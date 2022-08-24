@@ -1,6 +1,17 @@
+import static de.fayard.refreshVersions.core.Versions.versionFor
+
 apply from: rootProject.file("gradle/library-module-android.gradle")
 
-android.buildFeatures.viewBinding = true
+android {
+    buildFeatures {
+        compose true
+        viewBinding = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versionFor(Libs.androidx_compose_compiler_compiler)
+    }
+}
 
 dependencies {
     api(Libs.activity_ktx)
@@ -16,6 +27,8 @@ dependencies {
     api(Libs.navigation_ui_ktx)
 
     // compose
+    api(Libs.accompanist_systemuicontroller)
+    api(Libs.coil_compose)
     api(Libs.koin_androidx_compose)
     api(Libs.activity_compose)
     api(Libs.ui)

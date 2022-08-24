@@ -15,12 +15,11 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.base.ui
+package com.tailoredapps.androidapptemplate.base.control
 
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModel
 import at.florianschuster.control.Controller
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import leakcanary.AppWatcher
 

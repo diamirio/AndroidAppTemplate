@@ -148,5 +148,6 @@ object Libs {
     const val kotlinx_coroutines_test: String =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:_"
 
-    const val ktlint_gradle: String = "org.jlleitschuh.gradle:ktlint-gradle:_"
+    const val org_jlleitschuh_gradle_ktlint_gradle_plugin: String =
+            "org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin:_"
 }

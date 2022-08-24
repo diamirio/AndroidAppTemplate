@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.ui.theme.AppTheme
+import com.tailoredapps.androidapptemplate.base.ui.theme.AppTheme
 
 @Composable
 fun Toolbar(
@@ -16,7 +16,7 @@ fun Toolbar(
 ) {
     TopAppBar(
         title = { Text(text = title) },
-        backgroundColor = MaterialTheme.colors.background
+        backgroundColor = AppTheme.colors.background
     )
 }
 

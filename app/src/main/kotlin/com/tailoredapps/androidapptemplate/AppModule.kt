@@ -21,13 +21,11 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import com.tailoredapps.androidapptemplate.core.model.AppBuildInfo
 import com.tailoredapps.androidapptemplate.ui.overview.overviewModule
-import com.tailoredapps.androidapptemplate.navigation.Navigator
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 internal val appModule = module {
     single { provideAppBuildInfo(context = androidContext()) }
-    single { Navigator() }
 }
 
 private fun provideAppBuildInfo(context: Context): AppBuildInfo = AppBuildInfo(

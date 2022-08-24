@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.tailoredapps.androidapptemplate.base.ui
+package com.tailoredapps.androidapptemplate.base.control
 
 import at.florianschuster.control.EffectController
 import kotlinx.coroutines.flow.Flow

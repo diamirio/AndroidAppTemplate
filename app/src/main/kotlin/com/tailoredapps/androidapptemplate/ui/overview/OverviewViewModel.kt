@@ -20,7 +20,7 @@ package com.tailoredapps.androidapptemplate.ui.overview
 import androidx.lifecycle.viewModelScope
 import at.florianschuster.control.Controller
 import at.florianschuster.control.createController
-import com.tailoredapps.androidapptemplate.base.ui.ControllerViewModel
+import com.tailoredapps.androidapptemplate.base.control.ControllerViewModel
 import com.tailoredapps.androidapptemplate.core.DataRepo
 
 class OverviewViewModel(
