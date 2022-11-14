@@ -19,16 +19,16 @@ package com.tailoredapps.androidapptemplate
 
 import android.content.res.Resources
 import android.view.View
-import junit.framework.AssertionFailedError
-import org.hamcrest.Description
-import org.hamcrest.Matcher
-import org.hamcrest.TypeSafeMatcher
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.UiController
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayingAtLeast
+import junit.framework.AssertionFailedError
+import org.hamcrest.Description
+import org.hamcrest.Matcher
+import org.hamcrest.TypeSafeMatcher
 
 object EspressoUtils {
 
@@ -76,13 +76,11 @@ object EspressoUtils {
             val adapter = view.adapter
             if (adapter != null && adapter.itemCount != count) {
                 throw AssertionFailedError(
-                    "RecyclerView with id=" + view.id + " has " +
-                            adapter.itemCount + " items, expected " + count + " items"
+                    "RecyclerView with id=" + view.id + " has " + adapter.itemCount + " items, expected " + count + " items"
                 )
             }
         } else {
             throw AssertionFailedError("View is not a RecyclerView")
         }
     }
-
 }

@@ -18,7 +18,6 @@
 package com.tailoredapps.androidapptemplate
 
 import android.app.Application
-import at.florianschuster.control.ControllerLog
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.tailoredapps.androidapptemplate.core.coreModules
 import org.koin.android.ext.koin.androidContext
@@ -38,13 +37,11 @@ class MyApp : Application() {
         AndroidThreeTen.init(this)
 
         startKoin {
-            androidLogger(Level.INFO)
+            val logLevel = if (BuildConfig.DEBUG) Level.INFO else Level.ERROR
+            androidLogger(logLevel)
             androidContext(this@MyApp)
             fragmentFactory()
             modules(coreModules + appModules)
         }
-
-        // delete this if you do not want your logcat spammed
-        ControllerLog.default = ControllerLog.Custom { Timber.v(it) }
     }
 }
